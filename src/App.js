@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import LoginSignUp from './Components/LoginSignUp/LoginSignUp'; // LoginSignUp.jsx'in bulunduğu dosya
+import Register from './Components/Register/Register'; // Register.jsx'in bulunduğu dosya
+import { Link } from 'react-router-dom';
+import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
+import CodePage from './Components/CodePage/CodePage';
+import NewPassword from './Components/NewPassword/NewPassword';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginSignUp/>}> </Route>
+        <Route path="/Register" element={<Register/>}> </Route>
+        <Route path="/ForgetPassword" element={<ForgetPassword/>}> </Route>
+        <Route path="/CodePage" element={<CodePage/>}> </Route>
+        <Route path="/NewPassword" element={<NewPassword/>}> </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

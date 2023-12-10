@@ -1,0 +1,117 @@
+.container {
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 250px;
+    background: #F5F5F5;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 950px;
+    height: 550px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    float: left;
+    margin-top: 52px;
+    margin-left: 30px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    
+}
+
+.header {
+    position: absolute; /* Diğer içeriklerle çakışmadan konumlandırmak için */
+    top: 10px;
+    
+    padding: 20px; /* İstenirse bir iç boşluk ayarlayabilirsiniz */
+    text-align: right; /* Yazının sağa hizalanması */
+    left: calc(50% + 135px);
+}
+/* .line {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 45px); 
+    width: 5px;
+    height: 100%; 
+    background-color: #000;
+} */
+.underline{
+    width: 210px;
+    height: 6px;
+    background-color: #5d5959;
+    border-radius: 9px;
+  }
+  .inputs{
+    position: absolute;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    left: calc(50% + 70px);
+    margin-top: 160px;
+    padding-left: 10px;
+  }
+  .input{
+    
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 380px;
+    height: 50px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    box-sizing: border-box;
+   
+  }
+  .input input{
+    height: 50px;
+    width: 300px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    color: #5e5a5a;
+    padding-left: 10px;
+  }
+  .text{
+    color: #5d5959;
+    font-size: 48px;
+    font-weight: 700;
+    margin-right: 14px;
+    
+  }
+  .input img{
+    margin: 0px 10px;
+  }
+
+  .submit-container{
+    position: absolute;
+    display: flex;
+    gap: 30px;
+    margin: 22px auto;
+    left: calc(50% + 73px);
+    margin-top: 480px;
+    
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 52px;
+    color: #fff;
+    background-color: #7c6262;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer; 
+}
+

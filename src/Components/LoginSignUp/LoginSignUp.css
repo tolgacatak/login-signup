@@ -1,0 +1,113 @@
+.container2{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 250px;
+    background: #fef;
+    padding-bottom: 30px;
+  border-radius: 30px;
+    width: 550px;
+    height: 550px;
+    
+}
+
+.header2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 15px;
+    
+}
+.logo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .logo2 img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover; /* Resmin boyutlarını korur */
+  }
+  
+  .text2{
+    color: #5d5959;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .underline2{
+    width: 181px;
+    height: 6px;
+    background-color: #5d5959;
+    border-radius: 9px;
+  }
+  .inputs2{
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .input2{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 60px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .input2 img{
+    margin: 0px 30px;
+  }
+  .input2 input{
+    height: 50px;
+    width: 400px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    color: #5e5a5a;
+  }
+.forgot-password2{
+    padding-left: 123px;
+    margin-top: 23px;
+    color:#9b9393;
+    font-size: 18px;
+    
+
+}
+.forgot-password2 span{
+    color:#5d5959;
+    cursor: pointer;
+}
+.submit-container2{
+    display: flex;
+    gap: 30px;
+    margin-top: 10px ;
+    margin-left: 95px;
+    
+}
+.submit2{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background-color: #7c6262;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.gray{
+    background-color: #eaeaee;
+    color: #676767;
+}
+
