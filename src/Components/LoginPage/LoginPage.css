@@ -1,0 +1,249 @@
+.navbar {
+    width: 100%;
+    height: 93px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    
+}
+.cicos{
+    text-decoration: none;
+    color: #ab4343;
+}
+
+.login-img {
+    position: relative;
+}
+
+.login-img img {
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    object-fit: contain;
+    margin-top: 12px;
+}
+
+.main-title {
+    position: relative;
+    margin-left: 137px;
+    margin-top: 1px;
+    color: #ab4343;
+}
+
+.giris {
+    background-color: #8CDBD6;
+    margin-right: 40px;
+    padding: 8px 14px;
+    border-radius: 25px;
+
+}
+
+.kayitol {
+    background-color: #FDEF80;
+    padding: 8px 14px;
+    border-radius: 25px;
+}
+
+.rightSide {
+    margin-left: 920px;
+    margin-top: 35px;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.bannerimage1 {
+    /* Resmin orijinal boyutundan daha düşükse sadece bu özelliği kullan */
+    width: 100%;
+    /* Genişlik oranını koru */
+    height: 700px;
+    /* Yükseklik oranını koru */
+}
+
+.home h1 {
+
+    justify-content: center;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 220%;
+    color: aliceblue;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.title-font {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: aliceblue;
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 70px;
+
+}
+
+.text-font {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: aliceblue;
+    position: absolute;
+    margin-top: 520px;
+    margin-left: 70px;
+    font-size: 24px;
+}
+
+.afet-buttons {
+    padding-top: 30px;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #fff;
+
+}
+
+.afet-buttons-btn-canli {
+    margin-left: 47px;
+    padding: 10px;
+    width: 15%;
+    height: 280px;
+    position: absolute;
+    padding-top: 2px;
+    border: 2px solid #000;
+    border-radius: 25px;
+}
+
+.afet-buttons-btn-canli img {
+
+    width: 100%;
+    height: 52%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.afet-buttons-btn-canli b {
+    margin-left: 15px;
+    font-size: 19px;
+
+}
+
+.afet-buttons-btn-canli p {
+    margin-left: 7px;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 4px;
+}
+
+.afet-buttons-btn-sosyal {
+    
+    padding: 10px;
+    width: 15%;
+    height: 280px;
+    position: absolute;
+    padding-top: 2px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    margin-left: 347px;
+}
+
+.afet-buttons-btn-sosyal img {
+
+    width: 100%;
+    height: 50%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.afet-buttons-btn-sosyal b {
+    margin-left: 15px;
+    font-size: 19px;
+
+}
+.afet-buttons-btn-sosyal p {
+    margin-left: 7px;
+    font-size: 15.5px;
+    text-align: center;
+    
+    
+}
+.afet-buttons-btn-haber {
+    
+    padding: 10px;
+    width: 15%;
+    height: 280px;
+    position: absolute;
+    padding-top: 2px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    margin-left: 657px;
+}
+.afet-buttons-btn-haber img {
+
+    width: 100%;
+    height: 50%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.afet-buttons-btn-haber b {
+    margin-left: 45px;
+    font-size: 19px;
+}
+.afet-buttons-btn-haber p {
+    margin-left: 7px;
+    font-size: 15.5px;
+    text-align: center;
+}
+.afet-buttons-btn-yardim {
+    
+    padding: 10px;
+    width: 15%;
+    height: 280px;
+    position: absolute;
+    padding-top: 2px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    margin-left: 957px;
+}
+.afet-buttons-btn-yardim img {
+
+    width: 100%;
+    height: 50%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.afet-buttons-btn-yardim b {
+    margin-left: 15px;
+    font-size: 17px;
+}
+.afet-buttons-btn-yardim p {
+    margin-left: 7px;
+    font-size: 15px;
+    text-align: center;
+}
+.afet-buttons-btn-acil{
+    
+    padding: 10px;
+    width: 15%;
+    height: 280px;
+    position: absolute;
+    padding-top: 2px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    margin-left: 1257px;
+
+}
+.afet-buttons-btn-acil img {
+
+    width: 100%;
+    height: 50%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}

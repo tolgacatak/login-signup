@@ -39,12 +39,7 @@
     font-weight: 700;
   }
 
-  .underline2{
-    width: 181px;
-    height: 6px;
-    background-color: #5d5959;
-    border-radius: 9px;
-  }
+ 
   .inputs2{
     margin-top: 45px;
     display: flex;

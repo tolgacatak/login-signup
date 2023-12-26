@@ -26,7 +26,7 @@ const LoginSignUp = () => {
                     {action}
                 </div>
 
-                <div className="underline2"></div>
+                
             </div>
             <div className="inputs2">
                 <div className="input2">

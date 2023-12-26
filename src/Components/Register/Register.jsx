@@ -21,7 +21,7 @@ const Register = () => {
                 <div className="text">
                     {action}
                 </div>
-                <div className="underline"></div>
+                
             </div>
 
             <div className="line"></div>
@@ -46,7 +46,7 @@ const Register = () => {
 
             </div>
             <div className="submit-container">
-                <Link to="/" className="submit">
+                <Link to="/login" className="submit">
                     Giriş Yap
                 </Link>
                 <Link to="/" className="submit">

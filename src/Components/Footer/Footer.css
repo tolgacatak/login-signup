@@ -1,0 +1,139 @@
+.footer-container {
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    padding-left: 20px;
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 140px;
+}
+.hakkimizda{
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 550px;
+
+    
+}
+.sss{
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 780px;
+
+}
+.hakkimizda-btn{
+    position: absolute;
+    text-decoration: none;
+    margin-top: 11px;
+    background-color: #F5C872;
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 3px;
+    font-family:serif;
+    padding: 7px;
+    padding-left: 12px;
+    margin-left: 50px;
+    
+}
+.sss-btn{
+    position: absolute;
+    text-decoration: none;
+    margin-top: 11px;
+    background-color: #F5C872;
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 3px;
+    font-family:serif;
+    padding: 7px;
+    margin-left: 60px;
+    padding-left: 22px;
+    text-align: center;
+    padding-right: 22px;
+}
+.social-media{
+    position: absolute;
+    margin-left: 704px;
+    margin-top: 55px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: orelega-one;
+    box-sizing: border-box; 
+}
+.social-media img{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.social-media img.twitter,
+.social-media img.instagram {
+    width: 30px; /* Facebook resminin boyutu */
+    height: 30px; /* Facebook resminin boyutu */
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.underline{
+    position: absolute;
+    margin-right: 200px;
+    margin-top: 90px;
+    width: 1500px;
+    height: 2px;
+    background-color: #fff;
+}
+.underline2{
+    position: absolute;
+    margin-right: 200px;
+    margin-top: 95px;
+    width: 1500px;
+    height: 2px;
+    background-color: #fff;
+}
+.gizlilik{
+    position: absolute;
+    margin-left: 590px;
+    margin-top: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 13px;
+}
+.kullanim-kosullari{
+    position: absolute;
+    margin-left: 810px;
+    margin-top: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+}
+.gizlilik-btn{
+   color: #fff;
+   font-size: 12px;
+}
+.kullanim-kosullari-btn{
+    color: #fff;
+    font-size: 12px;
+}
