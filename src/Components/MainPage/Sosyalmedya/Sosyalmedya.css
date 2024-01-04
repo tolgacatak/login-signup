@@ -1,0 +1,103 @@
+.sosyal-medya{
+    width: 20%;
+    height: 372px;
+    margin-left: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    float: left;
+}
+.sosyal-medya::after{
+    content : "";
+    display: table;
+    clear: both;
+}
+.sosyal-user-image{
+    width: 12%;
+    height: 12%;
+    border-radius: 25px;
+    object-fit: cover;
+    position: absolute;
+    margin-right: 230px;
+    margin-bottom: 288px;
+}
+.sosyal-twitter-image{
+    width: 7%;
+    height: 7%;
+    border-radius: 25px;
+    object-fit: cover;
+    position: absolute;
+    margin-left: 250px;
+    margin-bottom: 290px;
+}
+.sosyal-medya .sosyal-isim-soyisim span{
+    position: absolute;
+    margin-left: 30px;
+    top: 25px;
+    left: 39px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+.sosyal-medya-icerik{
+    position: absolute;
+    margin-left: 30px;
+    top: 80px;
+    left: 10px;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    overflow: auto;
+    max-height: 280px;
+}
+.sosyal-sure{
+    position: absolute;
+    margin-left: 66px;
+    margin-bottom: 240px;
+    left: 10px;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+}
+.sosyal-medya2{
+    width: 20%;
+    height: 372px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    float: left;
+}
+.sosyal-medya2::after{
+    content : "";
+    display: table;
+    clear: both;
+}
+.sosyal-medya3{
+    width: 20%;
+    height: 372px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    float: left;
+}
+

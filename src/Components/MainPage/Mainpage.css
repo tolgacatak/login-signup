@@ -1,0 +1,75 @@
+
+.deprem-haberi {
+    display: flex;
+    justify-content: center;
+    margin-right: 220px;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.deprem-haberi span{
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    font-size: 30px;
+    color: #000;
+    font-weight: 600;
+    margin-top: 180px;
+    margin-left: 360px;
+    color: #FF0000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.arama-anasayfa {
+    display: flex;
+    justify-content: center;
+    margin-left: 320px;
+    margin-top: 2px;
+    padding: 10px;
+    border-radius: 15px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #000;
+    height: 30px;
+    width: 900px;
+    position: relative;
+    background-color: #CBC2C2;
+}
+.arama-anasayfa span{
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+}
+.arama input{
+    position: absolute;
+    top: 3px;
+    left: 50px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    margin-left: 600px;
+    border-radius: 25px;
+    padding-left: 15px;
+}
+.arama img{
+    position: absolute;
+    height: 17px;
+    margin-left: 400px;
+    top: 6px;
+
+
+}
+
+

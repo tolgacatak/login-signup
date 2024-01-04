@@ -10,6 +10,7 @@ import Hakkimizda from './Components/Footer/Hakkimizda';
 import SSS from './Components/Footer/sss';
 import Gizlilik from './Components/Footer/Gizlilik';
 import KullanimKosullari from './Components/Footer/Kullanım';
+import Mainpage from './Components/MainPage/Mainpage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/sss" element={<SSS />} />
         <Route path="/gizlilik" element={<Gizlilik/>} />
         <Route path="/kullanim-kosullari" element={<KullanimKosullari/>} />
+        <Route path="/mainpage" element={<Mainpage />} />
       </Routes>
     </BrowserRouter>
   );

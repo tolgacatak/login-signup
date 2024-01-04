@@ -4,13 +4,69 @@ import user_icon from '../Assets/person.png'
 import password_icon from '../Assets/password.png'
 import mail_icon from '../Assets/email.png'
 import logo from '../Assets/logo.jpeg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Loginmodal from '../Modals/Loginmodal'
 
 const Register = () => {
     const [action, setAction] = useState("Kayıt Ol");
+    const [error, setError] = useState(false);
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [mail, setMail] = useState("");
+    const [password2, setPassword2] = useState("");
+
+    const errorHandler = () => {
+        setError(false);
+    }
+
+    const userHandler = (e) => {
+        setUser(e.target.value);
+    }
+    const paswordHandler = (e) => {
+        setPassword(e.target.value);
+    }
+    const mailHandler = (e) => {
+        setMail(e.target.value);
+    }
+    const paswordHandler2 = (e) => {
+        setPassword2(e.target.value);
+    }
+
+    const registerPageHandler = (e) => {
+        e.preventDefault();
+        if (user.trim().length === 0 || password.trim().length === 0 || mail.trim().length === 0 || password2.trim().length === 0) {
+            setError(
+                {
+                    title: "Hatalı Giriş",
+                    message: "Lütfen ilgili alanları doldurunuz!"
+                }
+            );
+            return;
+        }
+        if(password !== password2){
+            setError(
+                {
+                    title: "Hatalı Giriş",
+                    message: "Şifreler uyuşmuyor!"
+                }
+            );
+            setPassword("");
+            setPassword2("");
+            return;
+        }
+        
+            setError(null);
+            navigate("/login");
+       
+
+    }
+
+
+    const navigate = useNavigate();
 
     return (
         <div className="container">
+            {error && <Loginmodal onConfirm={errorHandler} error={error} />}
 
             <div className="logo">
                 <img src={logo} alt="" />
@@ -28,19 +84,19 @@ const Register = () => {
             <div className="inputs">
                 <div className="input">
                     <img src={mail_icon} alt="" />
-                    <input type='mail' placeholder='valid_mail_address@mail.com' />
+                    <input type='mail' placeholder='valid_mail_address@mail.com' onChange={mailHandler} value={mail}/>
                 </div>
                 <div className="input">
                     <img src={user_icon} alt="" />
-                    <input type="text" placeholder='Kullanıcı Adı' />
+                    <input type="text" placeholder='Kullanıcı Adı' onChange={userHandler} value={user}/>
                 </div>
                 <div className="input">
                     <img src={password_icon} alt="" />
-                    <input type="password" placeholder='*******' />
+                    <input type="password" placeholder='*******' onChange={paswordHandler} value={password} />
                 </div>
                 <div className="input">
                     <img src={password_icon} alt="" />
-                    <input type="password" placeholder='Correct Password' />
+                    <input type="password" placeholder='Correct Password' onChange={paswordHandler2} value={password2} />
                 </div>
 
 
@@ -49,9 +105,9 @@ const Register = () => {
                 <Link to="/login" className="submit">
                     Giriş Yap
                 </Link>
-                <Link to="/" className="submit">
+                <button className="submit" onClick={registerPageHandler}>
                     Kayıt Ol
-                </Link>
+                </button>
             </div>
         </div>
     )

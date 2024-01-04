@@ -1,0 +1,107 @@
+.nav-bar{
+    box-sizing: border-box;
+    margin-top: 2px;
+    width: 100%;
+    position: relative;
+    background-color: #1a1a1a;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;       
+}
+.img-navbar {
+    position: relative;
+    margin-bottom: 69px;
+}
+.img-navbar img {
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    object-fit: contain;
+}
+.afetanka-navbar{
+    position: absolute;
+    margin-left: 125px;
+    margin-top: 4px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: orelega-one;  
+}
+.afetanka-navbar span{
+    color: #CA2C1B;
+    size: 16px;
+    text-align: center;
+    text-decoration: none;  
+}
+.afetanka-navbar .link1{
+    text-decoration: none;
+}
+.buttons-navbar{
+    position: absolute;
+    margin-left: 320px;
+    font-size: 21px;
+    font-weight: 600;
+    font-family: orelega-one;
+    box-sizing: border-box; 
+}
+.link2{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #fff;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    font-family:serif;
+    padding: 6px;   
+}
+.link3{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #fff;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    margin-left: 60px;
+    font-family:serif;
+    padding: 6px;
+}
+.link4{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #fff;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    margin-left: 60px;
+    font-family:serif;
+    padding: 6px;
+}
+.link5{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #fff;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    margin-left: 60px;
+    font-family:serif;
+    padding: 6px;
+}
+.exit{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    margin-right: 30px;
+    box-sizing: border-box;
+    border: none;
+}
+.exit button{
+    background-color: #E54E4E;
+    border: none;
+    font-size: 25px;
+    font-weight: 560;
+    font-family: orelega-one;
+    cursor: pointer;
+    border-radius: 25px;
+    font-family:serif;
+    color: white;
+    height: 42px;
+}
+

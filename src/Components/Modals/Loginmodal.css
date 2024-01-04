@@ -1,0 +1,51 @@
+/* Loginmodal.css */
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 580px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Kutunun gölgesini artırabilirsiniz */
+    text-align: center;
+    border-radius: 15px;
+    z-index: 1000; /* Yüksek bir z-index değeri ekleyin */
+}
+
+.modal-header {
+    background-color: #477594;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 15px;
+}
+
+.modal-section {
+    padding: 20px;
+    font-size: x-large;
+}
+
+.modal-footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.tamam {
+    background-color: #477594;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 15px;
+}
+
+/* Bu örnek tasarımı ihtiyacınıza göre özelleştirebilirsiniz */

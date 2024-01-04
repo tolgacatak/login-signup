@@ -1,44 +1,70 @@
-import React, { useState } from 'react'
-import './LoginSignUp.css'
-import user_icon from '../Assets/person.png'
-import password_icon from '../Assets/password.png'
-import logo from '../Assets/logo.jpeg'
-import { useHistory } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-
-import Register from '../Register/Register'
-
-// import Register from './Register';
-
+import React, { useState } from 'react';
+import './LoginSignUp.css';
+import user_icon from '../Assets/person.png';
+import password_icon from '../Assets/password.png';
+import logo from '../Assets/logo.jpeg';
+import { useNavigate, Link } from 'react-router-dom';
+import Loginmodal from '../Modals/Loginmodal';
 
 const LoginSignUp = () => {
     const [action, setAction] = useState("Giriş Yap");
-    const [showRegister, setShowRegister] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
+    const [error, setError] = useState(false);
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    const errorHandler = () => {
+        setError(false);
+    }
+
+    const userHandler = (e) => {
+        setUser(e.target.value);
+    }
+
+    const passwordHandler = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const loginPageHandler = (e) => {
+        e.preventDefault();
+        if (user.trim().length === 0 || password.trim().length === 0) {
+            setError(
+                {
+                    title: "Hatalı Giriş",
+                    message: "Kullanıcı adı veya şifre boş bırakılamaz!"
+                }
+            );
+            return;
+        } else {
+            setError(null);
+            navigate("/mainpage");
+        }
+    }
 
     return (
         <div className='container2'>
+            {error && <Loginmodal onConfirm={errorHandler} error={error} />}
+
             <div className="logo2">
                 <img src={logo} alt="" />
             </div>
             <div className="header2">
-
                 <div className="text2">
                     {action}
                 </div>
-
-                
             </div>
             <div className="inputs2">
                 <div className="input2">
                     <img src={user_icon} alt="" />
-                    <input type="text" placeholder='Kullanıcı Adı' />
+                    <input type="text" placeholder='Kullanıcı Adı' onChange={userHandler} value={user} />
                 </div>
 
                 <div className="input2">
                     <img src={password_icon} alt="" />
-                    <input type="password" placeholder='*******' />
+                    <input type="password" placeholder='*******' onChange={passwordHandler} value={password} />
                 </div>
-
             </div>
             <div className="forgot-password2">Şifrenizi mi Unuttunuz? <span>
                 <Link to="/forgetpassword">
@@ -47,15 +73,15 @@ const LoginSignUp = () => {
             </div>
 
             <div className="submit-container2">
-                <Link to="/" className="submit">
+                <button className="submit" onClick={loginPageHandler}>
                     Giriş Yap
-                </Link>
+                </button>
                 <Link to="/register" className="submit">
                     Kayıt Ol
                 </Link>
-
             </div>
         </div>
     )
 }
-export default LoginSignUp
+
+export default LoginSignUp;
