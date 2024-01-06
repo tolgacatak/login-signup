@@ -1,0 +1,44 @@
+.error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.error-page h1{
+    font-size: 10rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 12px #fff,
+                 0 0 12px #fff,
+                 0 0 12px #fff,
+                 0 0 40px #786b76,
+                 0 0 40px #786b76,
+                 0 0 40px #786b76,
+                 0 0 40px #786b76;
+}
+.error-page h2{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 0 12px #fff,
+                 0 0 12px #fff,
+                 0 0 12px #fff,
+                 0 0 40px #786b76,
+                 0 0 40px #786b76,
+                 0 0 40px #786b76,
+                 0 0 40px #786b76;
+                 margin-bottom: 40px;
+}
+.error-page button{
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #786b76;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}

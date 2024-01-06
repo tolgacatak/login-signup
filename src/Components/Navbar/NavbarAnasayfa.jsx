@@ -1,8 +1,14 @@
 import './NavbarAnasayfa.css'
 import logo from '../Assets/logo_navbar.jpg'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const NavbarAnasayfa = () => {
+    const navigate = useNavigate();
+ const closeHandler = () => {
+    navigate("/login")
+  }
+
   return (
     <nav>
     <div className="nav-bar">
@@ -21,7 +27,7 @@ const NavbarAnasayfa = () => {
             <Link className="link5" to="/button4">Acil Durum Bilgileri</Link>
         </div>
         <div className="exit">
-            <button>Çıkış</button>
+            <button onClick={closeHandler} >Çıkış</button>
         </div>
     </div>
     

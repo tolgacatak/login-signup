@@ -6,6 +6,7 @@ import mail_icon from '../Assets/email.png'
 import logo from '../Assets/logo.jpeg'
 import { Link, useNavigate } from 'react-router-dom'
 import Loginmodal from '../Modals/Loginmodal'
+import axios from 'axios'
 
 const Register = () => {
     const [action, setAction] = useState("Kayıt Ol");
@@ -14,6 +15,9 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [mail, setMail] = useState("");
     const [password2, setPassword2] = useState("");
+    
+
+    
 
     const errorHandler = () => {
         setError(false);
@@ -32,7 +36,7 @@ const Register = () => {
         setPassword2(e.target.value);
     }
 
-    const registerPageHandler = (e) => {
+    const registerPageHandler = async (e) => {
         e.preventDefault();
         if (user.trim().length === 0 || password.trim().length === 0 || mail.trim().length === 0 || password2.trim().length === 0) {
             setError(
@@ -54,11 +58,40 @@ const Register = () => {
             setPassword2("");
             return;
         }
-        
-            setError(null);
-            navigate("/login");
-       
+        try{
+            const response = await axios.post("/users/register", {
+                username: user,
+                password: password,
+                email: mail
+                });
+                if(response.status === 200){
+                    setError(
+                        {
+                            title: "Başarılı",
+                            message: "Kayıt işlemi başarılı!"
+                        }
+                    );
+                    setError(null);
+                     navigate("/login");
+                }
+                else {
+                    throw new Error("Kayıt işlemi başarısız!");
+                    
+                } 
+        } catch (error) {
+            console.log(error.response);
+            
+            setError(
+                {
+                    title: "Hatalı Giriş",
+                    message: error.message
+                }
+            );
 
+        
+            
+       
+            }
     }
 
 

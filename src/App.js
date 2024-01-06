@@ -11,6 +11,7 @@ import SSS from './Components/Footer/sss';
 import Gizlilik from './Components/Footer/Gizlilik';
 import KullanimKosullari from './Components/Footer/Kullanım';
 import Mainpage from './Components/MainPage/Mainpage';
+import ErrorPage from './Components/404Page/404Page';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/gizlilik" element={<Gizlilik/>} />
         <Route path="/kullanim-kosullari" element={<KullanimKosullari/>} />
         <Route path="/mainpage" element={<Mainpage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );

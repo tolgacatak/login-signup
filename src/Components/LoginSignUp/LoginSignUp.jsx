@@ -5,6 +5,7 @@ import password_icon from '../Assets/password.png';
 import logo from '../Assets/logo.jpeg';
 import { useNavigate, Link } from 'react-router-dom';
 import Loginmodal from '../Modals/Loginmodal';
+import axios from 'axios';
 
 const LoginSignUp = () => {
     const [action, setAction] = useState("Giriş Yap");
@@ -27,7 +28,7 @@ const LoginSignUp = () => {
         setPassword(e.target.value);
     }
 
-    const loginPageHandler = (e) => {
+    const loginPageHandler = async (e) => {
         e.preventDefault();
         if (user.trim().length === 0 || password.trim().length === 0) {
             setError(
@@ -37,11 +38,27 @@ const LoginSignUp = () => {
                 }
             );
             return;
-        } else {
-            setError(null);
-            navigate("/mainpage");
+        } 
+        try{
+            const login = await axios.post("/users/login",{
+                username: user,
+                password: password,
+            });
+            if(login.status === 200){
+                setError(null);
+                navigate("/mainpage");
+            }else{
+                throw new Error("Giriş işlemi başarısız");
+            }
+        }catch (error){
+            setError({
+                title: "Hatalı Giriş",
+                message: error.message,
+            });
         }
+        
     }
+    
 
     return (
         <div className='container2'>
