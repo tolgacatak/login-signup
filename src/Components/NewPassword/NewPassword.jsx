@@ -51,7 +51,7 @@ const NewPassword = () => {
                     </form>
 
                 </div>
-                <Link to="/" className="submit-new">
+                <Link to="/login" className="submit-new">
                     <button type="submit">Şifreyi Kaydet</button>
                 </Link>
             </div>

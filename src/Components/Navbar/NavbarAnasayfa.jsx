@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const NavbarAnasayfa = () => {
     const navigate = useNavigate();
  const closeHandler = () => {
-    navigate("/login")
+    navigate("/")
   }
 
   return (
