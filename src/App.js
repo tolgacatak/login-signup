@@ -12,6 +12,8 @@ import Gizlilik from './Components/Footer/Gizlilik';
 import KullanimKosullari from './Components/Footer/Kullanım';
 import Mainpage from './Components/MainPage/Mainpage';
 import ErrorPage from './Components/404Page/404Page';
+import ProfilSayfasi from './Components/Profile/ProfilePage';
+import ProfileSifreyiYenile from './Components/Profile/ProfileSifreyiYenile/ProfileSifreyiYenile';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/gizlilik" element={<Gizlilik/>} />
         <Route path="/kullanim-kosullari" element={<KullanimKosullari/>} />
         <Route path="/mainpage" element={<Mainpage />} />
+        <Route path="/profil-page" element={<ProfilSayfasi />} />
+        <Route path="/sifre-yenile" element={<ProfileSifreyiYenile />}></Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

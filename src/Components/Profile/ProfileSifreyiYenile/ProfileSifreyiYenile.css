@@ -1,0 +1,99 @@
+.sifre-yenile-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: #fef;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 400px;
+    height: 350px;
+    position: relative;
+}
+.sifre-yenile-wrapper h1{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.password-change-wrapper{
+    margin-left: 75px;
+    margin-top: 25px;
+}
+.eski-sifreniz input{
+    width: 234px;
+    height: 40px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 39px;
+    font-size: 20px;
+    font-size: 14px;
+}
+.eski-sifreniz{
+    position: relative;
+}
+.eski-sifreniz img{
+    position: absolute;
+    margin: 0px 12px;
+    margin-top: 8px;
+}
+.yeni-sifreniz input{
+    margin-top: 25px;
+    width: 234px;
+    height: 40px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 39px;
+    font-size: 20px;
+    font-size: 14px;
+}
+.yeni-sifreniz{
+    position: relative;
+}
+.yeni-sifreniz img{
+    position: absolute;
+    margin: 0px 12px;
+    margin-top: 33px;
+}
+.yeni-sifreniz-tekrar input{
+    margin-top: 25px;
+    width: 234px;
+    height: 40px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 39px;
+    font-size: 20px;
+    font-size: 14px;    
+}
+.yeni-sifreniz-tekrar{
+    position: relative;
+}
+.yeni-sifreniz-tekrar img{
+    position: absolute;
+    margin: 0px 12px;
+    margin-top: 33px;
+}
+.yeni-sifre-kaydet button{
+    margin-top: 25px;
+    width: 140px;
+    margin-left: 45px;
+    height: 40px;
+    background-color: #5d5959;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    font-size: 14px;
+    cursor: pointer;    
+}
+.yeni-sifre-link{
+    text-decoration: none;
+}
+

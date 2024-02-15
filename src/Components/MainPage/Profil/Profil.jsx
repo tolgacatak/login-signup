@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Profil.css'
 import logo from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Assets\\user.png'
 const Profil = () => {
@@ -10,7 +11,7 @@ const Profil = () => {
             <span>Ad Soyad</span>
         </div>
         <div className="profile-btn">
-            <button>Profilime Git</button>
+            <Link className='profile-link' to="/profil-page">Profile Git</Link>
         </div>
     </div>
   )

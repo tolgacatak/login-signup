@@ -87,11 +87,7 @@ const Register = () => {
                     message: error.message
                 }
             );
-
-        
-            
-       
-            }
+        }
     }
 
 

@@ -43,3 +43,16 @@
     margin-left: 14px;
     margin-bottom: 7px;
 }
+.profile-link {
+    text-decoration: none;
+    color: #fff;
+    background-color: #5d5959;
+    border: 1px solid #5d5959;
+    padding: 12px 30px;
+    margin-left: 14px;
+    margin-bottom: 8px;
+    border-radius: 25px;
+    font-size: larger;
+    text-size-adjust: 100%;
+
+}

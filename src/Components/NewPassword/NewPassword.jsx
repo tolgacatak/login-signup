@@ -37,19 +37,15 @@ const NewPassword = () => {
             <div className="new-password">
                 <div className="password1">
                     <label>
-
                         <input type="password" value={password} onChange={handlePasswordChange} placeholder='Yeni Şifre' onPaste={(e) => e.preventDefault()} />
                     </label>
                 </div>
                 <div className="password2">
                     <form onSubmit={handleSubmit}>
                         <label>
-
                             <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder='Şifreyi Tekrar Giriniz' onPaste={(e) => e.preventDefault()} />
                         </label>
-
                     </form>
-
                 </div>
                 <Link to="/login" className="submit-new">
                     <button type="submit">Şifreyi Kaydet</button>

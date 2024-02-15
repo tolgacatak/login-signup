@@ -1,0 +1,194 @@
+.profilepage-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: #fef;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 550px;
+    height: 380px;
+    position: relative;
+}
+.profilepage-wrapper h1{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.inputs-profile-wrapper{
+     margin-left: 40px;
+     margin-top: 35px;
+     
+}
+.e-posta-adresi{
+    position: relative;
+}
+
+.e-posta-adresi input{
+
+    width: 234px;
+    height: 40px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 39px;
+    font-size: 20px;
+    font-size: 14px;
+}
+.e-posta-adresi img{
+    position: absolute;
+    margin: 0px 10px;
+    margin-top: 12px;
+}
+
+.isim-alani input{
+    margin-top: 25px;
+    width: 234px;
+    height: 40px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 39px;
+    font-size: 20px;
+    font-size: 14px;
+}
+.isim-alani img{
+    position: absolute;
+    margin: 0px 10px;
+    margin-top: 33px;
+}
+.soyisim-alani input{
+    margin-top: 25px;
+    width: 234px;
+    height: 40px;
+    background-color: #c3b9b9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 39px;
+    font-size: 20px;
+    font-size: 14px;
+}
+.soyisim-alani img{
+    position: absolute;
+    margin: 0px 10px;
+    margin-top: 33px;
+}
+.hesap-foto{
+    position: absolute;
+    margin-left: 308px;
+    top: 90px;
+}
+.hesap-foto img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.hesap-foto label{
+    position: absolute;
+    top: 210px;
+    left: 50px;
+    width: 100px;
+    height: 40px;
+    background-color: #5d6275;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.hesap-foto p{
+    position: absolute;
+    margin-left: 21px;
+    top: -12px;
+    color: #fff;
+    font-style:unset;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.yenile-link{
+    text-decoration: none;
+}
+.profil-sifre-yenile{
+    position: absolute;
+    top: 300px;
+}
+.yenile-link{
+    width: 100px;
+    height: 40px;
+    background-color: #907f7f;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-size: 14px;
+    margin-left: 50px;
+}
+.profil-kaydet{
+    position: absolute;
+    top: 300px;
+    text-decoration: none;
+}
+/* .profil-kaydet button{
+    width: 100px;
+    height: 40px;
+    background-color: #907f7f;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-size: 14px;
+    margin-left: 160px;
+    text-decoration: none;
+} */
+.kaydet-link{
+    text-decoration: none;
+}
+/* .profile-save{
+    text-decoration: none;
+    color: #fff;
+    background-color: #907f7f;
+    padding: 8px 16px;
+    margin-left: 174px;
+    top: 20px;
+    border-radius: 25px;
+    font-size: larger;
+    text-size-adjust: 100%;
+} */
+.kaydet-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #907f7f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-bottom: 45px;
+    margin-left: 50px;
+  }
+  
+  .kaydet-link:hover {
+    background-color: #8d969f;
+  }
+  .yenile-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #907f7f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-bottom: 45px;
+    margin-left: 155px;
+  }
+  .yenile-link p{
+    position: absolute;
+    top: -12px;
+    margin-left: 3px;
+  }
+  .yenile-link:hover {
+    background-color: #8d969f;
+  }
+  
+  
+  
+
+

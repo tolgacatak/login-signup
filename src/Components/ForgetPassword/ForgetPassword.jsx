@@ -18,7 +18,7 @@ const ForgetPassword = () => {
         <div className="underline-forget"></div>
       </div>
       <div className="inputs-forget">
-      <div className="label-forget"><h2>Mail Adresinizi Girin</h2></div>
+        <div className="label-forget"><h2>Mail Adresinizi Girin</h2></div>
         <div className="input-forget">
           <input type="text" placeholder="E-mail" />
         </div>
@@ -27,7 +27,7 @@ const ForgetPassword = () => {
         <Link to="/codepage" className="submit-forget">
           Gönder
         </Link>
-        
+
       </div>
     </div>
 
