@@ -26,13 +26,13 @@ const ProfilePage = () => {
                     <div className="isim-alani">
                     <img src={user_icon} alt="" />
                         <label>
-                            <input type="text" placeholder='Adınız'/>
+                            <input type="text" placeholder='Kullanıcı Adı'/>
                         </label>
                     </div>
                     <div className="soyisim-alani">
                     <img src={user_icon} alt="" />
                         <label>
-                            <input type="text" placeholder='Soyadınız'/>
+                            <input type="text" placeholder='Adınız - Soyadınız'/>
                         </label>
                     </div>
                 </div>

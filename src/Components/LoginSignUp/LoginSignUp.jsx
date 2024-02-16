@@ -40,7 +40,7 @@ const LoginSignUp = () => {
             return;
         } 
         try{
-            const login = await axios.post("/users/login",{
+            const login = await axios.post("http://localhost:8087/users/login",{
                 username: user,
                 password: password,
             });
