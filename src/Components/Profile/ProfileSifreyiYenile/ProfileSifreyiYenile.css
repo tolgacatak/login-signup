@@ -8,7 +8,7 @@
     padding-bottom: 30px;
     border-radius: 30px;
     width: 400px;
-    height: 350px;
+    height: 280px;
     position: relative;
 }
 .sifre-yenile-wrapper h1{
@@ -18,9 +18,8 @@
 }
 .password-change-wrapper{
     margin-left: 75px;
-    margin-top: 25px;
 }
-.eski-sifreniz input{
+/* .eski-sifreniz input{
     width: 234px;
     height: 40px;
     background-color: #c3b9b9;
@@ -38,7 +37,7 @@
     position: absolute;
     margin: 0px 12px;
     margin-top: 8px;
-}
+} */
 .yeni-sifreniz input{
     margin-top: 25px;
     width: 234px;
@@ -53,6 +52,7 @@
 }
 .yeni-sifreniz{
     position: relative;
+    top: -15px;
 }
 .yeni-sifreniz img{
     position: absolute;
@@ -73,6 +73,7 @@
 }
 .yeni-sifreniz-tekrar{
     position: relative;
+    top: -15px;
 }
 .yeni-sifreniz-tekrar img{
     position: absolute;
@@ -80,7 +81,7 @@
     margin-top: 33px;
 }
 .yeni-sifre-kaydet button{
-    margin-top: 25px;
+    margin-top: 5px;
     width: 140px;
     margin-left: 45px;
     height: 40px;

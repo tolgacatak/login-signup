@@ -12,12 +12,12 @@ const ProfileSifreyiYenile = () => {
           <div className="sifre-alanlari">
             <h1>Şifrenizi Yenileyin</h1>
             <div className="password-change-wrapper">
-              <div className="eski-sifreniz">
+              {/* <div className="eski-sifreniz">
                 <label>
                   <img src={password_icon} alt="" />
                   <input type="password" placeholder='Eski Şifreniz'/>
                 </label>
-              </div>
+              </div> */}
               <div className="yeni-sifreniz">
                 <label>
                   <img src={password_icon} alt="" />

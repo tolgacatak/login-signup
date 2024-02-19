@@ -13,6 +13,7 @@ const LoginSignUp = () => {
     const [error, setError] = useState(false);
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
+    const [id, setId] = useState("");
 
     const navigate = useNavigate();
 
@@ -45,6 +46,7 @@ const LoginSignUp = () => {
                 password: password,
             });
             if(login.status === 200){
+                localStorage.setItem('userId', login.data.id);
                 setError(null);
                 navigate("/mainpage");
             }else{
