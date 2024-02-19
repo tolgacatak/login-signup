@@ -8,22 +8,41 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Loginmodal from '../Modals/Loginmodal'
 
 const ProfilePage = () => {
     const[userName, setUserName] = useState("");
     const[nameSurname, setNameSurname] = useState("");
     const[email, setEmail] = useState("");
-    const[id, setId] = useState(1);
+    const[error, setError] = useState(false);
     const [userInfo, setUserInfo] = useState({
         id: "",
         user: "",
         nameSurname: "",
         email: ""
     });
-    
+    const errorHandler = () => {
+        setError(false);
+    }
 
-    const handleFileChange = (e) => {
-        /// dosya seçildiğinde yapılacaklar
+    const handleFileChange = async (e) => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+        console.log("dodo")
+        formData.append("file", file);
+        
+
+        // try {
+        //     await axios.post("http://localhost:8087/users/uploadProfilePicture", formData, {
+        //         contentType: "multipart/form-data",
+        //     });
+        // }
+        try {
+            await axios.post("http://localhost:8087/users/uploadProfilePicture", formData);
+        }
+        catch (error) {
+            
+        }
     }
     const emailHandler = (e) => {
         setEmail(e.target.value);
@@ -35,7 +54,17 @@ const ProfilePage = () => {
     const nameSurnameHandler = (e) => {
         setNameSurname(e.target.value);
     }
-    const saveProfile = () => {
+    const saveProfile = async (e) => {
+        e.preventDefault();
+        if(userName.trim().length === 0 || nameSurname.trim().length === 0 || email.trim().length === 0){
+            setError(
+                {
+                    title: "Hatalı Giriş",
+                    message: "Lütfen ilgili alanları doldurunuz!"
+                }
+            );
+            return;
+        }
         try{
             axios.put('http://localhost:8087/users/updateUserInfo' , {
                 id: localStorage.getItem('userId'),
@@ -45,12 +74,18 @@ const ProfilePage = () => {
             })
     }
     catch(e){
-        console.log(e);
+        setError(
+            {
+                title: "Hatalı Giriş",
+                message: "Lütfen ilgili alanları doldurunuz!"
+            }
+        );
         }
     }
   return (
     <div>
         <NavbarAnasayfa/>
+        {error && <Loginmodal onConfirm={errorHandler} error={error} />}
         <div className="profilepage-wrapper">
             <div className="hesap-ayarlari">
                 <h1>Hesap Bilgileriniz</h1>
