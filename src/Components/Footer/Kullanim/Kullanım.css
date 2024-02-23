@@ -1,0 +1,78 @@
+.kullanım-container {
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: #F5F5F5;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 600px;
+    height: 580px;
+    overflow: auto; /* Yalnızca içerik container boyutunu aştığında scroll bar göster */
+}
+.kullanım-container::-webkit-scrollbar {
+    width: 10px; /* Scroll bar genişliği */
+    height: 10px; /* Dikey scroll bar yüksekliği */
+}
+
+.kullanım-container::-webkit-scrollbar-thumb {
+    background: #888; /* Scroll bar renk */
+    border-radius: 5px; /* Scroll bar kenar yarıçapı */
+}
+
+.kullanım-title h1 {
+    margin-top: 40px;
+    text-align: center;
+}
+.kullanim1 h3 {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.kullanim1 p {
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
+.kullanim2 h3 {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.kullanim2 p {
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
+.kullanim3 h3 {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.kullanim3 p {
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
+.kullanim4 h3 {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.kullanim4 p {
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
+.kullanim5 h3 {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.kullanim5 p {
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}

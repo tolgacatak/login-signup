@@ -21,29 +21,11 @@ const ProfilePage = () => {
         nameSurname: "",
         email: ""
     });
+
     const errorHandler = () => {
         setError(false);
     }
-
-    const handleFileChange = async (e) => {
-        const file = e.target.files[0];
-        const formData = new FormData();
-        console.log("dodo")
-        formData.append("file", file);
-        
-
-        // try {
-        //     await axios.post("http://localhost:8087/users/uploadProfilePicture", formData, {
-        //         contentType: "multipart/form-data",
-        //     });
-        // }
-        try {
-            await axios.post("http://localhost:8087/users/uploadProfilePicture", formData);
-        }
-        catch (error) {
-            
-        }
-    }
+    
     const emailHandler = (e) => {
         setEmail(e.target.value);
 
@@ -82,6 +64,8 @@ const ProfilePage = () => {
         );
         }
     }
+    
+
   return (
     <div>
         <NavbarAnasayfa/>
@@ -114,7 +98,7 @@ const ProfilePage = () => {
                         <label htmlFor="file-upload" className="custom-file-upload">
                             <p className='foto'>Fotoğrafı Değiştir</p>
                         </label>
-                    <input id="file-upload" type="file" style={{display: 'none'}} onChange={handleFileChange}/>
+                    <input id="file-upload" type="file" style={{display: 'none'}} />
                 </div>
 
             </div>

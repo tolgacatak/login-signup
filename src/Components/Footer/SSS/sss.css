@@ -1,0 +1,47 @@
+.sss-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: #F5F5F5;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 650px;
+    height: 680px;
+}
+.sss-title h1{
+    margin-top: 40px;
+    text-align: center;
+}
+.sss1 h3{
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.sss1 p{
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
+.sss2 h3{
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.sss2 p{
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
+.sss3 h3{
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.sss3 p{
+    margin-top: 8px;
+    margin-left: 25px;
+    text-align: justify;
+    padding-right: 23px;
+}
