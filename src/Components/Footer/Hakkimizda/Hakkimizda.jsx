@@ -2,10 +2,13 @@ import React from 'react'
 import './Hakkimizda.css'
 import NavbarGiris from '../../Navbar/NavbarGiris'
 import Footer from '../Footer'
+import NavbarAnasayfa from '../../Navbar/NavbarAnasayfa'
+
 const Hakkimizda = () => {
+  const userId = localStorage.getItem('userId');
   return (
     <div className='hakkimizda-container'>
-      <NavbarGiris/>
+      {userId ? <NavbarAnasayfa /> : <NavbarGiris />}
         <div className="hakkimizda-wrapper">
           <div className="hakkimizda-title">
             <h1>Hakkımızda</h1>

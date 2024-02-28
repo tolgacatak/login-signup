@@ -2,11 +2,13 @@ import React from 'react'
 import NavbarGiris from '../../Navbar/NavbarGiris'
 import Footer from '../Footer'
 import './sss.css'
+import NavbarAnasayfa from '../../Navbar/NavbarAnasayfa'
 
 const sss = () => {
+  const userId = localStorage.getItem('userId');
   return (
     <div className='sss-container'>
-      <NavbarGiris/> 
+      {userId ? <NavbarAnasayfa /> : <NavbarGiris />}
         <div className="sss-wrapper">
           <div className="sss-title">
             <h1>Sıkça Sorulan Sorular</h1>

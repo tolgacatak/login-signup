@@ -62,8 +62,49 @@ const ProfilePage = () => {
                 message: "Lütfen ilgili alanları doldurunuz!"
             }
         );
-        }
+      }
     }
+    // const chunkSize = 1024 * 1024; // 1MB chunks
+    // let offset = 0;
+  
+    // const uploadChunks = async (file, userId) => {
+    //   while (offset < file.size) {
+    //     const chunk = file.slice(offset, offset + chunkSize);
+    //     const formData = new FormData();
+    //     formData.append('id', userId);
+    //     formData.append('chunk', chunk);
+  
+    //     try {
+    //       await axios.post('http://localhost:8087/users/uploadProfilePicture', formData);
+    //       offset += chunkSize;
+    //     } catch (error) {
+    //       console.error('Error uploading chunk:', error);
+    //       break;
+    //     }
+    //   }
+    // };
+  
+    // const handleFileChange = async (e) => {
+    //     const file = e.target.files[0];
+    //     const userId = localStorage.getItem('userId');
+    //     if (!userId) {
+    //         console.error('User ID not found in localStorage');
+    //         return;
+    //     }
+
+    //     try {
+    //         offset = 0; 
+    //         await uploadChunks(file, userId);
+    //         console.log('Upload completed successfully');
+    //     } catch (error) {
+    //         console.error('Error uploading file:', error);
+    //     }
+    // };
+    const handleFileChange = async (e) => {
+        //dummy part
+    }
+
+    
     
 
   return (
@@ -98,7 +139,7 @@ const ProfilePage = () => {
                         <label htmlFor="file-upload" className="custom-file-upload">
                             <p className='foto'>Fotoğrafı Değiştir</p>
                         </label>
-                    <input id="file-upload" type="file" style={{display: 'none'}} />
+                    <input id="file-upload" type="file" style={{display: 'none'}} onChange={handleFileChange} />
                 </div>
 
             </div>

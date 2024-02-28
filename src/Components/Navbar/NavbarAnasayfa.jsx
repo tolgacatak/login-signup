@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const NavbarAnasayfa = () => {
     const navigate = useNavigate();
  const closeHandler = () => {
+    localStorage.removeItem('userId');
     navigate("/")
   }
 
@@ -16,7 +17,7 @@ const NavbarAnasayfa = () => {
             <img src={logo} alt="" />
         </div>
         <div className="afetanka-navbar">
-            <Link className="link1" to="/">
+            <Link className="link1" to="/mainpage">
                 <span>AfetAnkaNet</span>
             </Link>
         </div>

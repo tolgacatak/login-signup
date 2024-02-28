@@ -2,11 +2,13 @@ import React from 'react'
 import NavbarGiris from '../../Navbar/NavbarGiris'
 import Footer from '../Footer'
 import './Gizlilik.css'
+import NavbarAnasayfa from '../../Navbar/NavbarAnasayfa'
 
 const gizlililk = () => {
+    const userId = localStorage.getItem('userId');
     return (
         <>
-            <NavbarGiris />
+            {userId ? <NavbarAnasayfa /> : <NavbarGiris />}
             <div className="gizlilik-container">
                 <div className="gizlilik-title">
                     <h1>Gizlilik Sözleşmesi</h1>

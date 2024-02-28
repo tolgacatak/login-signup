@@ -1,12 +1,14 @@
 import React from 'react'
 import NavbarGiris from '../../Navbar/NavbarGiris'
 import Footer from '../Footer'
+import NavbarAnasayfa from '../../Navbar/NavbarAnasayfa'
 import './Kullanım.css'
 
 const Kullanım = () => {
+  const userId = localStorage.getItem('userId');
   return (
     <>
-    <NavbarGiris/> 
+    {userId ? <NavbarAnasayfa /> : <NavbarGiris />}
         <div className="kullanım-container">
             <div className="kullanım-title">
                 <h1>Kullanım Koşulları</h1>
