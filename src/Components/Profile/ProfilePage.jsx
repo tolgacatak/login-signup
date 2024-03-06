@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import Loginmodal from '../Modals/Loginmodal'
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
     const[userName, setUserName] = useState("");
@@ -17,6 +18,7 @@ const ProfilePage = () => {
     const[email, setEmail] = useState("");
     const[error, setError] = useState(false);
     const [profilePictureUrl, setProfilePictureUrl] = useState('');
+    const navigate = useNavigate();
     
     const id = localStorage.getItem('userId');
 
@@ -65,6 +67,18 @@ const ProfilePage = () => {
                 nameSurname: nameSurname,
                 email: email
             })
+            setError(
+                {
+                    title: "Başarılı",
+                    message: "Bilgileriniz başarıyla güncellendi!"
+                }
+            );
+            
+            
+            setTimeout(() => {
+                navigate("/mainpage");
+            }, 4000); 
+            
     }
     catch(e){
         setError(
