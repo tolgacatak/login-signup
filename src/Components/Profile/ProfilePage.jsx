@@ -9,20 +9,30 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import Loginmodal from '../Modals/Loginmodal'
+import { useParams } from 'react-router-dom';
 
 const ProfilePage = () => {
     const[userName, setUserName] = useState("");
     const[nameSurname, setNameSurname] = useState("");
     const[email, setEmail] = useState("");
     const[error, setError] = useState(false);
-    const [profilePictureUrl, setProfilePictureUrl] = useState(localStorage.getItem('profilePictureUrl') || logo);
-    const [userInfo, setUserInfo] = useState({
-        id: "",
-        user: "",
-        nameSurname: "",
-        email: ""
-    });
+    const [profilePictureUrl, setProfilePictureUrl] = useState('');
+    
+    const id = localStorage.getItem('userId');
 
+    useEffect(() => {
+        console.log(id);
+        axios.get(`http://localhost:8087/users/getProfileInfo/${id}`)
+        .then((response) => {
+            console.log(response.data);
+            setProfilePictureUrl(response.data.profilePicture);
+        })
+        .catch((error) => {
+            console.error("Hata:", error);
+        });
+    }, [id]);
+    
+    
     const errorHandler = () => {
         setError(false);
     }
@@ -71,25 +81,29 @@ const ProfilePage = () => {
             console.error("Dosya seçilmedi.");
             return;
         }
-    
+
         const formData = new FormData();
         formData.append('file', file);
-    
+
         try {
             const userId = localStorage.getItem('userId');
             if (!userId) {
                 throw new Error("Kullanıcı ID'si bulunamadı.");
             }
-    
+
             const response = await axios.post(`http://localhost:8087/users/uploadProfilePicture?userId=${userId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-    
+
             if (response.status === 200) {
-                console.log("Profil resmi başarıyla yüklendi.");
-                setProfilePictureUrl(URL.createObjectURL(file));
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                console.log(reader.result);
+                setProfilePictureUrl(reader.result.split(',')[1]);  
+                };
             } else {
                 throw new Error("Profil resmi yüklenirken bir hata oluştu.");
             }
@@ -130,7 +144,7 @@ const ProfilePage = () => {
                     </div>
                 </div>
                 <div className="hesap-foto">
-                    <img src={profilePictureUrl} alt="Profil Resmi" />
+                    <img src={profilePictureUrl ? `data:image/png;base64,${profilePictureUrl}` : logo} alt="Profil Resmi" />
                     <label htmlFor="file-upload" className="custom-file-upload">
                         <p className='foto'>Fotoğrafı Değiştir</p>
                     </label>
