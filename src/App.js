@@ -14,6 +14,12 @@ import Mainpage from './Components/MainPage/Mainpage';
 import ErrorPage from './Components/404Page/404Page';
 import ProfilSayfasi from './Components/Profile/ProfilePage';
 import ProfileSifreyiYenile from './Components/Profile/ProfileSifreyiYenile/ProfileSifreyiYenile';
+import AcilDurumBilgileri from './Components/AcilDurumBilgileri/AcilDurumBilgileri';
+import DepremAni from './Components/AcilDurumBilgileri/DepremAnındaYapılacaklar/DepremAniYapilacak';
+import SelAni from './Components/AcilDurumBilgileri/SelAnındaYapılacaklar/SelAnindaYapilacaklar';
+import CigAni from './Components/AcilDurumBilgileri/ÇığAnındaYapılacaklar/CigAnindaYapilacaklar';
+import YanginAni from './Components/AcilDurumBilgileri/YangınAnındaYapılacaklar/YanginAnindaYapilacaklar';
+
 
 function App() {
   return (
@@ -33,7 +39,13 @@ function App() {
         <Route path="/mainpage" element={<Mainpage />} />
         <Route path="/profil-page" element={<ProfilSayfasi />} />
         <Route path="/sifre-yenile" element={<ProfileSifreyiYenile />}></Route>
+        <Route path="/acil-durum-bilgileri" element={<AcilDurumBilgileri />} />
+        <Route path="/deprem-ani" element={<DepremAni />} />
+        <Route path="/sel-ani" element={<SelAni />} />
+        <Route path="/cig-ani" element={<CigAni />} />
+        <Route path="/yangin-ani" element={<YanginAni />} />
         <Route path="*" element={<ErrorPage />} />
+
       </Routes>
     </BrowserRouter>
   );

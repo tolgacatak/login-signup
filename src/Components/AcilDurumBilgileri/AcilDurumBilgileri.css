@@ -1,0 +1,177 @@
+.acil-durum-wrapper {
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 650px;
+    height: 680px;
+    margin-left: 490px;
+}
+.acil-durum-yazi {
+    margin-top: 20px;
+    margin-left: 190px;
+}
+.acil-durum-yazi p {
+    padding: 5px;
+    padding-right: 30px;
+    font-size: 17px;
+}
+.acil-durum-112 {
+    margin-left: 24px;
+    position: absolute;
+    margin-top: 39px;
+}
+.acil-durum-112 img {
+    width: 150px;
+    height: 130px;
+}
+.acil-durum-numaralar{
+    margin-left: 24px;
+    position: absolute;
+    margin-top: 200px;
+}
+.acil-durum-numaralar img {
+    width: 430px;
+    height: 440px;
+    margin-left: 77px;
+}
+.acil-durumyapilacaklar {
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 110px;
+    margin-bottom: 100px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 450px;
+    height: 610px;
+    margin-left: 140px;
+    float: left;
+    margin-right: 80px;
+}
+.acil-durumyapilacaklar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.acil-durum-yapilacaklar{
+    margin-top: 20px;
+    margin-left: 90px;
+}
+.acil-durum-yapilacaklar p {
+    
+    font-size: 20px;
+}
+.deprem-aninda-yapilacaklar{
+    position: absolute; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 90px;
+    border-radius: 30px;
+    width: 390px;
+    height: 110px;
+    margin-left: 30px;
+    background-color: #dbcece;
+}
+.deprem-aninda-yapilacaklar img {
+    padding: 10px;
+    width: 150px;
+    height: 110px;
+    margin-left: 18px;
+    border-radius: 20px;
+}
+.deprem-aninda-yapilacaklar p {
+    top: 5px;
+    margin-left: 203px;
+    font-size: 20px;
+    position: absolute;
+    color: black;
+}
+.sel-aninda-yapilacaklar{
+    position: absolute; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 220px;
+    border-radius: 30px;
+    width: 390px;
+    height: 110px;
+    margin-left: 30px;
+    background-color: #dbcece;
+}
+.sel-aninda-yapilacaklar img {
+    padding: 10px;
+    width: 150px;
+    height: 110px;
+    margin-left: 18px;
+    border-radius: 20px;
+}
+.sel-aninda-yapilacaklar p {
+    top: 5px;
+    margin-left: 203px;
+    font-size: 20px;
+    position: absolute;
+    color: black;
+}
+.cig-aninda-yapilacaklar{
+    position: absolute; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 350px;
+    border-radius: 30px;
+    width: 390px;
+    height: 110px;
+    margin-left: 30px;
+    background-color: #dbcece;
+}
+.cig-aninda-yapilacaklar img {
+    padding: 10px;
+    width: 150px;
+    height: 110px;
+    margin-left: 18px;
+    border-radius: 20px;
+}
+.cig-aninda-yapilacaklar p {
+    top: 5px;
+    margin-left: 203px;
+    font-size: 20px;
+    position: absolute;
+    color: black;
+}
+.yangin-aninda-yapilacaklar{
+    position: absolute; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 480px;
+    border-radius: 30px;
+    width: 390px;
+    height: 110px;
+    margin-left: 30px;
+    background-color: #dbcece;
+}
+.yangin-aninda-yapilacaklar img {
+    padding: 10px;
+    width: 150px;
+    height: 110px;
+    margin-left: 18px;
+    border-radius: 20px;
+}
+.yangin-aninda-yapilacaklar p {
+    top: 5px;
+    margin-left: 203px;
+    font-size: 20px;
+    position: absolute;
+    color: black;
+}
+
+
