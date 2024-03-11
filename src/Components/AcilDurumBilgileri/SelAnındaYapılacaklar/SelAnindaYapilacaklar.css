@@ -1,0 +1,84 @@
+.sel-ani-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 680px;
+    height: 700px;
+    margin-left: 420px;
+    overflow: auto;
+}
+.sel-ani-wrapper::-webkit-scrollbar{
+    width: 10px; /* Scroll bar genişliği */
+    height: 10px; /* Dikey scroll bar yüksekliği */
+}
+.sel-ani-wrapper::-webkit-scrollbar-thumb{
+    background: #888; /* Scroll bar renk */
+    border-radius: 5px; /* Scroll bar kenar yarıçapı */
+}
+.sel-ani-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 150px;
+}
+.sel-ani-icerik{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 14px;
+    text-align: justify;
+    margin-right: 16px;
+}
+.sel-sekil-1{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.sel-sekil-1 img{
+    width: 440px;
+}
+.sel2{
+    margin-top: 375px;
+}
+.sel-sekil-2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.sel-sekil-2 img{
+    width: 440px;
+}
+.sel3{
+    margin-top: 260px;
+}
+.sel-sonrasi-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 130px;
+}
+.sel-sekil-3{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+   
+}
+.sel-sekil-3 img{
+    width: 440px;
+    margin-bottom: 40px;
+}
