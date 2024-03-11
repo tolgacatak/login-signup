@@ -1,0 +1,72 @@
+.cig-ani-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 680px;
+    height: 700px;
+    margin-left: 420px;
+    overflow: auto;
+}
+.cig-ani-wrapper::-webkit-scrollbar{
+    width: 10px; /* Scroll bar genişliği */
+    height: 10px; /* Dikey scroll bar yüksekliği */
+}
+.cig-ani-wrapper::-webkit-scrollbar-thumb{
+    background: #888; /* Scroll bar renk */
+    border-radius: 5px; /* Scroll bar kenar yarıçapı */
+}
+.cig-ani-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 150px;
+}
+.cig-ani-icerik{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 14px;
+    text-align: justify;
+    margin-right: 16px;
+}
+.cig1-img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.cig1-img img{
+    width: 440px;
+}
+.cig2{
+    margin-top: 465px;
+}
+.cig2-img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.cig2-img img{
+    width: 440px;
+}
+.cig-sonrasi-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 375px;
+    margin-left: 180px;
+}
+.cig3{
+    margin-bottom: 40px;
+}

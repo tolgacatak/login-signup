@@ -48,9 +48,12 @@ const SelAnindaYapilacaklar = () => {
                 <p>
                   •Sel sonrası evinize dönmeden önce, yetkililerin güvenli olduğunu ilan etmesini bekleyin.
                   <br />
+                  <br />
                   •Elektrik sistemi, gaz hatları ve su sistemi gibi altyapılar için hasar kontrolü yapın.
                   <br />
+                  <br />
                   •İçme suyunun güvenli olduğundan emin olana kadar şişelenmiş su kullanın.
+                  <br />
                   <br />
                   •Hasar görmüş eşyaları ve potansiyel tehlikeleri temizlerken dikkatli olun.
                 </p>
