@@ -49,6 +49,7 @@ const CigAnindaYapilacaklar = () => {
             •Çığ tehlikesinin olduğu bir bölgedeyseniz, başkalarına çığ tehlikesi hakkında bilgi verin ve onları uyarmaya çalışın.
             </p>
           </div>
+
         </div>
       </div>
       <Footer />

@@ -1,0 +1,82 @@
+.yangin-ani-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 680px;
+    height: 700px;
+    margin-left: 420px;
+    overflow: auto;
+}
+.yangin-ani-wrapper::-webkit-scrollbar{
+    width: 10px; /* Scroll bar genişliği */
+    height: 10px; /* Dikey scroll bar yüksekliği */
+}
+.yangin-ani-wrapper::-webkit-scrollbar-thumb{
+    background: #888; /* Scroll bar renk */
+    border-radius: 5px; /* Scroll bar kenar yarıçapı */
+}
+.yangin-ani-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 128px;
+}
+.yangin-ani-icerik{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 14px;
+    margin-left: 14px;
+    text-align: justify;
+    margin-right: 16px;
+}
+.yangin-img1{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.yangin-img1 img{
+    width: 440px;
+    height: 300px;
+}
+.yangin2{
+    margin-top: 355px;
+}
+.yangin-img2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.yangin-img2 img{
+    width: 440px;
+    height: 300px;
+}
+.yangin3{
+    margin-top: 345px;
+}
+.yangin-img3{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 104px;
+}
+.yangin-img3 img{
+    width: 440px;
+    height: 300px;
+}
+.yangin4{
+    margin-top: 355px;
+    margin-bottom: 40px;
+}
