@@ -28,7 +28,7 @@ const Profil = () => {
   return (
     <div className="profile-wrapper">
         <div className="profile-img">
-            <img src={`data:image/png;base64,${userData.profilePicture}` || logo} alt="" />
+            <img src={userData.profilePicture ? `data:image/png;base64,${userData.profilePicture}` : logo} alt="" />
         </div>
         <div className="profile-text">
             <span>{userData.nameSurname || userData.username}</span>
