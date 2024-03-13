@@ -35,7 +35,7 @@ const CodePage = () => {
                 email: email,
                 password: code
             });
-            navigate('/newpassword');
+            navigate('/newpassword', { state: { email: email } });
         } catch (error) {
             console.error('Hata:', error);
         }
