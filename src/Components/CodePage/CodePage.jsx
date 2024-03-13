@@ -4,6 +4,9 @@ import './CodePage.css';
 import logo from '../Assets/logo.jpeg';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 const CodePage = () => {
     const input1Ref = useRef(null);
@@ -12,20 +15,34 @@ const CodePage = () => {
     const input4Ref = useRef(null);
     const input5Ref = useRef(null);
     const input6Ref = useRef(null);
+    const location = useLocation();
+
+    const [code, setCode] = useState('');
+    const navigate = useNavigate();
+    const { email: email } = location.state || {}; // Email'i location.state'ten al
 
     const handleCodeChange = (e, nextInputRef) => {
         if (e.target.value.length === e.target.maxLength) {
             nextInputRef.current.focus();
+            setCode(prevCode => prevCode + e.target.value);
+        }
+    };
+    const handleSubmit = async (e) => {
+        console.log('email:', email);
+        e.preventDefault();
+        try {
+            await axios.post('http://localhost:8087/users/verify-code', {
+                email: email,
+                password: code
+            });
+            navigate('/newpassword');
+        } catch (error) {
+            console.error('Hata:', error);
         }
     };
 
     return (
         <div className="container-code">
-            {/* <div className="logo">
-                <img src={logo} alt="" />
-            </div> */}
-
-
             <div className="header-code">
                 <div className="text-code">
                     <h4>Mail Hesabınıza Gelen 6 Haneli Kod:</h4>
@@ -33,7 +50,7 @@ const CodePage = () => {
                 <div className="underline-code"></div>
             </div>
             <div className="code">
-                <input
+            <input
                     ref={input1Ref}
                     type="text"
                     className='onecode1'
@@ -73,10 +90,11 @@ const CodePage = () => {
                     type="text"
                     className='onecode6'
                     maxLength={1}
+                    onChange={(e) => setCode(prevCode => prevCode + e.target.value)}
                 />
             </div>
             <div className="submit-container-code">
-                <Link to="/newpassword" className="submit-code" >
+                <Link to="/newpassword" className="submit-code" onClick={handleSubmit} >
                     Gönder
                 </Link>
             </div>

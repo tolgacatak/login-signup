@@ -12,7 +12,7 @@ const ForgetPassword = () => {
     e.preventDefault();
     try {
       await axios.get(`http://localhost:8087/users/request/${email}`);
-      navigate('/CodePage');
+      navigate('/CodePage', { state: { email: email } });
     } catch (error) {
       console.error('Hata:', error);
     }
