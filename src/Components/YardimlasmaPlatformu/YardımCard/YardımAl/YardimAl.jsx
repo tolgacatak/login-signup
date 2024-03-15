@@ -11,7 +11,7 @@ const YardimAl = () => {
         <div className="yardimal-button">
         <img src={yardim} alt="" />
             <button>
-                <p>Yardım Al</p>
+                <p>Yardım Almak İstiyorum</p>
             </button>
         </div>
     </div>

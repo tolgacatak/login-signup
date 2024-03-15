@@ -14,7 +14,7 @@ const YardimlasmaAnaSayfa = () => {
             </div>
             <div className="yardimlasma-kucuk-yazi">
                 <p>
-                    <b>AfetAnkaNet Yardımlaşma Platformu, Afetzedelerin acılarını bir nebze de olsa azalatmak için kurulmuştur.</b>
+                    <b>AfetAnkaNet Yardımlaşma Platformu, Afetzedelerin acılarını bir nebze de olsa azaltmak için kurulmuştur.</b>
                 </p>
             </div>
             <div className="yardimlasma-paragraf">

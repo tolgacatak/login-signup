@@ -11,7 +11,7 @@ const YardimYap = () => {
         <div className="yardimyap-button">
         <img src={yardim} alt="" />
             <button>
-                <p>Yardım Yap</p>
+                <p>Yardım Yapmak İstiyorum</p>
             </button>
         </div>
 
