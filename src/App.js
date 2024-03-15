@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import LoginSignUp from './Components/LoginSignUp/LoginSignUp'; // LoginSignUp.jsx'in bulunduğu dosya
 import Register from './Components/Register/Register'; // Register.jsx'in bulunduğu dosya
-import { Link } from 'react-router-dom';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import CodePage from './Components/CodePage/CodePage';
 import NewPassword from './Components/NewPassword/NewPassword';
@@ -19,6 +18,7 @@ import DepremAni from './Components/AcilDurumBilgileri/DepremAnındaYapılacakla
 import SelAni from './Components/AcilDurumBilgileri/SelAnındaYapılacaklar/SelAnindaYapilacaklar';
 import CigAni from './Components/AcilDurumBilgileri/ÇığAnındaYapılacaklar/CigAnindaYapilacaklar';
 import YanginAni from './Components/AcilDurumBilgileri/YangınAnındaYapılacaklar/YanginAnindaYapilacaklar';
+import YardimlasmaAnaSayfa from './Components/YardimlasmaPlatformu/YardimlasmaAnaSayfa';
 
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
         <Route path="/sel-ani" element={<SelAni />} />
         <Route path="/cig-ani" element={<CigAni />} />
         <Route path="/yangin-ani" element={<YanginAni />} />
+        <Route path="/yardimlasma-platformu" element={<YardimlasmaAnaSayfa />} />
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>

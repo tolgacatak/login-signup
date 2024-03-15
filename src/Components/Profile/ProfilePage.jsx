@@ -49,7 +49,19 @@ const ProfilePage = () => {
     const nameSurnameHandler = (e) => {
         setNameSurname(e.target.value);
     }
+    // const checkUniqueUsername = async (username) => {
+    //     try {
+            
+    //         const response = await axios.get(`http://localhost:8087/users/getProfileInfo/${username}`);
+    //         if (response.data.username === username) {
+    //             throw new Error("Kullanıcı adı zaten mevcut.");
+    //         }
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // }
     const saveProfile = async (e) => {
+        
         e.preventDefault();
         if(userName.trim().length === 0 || nameSurname.trim().length === 0 || email.trim().length === 0){
             setError(
@@ -61,6 +73,7 @@ const ProfilePage = () => {
             return;
         }
         try{
+            
             axios.put('http://localhost:8087/users/updateUserInfo' , {
                 id: localStorage.getItem('userId'),
                 username: userName,
@@ -73,9 +86,6 @@ const ProfilePage = () => {
                     message: "Bilgileriniz başarıyla güncellendi!"
                 }
             );
-            
-            
-            
             
     }
     catch(e){

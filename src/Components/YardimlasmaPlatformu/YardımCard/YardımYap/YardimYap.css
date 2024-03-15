@@ -1,0 +1,57 @@
+.yardimyap-wrapper{
+    display: flex;
+    flex-direction: column;   
+    width: 222px;
+    height: 343px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    position: relative;
+    margin-left: 70px;
+}
+.yardimyap-gorsel{
+    width: 222px;
+    height: 222px;
+    border-radius: 25px 25px 0px 0px;
+}
+.yardimyap-gorsel img{
+    padding: 3px;
+    width: 222px;
+    height: 262px;
+    border-radius: 25px 25px 0px 0px;
+}
+.yardimyap-button{
+    width: 222px;
+    height: 80px;
+    background-color: #8f90b8;
+    border-radius: 0px 0px 25px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+.yardimyap-button button{
+    width: 160px;
+    height: 40px;
+    background-color: #abddf5;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.yardimyap-button img{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-right: 113px;
+}
+.yardimyap-button p{
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 30px;
+}

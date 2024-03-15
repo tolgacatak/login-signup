@@ -1,0 +1,45 @@
+.yardimlasma-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    width: 680px;
+    height: 700px;
+    margin-left: 420px;
+}
+.yardimlasma-title{
+    font-size: 21px;
+    font-weight: 650;
+    color: #000;
+    text-align: center;
+    margin-top: 15px;
+}
+.yardimlasma-kucuk-yazi{
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin-left: 20px;
+    text-align: justify;
+    margin-right: 20px;
+}
+.yardimlasma-paragraf{
+    font-size: 17px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 4px;
+    margin-left: 14px;
+    text-align: justify;
+    margin-right: 16px;
+}
+.yardim-al{
+    position: absolute;
+}
+.yardim-yap{
+    position: absolute;
+    margin-left: 300px;
+}
