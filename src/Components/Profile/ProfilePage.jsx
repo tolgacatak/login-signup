@@ -75,9 +75,7 @@ const ProfilePage = () => {
             );
             
             
-            setTimeout(() => {
-                navigate("/mainpage");
-            }, 4000); 
+            
             
     }
     catch(e){

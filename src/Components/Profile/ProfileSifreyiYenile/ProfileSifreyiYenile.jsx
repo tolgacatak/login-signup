@@ -52,6 +52,13 @@ const ProfileSifreyiYenile = () => {
         userId: localStorage.getItem('userId'),
         newPassword: password
       })
+      if (
+        window.confirm(
+          "Şifreniz başarıyla değiştirildi.Anasayfaya dönmek ister misiniz?"
+        )
+      ) {
+        window.location.href = "/mainpage";
+      }
       console.log(password);
       }
       catch (error) {

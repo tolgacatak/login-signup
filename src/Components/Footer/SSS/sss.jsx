@@ -24,10 +24,10 @@ const sss = () => {
             </div>
             <div className="sss2">
               <h3>
-              •AfetAnkaNET'in ana amacı nedir?
+              •AfetAnkaNET'in amacı nedir?
               </h3>
               <p>
-              AfetAnkaNET'in ana amacı, afet durumlarında etkilenen bireyler ve yardım organizasyonları için yakın zamanlı ve etkili bilgilendirme sağlamaktır. Bu platform, afetle ilgili sosyal medya paylaşımlarını analiz ederek güncel ve doğru bilgiler sunar, afet bölgelerini harita üzerinde gösterir ve yardım organizasyonları için etkili bir koordinasyon arayüzü sağlar.
+              AfetAnkaNET'in amacı, afet durumlarında etkilenen bireyler ve yardım organizasyonları için yakın zamanlı ve etkili bilgilendirme sağlamaktır. Bu platform, afetle ilgili sosyal medya paylaşımlarını analiz ederek güncel ve doğru bilgiler sunar, afet bölgelerini harita üzerinde gösterir ve yardım organizasyonları için etkili bir koordinasyon arayüzü sağlar.
               </p>
             </div>
             <div className="sss3">
