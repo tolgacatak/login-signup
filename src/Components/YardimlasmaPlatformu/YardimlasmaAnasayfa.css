@@ -9,7 +9,7 @@
     padding-bottom: 30px;
     border-radius: 30px;
     width: 680px;
-    height: 700px;
+    height: 750px;
     margin-left: 420px;
 }
 .yardimlasma-title{
@@ -42,4 +42,19 @@
 .yardim-yap{
     position: absolute;
     margin-left: 300px;
+}
+.yardimlasma-uyari{
+    font-size: 15px;
+    font-weight: 400;
+    color: red;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: justify;
+    margin-right: 20px;
+    margin-top: 346px;
+}
+.yardimlasma-uyari a{
+    text-decoration: underline;
+    color: red;
+    font-weight: 900;
 }

@@ -30,6 +30,13 @@ const YardimlasmaAnaSayfa = () => {
                     <YardimYap />
                 </div>
             </div>
+            <div className="yardimlasma-uyari">
+                <p>
+                    <b>Yardım talebi oluşturmak ve yardım yapmak için İsim - Soyisim bilgisinin eklenmiş olması gerekmektedir !
+                        Eklemek için <a href="/profil-page  ">tıklayınız.</a>
+                    </b>
+                </p>
+            </div>
         </div>
         <Footer />
     </div>

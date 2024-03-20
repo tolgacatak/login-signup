@@ -1,5 +1,5 @@
 import './YardimYap.css'
-import yardimyap from './YardımYapAssets/2.jpg'
+import yardimyap from './YardımYapAssets/4.jpg'
 import yardim from './YardımYapAssets/3.png'
 
 const YardimYap = () => {
