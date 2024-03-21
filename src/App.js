@@ -19,6 +19,7 @@ import SelAni from './Components/AcilDurumBilgileri/SelAnındaYapılacaklar/SelA
 import CigAni from './Components/AcilDurumBilgileri/ÇığAnındaYapılacaklar/CigAnindaYapilacaklar';
 import YanginAni from './Components/AcilDurumBilgileri/YangınAnındaYapılacaklar/YanginAnindaYapilacaklar';
 import YardimlasmaAnaSayfa from './Components/YardimlasmaPlatformu/YardimlasmaAnaSayfa';
+import YardimAlDetay from './Components/YardimlasmaPlatformu/Yardimlasmaİcerikleri/YardimAlDetay/YardimAlDetay';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="/cig-ani" element={<CigAni />} />
         <Route path="/yangin-ani" element={<YanginAni />} />
         <Route path="/yardimlasma-platformu" element={<YardimlasmaAnaSayfa />} />
+        <Route path="/yardim-al-detay" element={<YardimAlDetay />} />
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>
