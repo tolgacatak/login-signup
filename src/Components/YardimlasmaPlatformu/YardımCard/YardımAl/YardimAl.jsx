@@ -27,7 +27,7 @@ const YardimAl = ({ authorized }) => {
         </div>
         <div className="yardimal-button">
             <img src={yardimfoto} alt="" />
-            <Link className='yardimal-button-link' to={authorized ? "/yardim-al-detay" : onclick = {yardimalHandler}}>
+            <Link className='yardimal-button-link' to={authorized ? "/destek-iste" : onclick = {yardimalHandler}}>
                 <button>
                     <p>Yardım Almak İstiyorum</p>
                 </button>
