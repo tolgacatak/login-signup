@@ -1,28 +1,113 @@
-.destek-iste-wrapper {
+
+.destek-iste-container{
     position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 100px;
+    margin-left: 517px;
     margin-bottom: 100px;
+    background: #F5FCFC;
     padding-bottom: 30px;
     border-radius: 30px;
-    width: 700px;
-    height: 640px;
+    width: 500px;
+    height: 690px;
+}
+.destek-gunes{
+    position: absolute;
+}
+.destek-gunes img{
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 20px;
 }
 .destek-iste-title{
-    position: absolute; /* Container'ı referans alarak konumlandırma yapabilmek için */
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    top: 0;
-    margin-top: 6px;
-    margin-left: 117px;
-    margin-bottom: 100px;
-    background: #F5F5F5;
-    padding-bottom: 30px;
-    border-radius: 30px;
-    width: 460px;
-    height: 690px;
-
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 30px;
+    margin-left: 145px;
+}
+.destek-cicek{
+    position: absolute;
+}
+.destek-cicek img{
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 360px;
+}
+.destek-atac{
+    position: absolute;
+}
+.destek-atac img{
+    width: 194px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 145px;
+}
+.destek-baslik1{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.destek1-icerik{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 160px;
+    
+}
+.destek1-icerik textarea{
+    width: 240px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+}
+.destek-baslik2{
+    margin-top: 80px;
+    margin-left: 48px;
+}
+.destek2-icerik{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 300px;
+}
+.destek2-icerik textarea{
+    width: 240px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+}
+.destek-baslik3{
+    margin-top: 20px;
+    margin-left: 52px;
+}
+.destek3-icerik{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 370px;
+}
+.destek3-icerik textarea{
+    width: 240px;
+    height: 52px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+}
+.destek-baslik4{
+    margin-top: 20px;
+    margin-left: 52px;
+}
+.destek4-icerik{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 450px;
+}
+.destek4-icerik select{
+    width: 240px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
 }
