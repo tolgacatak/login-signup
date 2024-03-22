@@ -10,6 +10,30 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const DestekTalepEt = () => {
+    const [sehirler, setSehirler] = useState([]);
+    const [categories, setCategories] = useState([]);
+
+const getSehirler = async () => {
+    try {
+        const response = await axios.get('http://localhost:8087/helpbox/cities');
+        setSehirler(response.data);
+    } catch (error) {
+        console.error('Error fetching cities:', error);
+    }
+};
+const getCategories = async () => {
+    try {
+        const response = await axios.get('http://localhost:8087/helpbox/categories');
+        setCategories(response.data);
+    } catch (error) {
+        console.error('Error fetching categories:', error);
+    }
+};
+
+useEffect(() => {
+    getSehirler();
+    getCategories();
+}, []);
     
   return (
     <div>
@@ -47,12 +71,41 @@ const DestekTalepEt = () => {
                     <textarea placeholder='Dikkat: Bu alanın doldurulması zorunlu değildir.' />
                 </div>
                 <div className="destek-baslik4">
-                    <p><b>*Şehir  :</b></p>
+                    <p><b>*Şehir :</b></p>
                 </div>
                 <div className="destek4-icerik">
                     <select name="sehirler" id="sehirler">
-                            
+                        {sehirler.map((sehir, index) => (
+                            <option key={index} value={sehir}>{sehir}</option>
+                        ))}
                     </select>
+                </div>
+                <div className="destek-baslik5">
+                    <p><b>*Yardım Kategorileri :</b></p>
+                </div>
+                <div className="destek5-icerik">
+                    {categories.reduce((acc, category, index) => {
+                        if (index % 4 === 0) {
+                            acc.push([]);
+                        }
+                        acc[acc.length - 1].push(
+                            <div key={index}>
+                                <input type="checkbox" id={`category${index}`} name={`category${index}`} value={category} />
+                                <label htmlFor={`category${index}`}>{category}</label>
+                            </div>
+                        );
+                        return acc;
+                    }, []).map((group, index) => (
+                        <div key={index} className="category-group">
+                            {group}
+                        </div>
+                    ))}
+                </div>
+                <div className="destek-al-uyari">
+                    <p><b>Dikkat: Tüm yıldızlı alanların doldurulması zorunludur.</b></p>
+                </div>
+                <div className="destek-al-talebi-gonder">
+                    <button type='submit'>Talebi Gönder</button>
                 </div>
             </div>
         

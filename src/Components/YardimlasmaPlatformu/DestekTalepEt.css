@@ -11,7 +11,7 @@
     padding-bottom: 30px;
     border-radius: 30px;
     width: 500px;
-    height: 690px;
+    height: 740px;
 }
 .destek-gunes{
     position: absolute;
@@ -64,13 +64,13 @@
     border: 1px solid #D3D3D3;
 }
 .destek-baslik2{
-    margin-top: 80px;
+    margin-top: 60px;
     margin-left: 48px;
 }
 .destek2-icerik{
     position: absolute;
     margin-left: 200px;
-    margin-top: 300px;
+    margin-top: 280px;
 }
 .destek2-icerik textarea{
     width: 240px;
@@ -86,7 +86,7 @@
 .destek3-icerik{
     position: absolute;
     margin-left: 200px;
-    margin-top: 370px;
+    margin-top: 350px;
 }
 .destek3-icerik textarea{
     width: 240px;
@@ -102,12 +102,46 @@
 .destek4-icerik{
     position: absolute;
     margin-left: 200px;
-    margin-top: 450px;
+    margin-top: 430px;
 }
 .destek4-icerik select{
     width: 240px;
     height: 30px;
-    margin-bottom: 10px;
     border-radius: 10px;
     border: 1px solid #D3D3D3;
+}
+.destek-baslik5{
+    margin-top: 20px;
+    margin-left: 48px;
+}
+.destek5-icerik{
+    position: absolute;
+    display: flex;
+    flex-direction: row;  
+    margin-left: 60px;
+    margin-top: 535px;
+}
+.category-group{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-right: 40px;
+    margin-left: 5px;
+}
+.destek-al-uyari{
+    position: absolute;
+    margin-top: 630px;
+    margin-left: 50px;
+    font-size: 12px;
+    color: red;
+}
+.destek-al-talebi-gonder{
+    position: absolute;
+    margin-top: 670px;
+    margin-left: 159px;
+    
+}
+.destek-al-talebi-gonder button{
+    height: 50px;
+    background-color: #243B48;
 }
