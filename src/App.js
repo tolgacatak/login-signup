@@ -20,6 +20,7 @@ import CigAni from './Components/AcilDurumBilgileri/ÇığAnındaYapılacaklar/C
 import YanginAni from './Components/AcilDurumBilgileri/YangınAnındaYapılacaklar/YanginAnindaYapilacaklar';
 import YardimlasmaAnaSayfa from './Components/YardimlasmaPlatformu/YardimlasmaAnaSayfa';
 import DestekIste from './Components/YardimlasmaPlatformu/DestekTalepEt';
+import YardimYap from './Components/YardimlasmaPlatformu/YardimYap';
 
 
 
@@ -49,6 +50,7 @@ function App() {
         <Route path="/yangin-ani" element={<YanginAni />} />
         <Route path="/yardimlasma-platformu" element={<YardimlasmaAnaSayfa />} />
         <Route path="/destek-iste" element={<DestekIste />} />
+        <Route path="/yardim-yap" element={<YardimYap />} />
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>
