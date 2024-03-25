@@ -1,0 +1,135 @@
+.destek-card-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 30px;
+    width: 590px;
+    height: 520px;
+    margin-left: 200px;
+}
+.yardim-kutusu-baslik{
+    margin-left: 15px;
+    margin-top: 5px;
+}
+.yardim-kutusu-baslik{
+    position: absolute;
+}
+.yardim-kutusu-baslik h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    top: -10px;
+}
+.yardim-kutusu-baslik h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+.yardim-kutusu-baslik img{
+    width: 140px;
+    height: 140px;
+    margin-top: 40px;
+    margin-left: 7px;
+}
+.star-rating {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.yardim-sag-taraf{
+    margin-left: 195px;
+    margin-top: 5px;
+    text-align: justify;
+    padding-right: 28px;
+}
+.yardim-orta-cizgi{
+    position: absolute;
+    width: 1px;
+    height: 424px;
+    background-color: #000;
+    margin-top: 22px;
+    margin-left: 180px;
+}
+.yardim-aktif{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-left: 47px;
+}
+.yardim-iletisime-gec{
+    position: absolute;
+    margin-left: 9px;
+    margin-top: 70px;
+
+}
+.yardim-iletisime-gec button{
+    width: 140px;
+    background-color: #FF8000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.yardim-sag-taraf h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 15px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #F4F0F0;
+    padding: 4px;
+}
+.yardim-yorum-yap{
+    position: absolute;
+    margin-left: 32px;
+    margin-top: 70px;
+}
+.yardim-yorum-yap img{
+    width: 40px;
+    height: 40px;
+    margin-top: 395px;
+    margin-left: 250x;
+}
+
+.yardim-input input{
+    position: absolute;
+    width: 359px;
+    height: 30px;
+    background-color: #F4F0F0;
+    color: #fff;
+    border: none;
+    margin-left: 55px;
+    bottom: 9px;
+    border-radius: 24px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
+.yardim-comment-icon img{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: 430px;
+    top: 0px
+}
+.uc-yorum{
+    position: absolute;
+    margin-left: 481px;
+    top: 405px;
+}
+.uc-yorum-iki{
+    position: absolute;
+    margin-left: 496px;
+    top: 405px;
+}
