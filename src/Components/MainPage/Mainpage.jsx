@@ -5,6 +5,7 @@ import depremHaberi from '../Assets/DepremHaberi.png'
 import './Mainpage.css'
 import search from '../Assets/search.png'
 import Sosyalmedya from "./Sosyalmedya/Sosyalmedya"
+import TalepCard from "./TalepCard/TalepCard"
 
 
 const Mainpage = () => {
@@ -16,6 +17,7 @@ const Mainpage = () => {
             <img src={depremHaberi} alt="" />
             <span>Az önce deprem mi oldu? Nerede, kaç şiddetinde deprem oldu?</span>
         </div>
+        <TalepCard />
         <div className="arama-anasayfa">
             <span>Afet Adı veya Anahtar Kelime Giriniz(ör: 'Deprem','Sel' vb.)</span>
             <div className="arama">
