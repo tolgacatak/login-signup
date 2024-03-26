@@ -46,3 +46,198 @@
     margin-top: 124px;
     
 }
+.destek-paging {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.destek-paging {
+    position: relative;
+    margin-bottom: 20px;
+    top: -20px;
+}
+.ucnokta{
+    width: 10px;
+    height: 10px;
+    margin-left: 6px;
+}
+.paging-all {
+    margin-left: 6px;
+}
+.destek-para-yardim{
+    position: relative;
+    display: flex;
+    flex-direction: column;   
+    margin-bottom: 50px;
+    margin-left: 400px;
+    width: 750px;
+    height: 423px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 10px;
+}
+.destek-para-yardim-title{
+    text-align: center;
+    font-size: 20px;
+}
+.destek-para-yardim-title h3{
+    font-style: italic;
+}
+.afad{
+    border: 2px solid #e1d9d9;
+    width: 340px;
+    height: 89px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 15px;
+    margin-left: 6px;
+
+}
+.afad img{
+    position: absolute;
+    width: 100px;
+    height: 88px;
+    top: 88.5px;
+    margin-left: 20px;
+}
+.afad a{
+    position: absolute;
+    margin-left: 185px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #685f5f;
+    text-decoration: none;
+}
+.darussafa{
+    border: 2px solid #e1d9d9;
+    width: 340px;
+    height: 89px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 15px;
+    margin-left: 6px;
+    margin-top: 14px;
+}
+.darussafa img{
+    position: absolute;
+    width: 100px;
+    height: 88px;
+    top: 191px;
+    margin-left: 20px;
+}
+.darussafa a{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #685f5f;
+    text-decoration: none;
+}
+.ihh{
+    border: 2px solid #e1d9d9;
+    width: 340px;
+    height: 90px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 15px;
+    margin-left: 6px;
+    margin-top: 14px;
+}
+.ihh img{
+    position: absolute;
+    width: 100px;
+    height: 88px;
+    top: 294px;
+    margin-left: 20px;
+}
+.ihh a{
+    position: absolute;
+    margin-left: 198px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #685f5f;
+    text-decoration: none;
+}
+.ahbap{
+    position: absolute;
+    top: 89px;
+    border: 2px solid #e1d9d9;
+    width: 340px;
+    height: 89px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 15px;
+    margin-left: 376px;
+}
+.ahbap img{
+    position: absolute;
+    width: 97px;
+    height: 85px;
+    top: 1px;
+    margin-left: 20px;
+}
+.ahbap a{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #685f5f;
+    text-decoration: none;
+}
+.kizilay{
+    position: absolute;
+    top: 178px;
+    border: 2px solid #e1d9d9;
+    width: 340px;
+    height: 89px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 15px;
+    margin-left: 376px;
+    margin-top: 14px;
+}
+.kizilay img{
+    position: absolute;
+    width: 90px;
+    height: 84px;
+    top: 0px;
+    margin-left: 20px;
+}
+.kizilay a{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #685f5f;
+    text-decoration: none;
+}
+.tegv{
+    position: absolute;
+    top: 280px;
+    border: 2px solid #e1d9d9;
+    width: 340px;
+    height: 89px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    padding: 15px;
+    margin-left: 376px;
+    margin-top: 14px;
+}
+.tegv img{
+    position: absolute;
+    width: 90px;
+    height: 84px;
+    top: 0px;
+    margin-left: 20px;
+}
+.tegv a{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #685f5f;
+    text-decoration: none;
+}
+

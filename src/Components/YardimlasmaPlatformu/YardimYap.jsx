@@ -4,6 +4,12 @@ import Footer from '../Footer/Footer'
 import gunes from './YardimYapAssests/1.png'
 import kutular from './YardimYapAssests/2.png'
 import Destek from './DestekKutu/Destek'
+import afad from './YardimYapAssests/3.jpg'
+import darüssafaka from './YardimYapAssests/4.png'
+import ihh from './YardimYapAssests/5.png'
+import ahbap from './YardimYapAssests/6.png'
+import kizilay from './YardimYapAssests/7.png'
+import tegv from './YardimYapAssests/8.jpg'
 
 const YardimYap = () => {
   return (
@@ -43,6 +49,54 @@ const YardimYap = () => {
             </div>
         </div>
         <Destek />
+        <div className="destek-paging">
+          <a href="" className='paging1'>1</a>
+          <a href="" className='ucnokta'>...</a>
+          <a href="" className='paging-all'>Görüntüle</a>
+        </div>
+        <div className="destek-para-yardim">
+            <div className="destek-para-yardim-title">
+              <h3>Maddi Bağış Yapabileceğiniz Kurumlar</h3>
+            </div>
+            <div className="kurumlar">
+              <div className="afad">
+                <div className="afad-gorsel">
+                  <img src={afad} alt ="" />
+                </div>
+                <a href="https://www.cnnturk.com/turkiye/afada-yardim-nasil-yapilir-kizilay-afad-deprem-bagisi-hesaplari-iban-hesap-bilgileri-sms-numaralari#:~:text=AFAD%20ba%C4%9F%C4%B1%C5%9F%C4%B1n%20nas%C4%B1l%20yap%C4%B1laca%C4%9F%C4%B1n%C4%B1%3B%20%22Kampanyaya,hesap%20numaralar%C4%B1%20%C3%BCzerinden%20ba%C4%9F%C4%B1%C5%9F%20yapabilecektir.">AFAD</a>
+              </div>
+              <div className="darussafa">
+                <div className="darussafa-gorsel">
+                  <img src={darüssafaka} alt="" />
+                </div>
+                <a href="https://www.darussafaka.org/bagis">Darüşşafaka</a>
+              </div>
+              <div className="ihh">
+                <div className="ihh-gorsel">
+                  <img src={ihh} alt="" />
+                </div>
+                <a href="https://www.ihh.org.tr/bagis">İHH</a>
+              </div>
+              <div className="ahbap">
+                <div className="ahbap-gorsel">
+                  <img src={ahbap} alt="" />
+                </div>
+                <a href="https://ahbap.org/bagisci-ol">Ahbap</a>
+              </div>
+              <div className="kizilay">
+                <div className="kizilay-gorsel">
+                  <img src={kizilay} alt="" />
+                </div>
+                <a href="https://www.kizilay.org.tr/bagis">Kızılay</a>
+              </div>
+              <div className="tegv">
+                <div className="tegv-gorsel">
+                  <img src={tegv} alt="" />
+                </div>
+                <a href="https://www.tegv.org/bagis">TEGV</a>
+              </div>
+            </div> 
+        </div>
       </div>
       <Footer />
     </div>
