@@ -28,6 +28,9 @@ const ProfilePage = () => {
         .then((response) => {
             console.log(response.data);
             setProfilePictureUrl(response.data.profilePicture);
+            setUserName(response.data.username);
+            setNameSurname(response.data.nameSurname);
+            setEmail(response.data.email);
         })
         .catch((error) => {
             console.error("Hata:", error);
@@ -49,17 +52,6 @@ const ProfilePage = () => {
     const nameSurnameHandler = (e) => {
         setNameSurname(e.target.value);
     }
-    // const checkUniqueUsername = async (username) => {
-    //     try {
-            
-    //         const response = await axios.get(`http://localhost:8087/users/getProfileInfo/${username}`);
-    //         if (response.data.username === username) {
-    //             throw new Error("Kullanıcı adı zaten mevcut.");
-    //         }
-    //     } catch (error) {
-    //         throw error;
-    //     }
-    // }
     const saveProfile = async (e) => {
         
         e.preventDefault();
@@ -149,19 +141,19 @@ const ProfilePage = () => {
                     <div className="e-posta-adresi">
                         <img src={mail_icon} alt="" />
                         <label>
-                            <input type="email" placeholder='E-Posta Adresiniz' onChange={emailHandler}/>
+                            <input type="email" placeholder='E-Posta Adresiniz' onChange={emailHandler} value={email}/>
                         </label>
                     </div>           
                     <div className="isim-alani">
                     <img src={user_icon} alt="" />
                         <label>
-                            <input type="text" placeholder='Kullanıcı Adı' onChange={userNamehandler}/>
+                            <input type="text" placeholder='Kullanıcı Adı' onChange={userNamehandler} value={userName}/>
                         </label>
                     </div>
                     <div className="soyisim-alani">
                     <img src={user_icon} alt="" />
                         <label>
-                            <input type="text" placeholder='Adınız' onChange={nameSurnameHandler}/>
+                            <input type="text" placeholder='Adınız' onChange={nameSurnameHandler} value={nameSurname}/>
                         </label>
                     </div>
                 </div>
