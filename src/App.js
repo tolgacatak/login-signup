@@ -21,6 +21,7 @@ import YanginAni from './Components/AcilDurumBilgileri/YangınAnındaYapılacakl
 import YardimlasmaAnaSayfa from './Components/YardimlasmaPlatformu/YardimlasmaAnaSayfa';
 import DestekIste from './Components/YardimlasmaPlatformu/DestekTalepEt';
 import YardimYap from './Components/YardimlasmaPlatformu/YardimYap';
+import Taleplerim from './Components/MainPage/Taleplerim/Taleplerim';
 
 
 
@@ -51,6 +52,7 @@ function App() {
         <Route path="/yardimlasma-platformu" element={<YardimlasmaAnaSayfa />} />
         <Route path="/destek-iste" element={<DestekIste />} />
         <Route path="/yardim-yap" element={<YardimYap />} />
+        <Route path="/taleplerim" element={<Taleplerim />} />
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>

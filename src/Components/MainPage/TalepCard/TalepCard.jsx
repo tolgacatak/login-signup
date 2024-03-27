@@ -2,9 +2,10 @@ import './TalepCard.css'
 import foto1 from './TalepCardAssets/1.png'
 import Loginmodal from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Modals\\Loginmodal';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
-const TalepCard = () => {
+const TalepCard = ({ authorized }) => {
   const[error, setError] = useState(false);
   const errorHandler = () => {
     setError('');
@@ -13,7 +14,7 @@ const TalepCard = () => {
     setError(
       {
         title: "Hata!",
-        message: 'Talep oluşturabilmek için isim ve soyisim bilgilerinizi eklemelisiniz.'
+        message: 'Talep  için isim ve soyisim bilgilerinizi eklemelisiniz.'
       }
     )
   }
@@ -23,9 +24,11 @@ const TalepCard = () => {
         <div className="talepcard-foto">
             <img src={foto1} alt="" />
         </div>
-        <div className="talepcard-button">
-            <button>Taleplerim</button>
-        </div>
+        <Link className='taleplerim-card' to={authorized ? "/taleplerim" : onclick = {yardimalHandler}}>
+          <div className="talepcard-button">
+              <button>Taleplerim</button>
+          </div>
+        </Link>
     </div>
   )
 }
