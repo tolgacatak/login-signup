@@ -114,13 +114,19 @@
     margin-top: 20px;
     margin-left: 48px;
 }
-.destek5-icerik{
+.destek5-icerik {
     position: absolute;
     display: flex;
-    flex-direction: row;  
+    flex-wrap: wrap; /* Satırı sardır */
     margin-left: 60px;
     margin-top: 535px;
 }
+
+.destek5-icerik > div {
+    flex: 0 0 50%; /* Yarısı kadar genişlik */
+}
+
+
 .category-group{
     display: flex;
     flex-direction: column;
