@@ -47,3 +47,10 @@
 .taleplerim-card{
     text-decoration: none;
 }
+.talepcard-aciklama-yazi{
+    font-size: 12px;
+    font-weight: 500;
+    color: #5d5959;
+    margin-left: 10px;
+    margin-top: 10px;
+}

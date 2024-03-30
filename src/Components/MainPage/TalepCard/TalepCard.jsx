@@ -24,6 +24,9 @@ const TalepCard = ({ authorized }) => {
         <div className="talepcard-foto">
             <img src={foto1} alt="" />
         </div>
+        <div className="talepcard-aciklama-yazi">
+          <p>Destek talebi oluşturmak, talebinizi düzenlemek veya görüntülemek için <b>Taleplerim</b> butonuna tıklayınız. </p>
+        </div>
         <Link className='taleplerim-card' to={authorized ? "/taleplerim" : onclick = {yardimalHandler}}>
           <div className="talepcard-button">
               <button>Taleplerim</button>

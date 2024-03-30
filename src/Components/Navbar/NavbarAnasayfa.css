@@ -42,7 +42,8 @@
     font-size: 21px;
     font-weight: 600;
     font-family: orelega-one;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    
 }
 .link2{
     text-decoration: none;
@@ -51,7 +52,8 @@
     background-color: #f5f5f5;
     border-radius: 25px;
     font-family:serif;
-    padding: 6px;   
+    padding: 6px;
+    
 }
 .link3{
     text-decoration: none;
