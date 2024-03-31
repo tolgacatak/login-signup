@@ -1,0 +1,44 @@
+.talep-hoseldin-wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 580px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-radius: 15px;
+    height: 310px;
+    z-index: 1000;
+}
+.talep-hosgeldin-header{
+    background-color: #477594;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 15px;
+}
+.talep-hosgeldin-icerik{
+    padding: 20px;
+    font-size: x-large;
+}
+.talep-hosgeldin-footer{
+    position: absolute;
+    margin-left: 188px;
+    
+}
+.talep-hosgeldin-footer button{
+    position: absolute;
+    background-color: #477594;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 230px;
+    cursor: pointer;
+    top: -22px;
+    border-radius: 15px;
+}
