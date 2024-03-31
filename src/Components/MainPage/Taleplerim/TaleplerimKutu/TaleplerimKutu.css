@@ -1,0 +1,83 @@
+.talep-kutu-wrapper{
+    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 30px;
+    width: 590px;
+    height: 520px;
+    display: flex;
+    border-radius: 10px;
+}
+.talep-kutu-gorsel{
+    position: absolute;
+}
+.talep-kutu-gorsel img{
+    width: 150px;
+    height: 150px;
+    margin-top: 120px;
+    margin-left: 37px;
+}
+.talep-kutu-aktif{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-left: 84px;
+    margin-top: 320px;
+}
+.talep-kutu-orta-cizgi{
+    position: absolute;
+    width: 1px;
+    height: 408px;
+    background-color: #000;
+    margin-top: 38px;
+    margin-left: 200px;
+}
+.talep-kutu-sagtaraf{
+    margin-left: 195px;
+    margin-top: 5px;
+    text-align: justify;
+    padding-right: 28px;
+}
+.talep-kutu-title{
+    margin-left: 33px;
+    margin-top: 2px;
+    font-size: large;
+    border-radius: 10px;
+}
+.talep-kutu-content{
+    margin-left: 26px;
+    font-size: medium;
+}
+.talep-kutu-yorum{
+    position: absolute;
+}
+.talep-kutu-yorum img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: 460px;
+    margin-left: 30px;
+}
+.talep-kutu-input input{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    margin-top: 470px;
+    margin-left: 100px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding-left: 10px;
+    background-color: #F4F0F0;
+}
+.talep-kutu-uc-yorum{
+    position: absolute;
+    width: 80px;
+    margin-top: 470px;
+    margin-left: 460px;
+    border-radius: 10px;
+    padding-left: 10px;
+
+}
