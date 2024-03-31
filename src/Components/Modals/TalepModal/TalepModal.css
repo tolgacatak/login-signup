@@ -1,0 +1,82 @@
+.talep-modal-wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 580px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-radius: 15px;
+    height: 310px;
+    z-index: 1000;
+}
+.talep-modal-title{
+    background-color: #477594;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 15px;
+}
+.talep-modal-olustur{
+    padding: 20px;
+    font-size: x-large;
+}
+.talep-modal-olustur-link1{
+    text-decoration: none;
+}
+.talep-modal-olustur button{
+    background-color: #477594;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 230px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 15px;
+
+}
+.talep-modal-görüntüle{
+    padding: 20px;
+    font-size: x-large;
+}
+.talep-modal-olustu-link2{
+    text-decoration: none;
+}
+.talep-modal-görüntüle button{
+    position: absolute;
+    background-color: #477594;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 30px;
+    top: 137px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 15px;
+}
+.talep-modal-tamam{
+    position: absolute;
+}
+.talep-modal-tamam button{
+    position: absolute;
+    background-color: #1d3b4f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 180px;
+    top: -30px;
+    border-radius: 5px;
+    border-radius: 15px;
+}
