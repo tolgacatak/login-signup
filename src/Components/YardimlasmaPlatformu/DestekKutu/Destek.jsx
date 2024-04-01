@@ -4,8 +4,13 @@ import foto1 from './DestekAssets/1.png';
 import StarRatings from 'react-star-ratings';
 import logo from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Assets\\user.png'
 import comment from './DestekAssets/3.png'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Destek = () => {
+
+
+
   return (
     <div className="destek-card-wrapper">
         <div className="yardim-kutusu-baslik">
