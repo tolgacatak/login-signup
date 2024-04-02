@@ -15,8 +15,8 @@ const TalepCard = ({ authorized }) => {
 
   const yardimalHandler = () => {
     setError({
-      title: 'Hata!',
-      message: 'Talep için isim ve soyisim bilgilerinizi eklemelisiniz.',
+      title: "Hata!",
+      message: 'Taleplerinizi görüntüleyebilmek için isim ve soyisim bilgilerinizi eklemelisiniz!'
     });
   };
 

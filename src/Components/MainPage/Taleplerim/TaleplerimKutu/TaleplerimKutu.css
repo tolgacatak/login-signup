@@ -7,7 +7,7 @@
     background: #fff;
     padding-bottom: 30px;
     width: 590px;
-    height: 560px;
+    height: 480px;
     display: flex;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #000;
@@ -32,7 +32,7 @@
 .talep-kutu-orta-cizgi{
     position: absolute;
     width: 1px;
-    height: 438px;
+    height: 418px;
     background-color: #000;
     margin-top: 38px;
     margin-left: 200px;

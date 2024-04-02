@@ -57,13 +57,7 @@ const TaleplerimKutu = () => {
                         <p>{helpBox.purpose}</p>
                     </div>
                 </div>
-                <div className="talep-kutu-yorum">
-                    <img src={logo} alt="" />
-                    <div className="talep-kutu-input">
-                        <input type="text" placeholder="Yorumunuzu buraya yazınız..." />
-                    </div>
-                    <div className="talep-kutu-uc-yorum">3 Yorum</div>
-                </div>
+               
             </div>
         </div>
     );

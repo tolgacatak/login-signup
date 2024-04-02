@@ -12,7 +12,7 @@ const TalepHosgeldinModal = ({ onClose }) => {
         <h1>Taleplerim Sayfasında;</h1>
       </header>
       <section className="talep-hosgeldin-icerik">
-        <p>Aktif taleplerinizi hem görüntüleyebilir hem de düzenleyebilirsiniz.</p>
+        <p>Tüm taleplerinizi hem görüntüleyebilir hem de düzenleyebilirsiniz.</p>
       </section>
       <footer className="talep-hosgeldin-footer">
         <button onClick={handleClose}>Tamam</button> {/* handleClose işlevini Tamam butonuna bağlayın */}

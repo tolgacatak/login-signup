@@ -1,5 +1,5 @@
 .destek-card-wrapper{
-    position: relative; /* Container'ı referans alarak konumlandırma yapabilmek için */
+    
     display: flex;
     margin: auto;
     margin-top: 40px;
@@ -7,8 +7,8 @@
     background: #fff;
     padding-bottom: 30px;
     width: 590px;
-    height: 520px;
-    margin-left: 190px;
+    height: 550px;
+
 }
 .yardim-kutusu-baslik{
     margin-left: 15px;
@@ -48,7 +48,7 @@
 .yardim-orta-cizgi{
     position: absolute;
     width: 1px;
-    height: 424px;
+    height: 438px;
     background-color: #000;
     margin-top: 22px;
     margin-left: 180px;
@@ -90,7 +90,7 @@
 .yardim-yorum-yap{
     position: absolute;
     margin-left: 32px;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 .yardim-yorum-yap img{
     width: 40px;

@@ -57,7 +57,7 @@ const errorHandler = () => {
             <img src={depremHaberi} alt="" />
             <span>Az önce deprem mi oldu? Nerede, kaç şiddetinde deprem oldu?</span>
         </div>
-        <div className="talep-card-mainpage" onClick={authorized ? null : yardimalHandler}>
+        <div className="talep-card-mainpage">
             <TalepCard authorized={authorized} />
         </div>
         <div className="arama-anasayfa">

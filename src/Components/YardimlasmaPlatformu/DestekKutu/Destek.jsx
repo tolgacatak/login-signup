@@ -8,14 +8,23 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const Destek = () => {
-
-
+  const [helpBox, setHelpBox] = useState({});
+  useEffect(() => {
+    axios.get(`http://localhost:8087/helpbox/getAllHelpBoxes`)
+        .then((response) => {
+            const helpBoxData = response.data[0]; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
+            setHelpBox(helpBoxData);
+        })
+        .catch((error) => {
+            console.error("Hata:", error);
+        });
+}, []);
 
   return (
     <div className="destek-card-wrapper">
         <div className="yardim-kutusu-baslik">
             <p>Yardım Kutusu Sahibi:</p>
-            <h4>İsim Soyisim</h4>
+            <h4>{helpBox.user?.nameSurname}</h4>
             <div className="star-ratings">
                 <StarRatings 
                 rating={3} // Başlangıç puanı (örneğin 2.5)
@@ -27,7 +36,7 @@ const Destek = () => {
             </div>
             <img src={foto1} alt="" />
             <div className="yardim-aktif">
-                <h2>AKTİF</h2>
+                <h2><h2>{helpBox.active ? 'AKTİF' : ''}</h2></h2>
             </div>
             <div className="yardim-iletisime-gec">
                 <button>İletişime Geç</button>
@@ -38,11 +47,14 @@ const Destek = () => {
         </div>
         <div className="yardim-sag-taraf">
             <div className="yardim-sag-title">
-                <h4>Şehit Ahmet İlkokulu Yardım Kutusu</h4>
+                <h4>{helpBox.city} - {helpBox.purpose}</h4>
             </div>
             <div className="yardim-sag-content">
-                <p>VAN'da bulunan Şehit Ahmet İlkokulu'nun değerli öğrencilerine yönelik olarak açılan bu yardım kutusu, onların eğitim hayatlarını desteklemek ve günlük ihtiyaçlarını karşılamak amacıyla hazırlandı. Bu kutuda, öğrencilerimiz için gerekli olan kırtasiye malzemeleri, okul çantaları, kitaplar ve giysi gibi temel eğitim materyallerini toplamayı hedefliyoruz. Her çocuğun eğitimine erişiminin önemli olduğuna inanarak, siz değerli bağışçıların desteğiyle onlara daha iyi bir öğrenim ortamı sunmayı amaçlıyoruz. Şehit Ahmet İlkokulu öğrencilerinin eğitimine katkıda bulunmak ve onlara daha parlak bir gelecek sunmak için bağışlarınızı bekliyoruz. Her katkınız, onların hayatında büyük bir fark yaratacaktır. Destekleriniz için şimdiden teşekkür ederiz!</p>
+                <p>{helpBox.summary}</p>
             </div>
+            <div className="yardim-kutu-adres">
+                        <p>{helpBox.contactInfo}</p>
+                </div>
         </div>
         <div className="yardim-yorum-yap">
             <img src={logo} alt="" />
