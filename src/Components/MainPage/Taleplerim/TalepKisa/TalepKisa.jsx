@@ -25,7 +25,7 @@ const TalepKisa = ({ onClick }) => {
     
     <div className='talep-kisa-wrapper' onClick={onClick}>
         <div className="talep-kisa-aktif">
-            <h2>{kisaUser.active ? 'AKTİF' : 'Pasif'}</h2>
+            <h2>{kisaUser.active ? 'AKTİF' : 'PASİF'}</h2>
         </div>
         <div className="talep-kisa-ortacizgi">
 

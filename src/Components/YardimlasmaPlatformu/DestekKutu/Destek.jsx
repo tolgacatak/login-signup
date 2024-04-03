@@ -7,21 +7,12 @@ import comment from './DestekAssets/3.png'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const Destek = () => {
-  const [helpBox, setHelpBox] = useState({});
-  useEffect(() => {
-    axios.get(`http://localhost:8087/helpbox/getAllHelpBoxes`)
-        .then((response) => {
-            const helpBoxData = response.data[0]; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
-            setHelpBox(helpBoxData);
-        })
-        .catch((error) => {
-            console.error("Hata:", error);
-        });
-}, []);
+const Destek = ({helpBox}) => {
+  
 
   return (
     <div className="destek-card-wrapper">
+        
         <div className="yardim-kutusu-baslik">
             <p>Yardım Kutusu Sahibi:</p>
             <h4>{helpBox.user?.nameSurname}</h4>

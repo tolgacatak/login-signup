@@ -10,8 +10,22 @@ import ihh from './YardimYapAssests/5.png'
 import ahbap from './YardimYapAssests/6.png'
 import kizilay from './YardimYapAssests/7.png'
 import tegv from './YardimYapAssests/8.jpg'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 const YardimYap = () => {
+  const [helpBox, setHelpBox] = useState([]);
+  useEffect(() => {
+    axios.get(`http://localhost:8087/helpbox/getAllHelpBoxes`)
+        .then((response) => {
+             
+            const helpBoxData = response.data; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
+            setHelpBox(helpBoxData);
+        })
+        .catch((error) => {
+            console.error("Hata:", error);
+        });
+}, []);
   return (
     <div>
       <Navbar />
@@ -48,7 +62,12 @@ const YardimYap = () => {
               <img src={kutular} alt="" />
             </div>
         </div>
-        <Destek />
+        <div className="destek-kutu-css">
+          {helpBox.length > 0 && helpBox.map((box) => (
+            <Destek key={box.id} helpBox={box} />
+          ))}
+        </div>
+
         <div className="destek-paging">
           <a href="" className='paging1'>1</a>
           <a href="" className='ucnokta'>...</a>
