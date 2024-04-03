@@ -112,15 +112,13 @@
     font-size: 18px;
 }
 .talep-kutu-ozet{
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    margin-top: 270px;
-    left: 1px !important;
-    font-size: 14px;
+   
 
 }
 .talep-kutu-ozet button{
+    position: absolute;
+    bottom: 10px !important;
+    left: 40px;
     width: 140px;
     height: 40px;
     background-color: #243B48;

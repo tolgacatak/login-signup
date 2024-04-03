@@ -98,6 +98,11 @@ const handleSubmit = async (e) => {
         window.location.reload();
     } catch (error) {
         console.error('Error creating help box:', error);
+        if (error.response && error.response.status === 400) {
+            alert('Talep oluşturma işleminiz gerçekleştirilemedi. Lütfen alanları doğru şekilde doldurunuz!');
+        } else {
+            alert('Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+        }
     }
 };
 
