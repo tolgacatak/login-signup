@@ -16,18 +16,18 @@
 .talep-kisa-aktif h2{
     position: absolute;
     font-size: xx-large;
-    right: 290px;
-    bottom: 30px;
+    right: 150px;
+    bottom: 68px;
 }
 .talep-kisa-ortacizgi{
     position: absolute;
     width: 2px;
-    height: 130px;
-    margin-right: 165px;
+    height: 2px;
+    width: 380px;
+    margin-bottom: 34px;
     background-color: #d3d3d3;
 }
 .talep-kisa-ozet h4{
-    font-size: medium;
-    margin-left: 100px;
-    text-align: justify;
+    margin-top: 50px !important;
+   top: 40px;
 }
