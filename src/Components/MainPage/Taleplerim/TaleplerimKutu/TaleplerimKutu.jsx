@@ -89,7 +89,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                         </p>
                     </div>
                     <div className="talep-kutu-ozet">
-                        <button type='button' onClick={() => {
+                        <button className='talep-kutu-ozet-button-' type='button' onClick={() => {
                             setEditMode(!editMode)
                             if (editMode) {
                                 handleUpdate();
