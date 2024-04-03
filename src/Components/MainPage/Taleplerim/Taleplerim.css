@@ -8,9 +8,7 @@
 }
 .talepler-kisa-ekran {
   display: flex;
-  margin-bottom: 150px;
-  
- 
+  margin-bottom: 150px; 
 }
 .talep-kutu-taleplerim {
   display: flex;
@@ -19,5 +17,4 @@
 .destek-kutu-css-taleplerim {
   display: flex;
   flex-direction: column;
-
 }

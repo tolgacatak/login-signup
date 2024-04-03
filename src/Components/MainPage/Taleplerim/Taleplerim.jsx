@@ -64,7 +64,7 @@ const Taleplerim = () => {
           <div ref={taleplerimKutuRef}>
             {talepKisaClicked && showTaleplerimKutu && <div className="destek-kutu-css-taleplerim">
           {helpBox.length > 0 && helpBox.map((box) => (
-            <TaleplerimKutu key={box.id} helpBox={box} />
+            <TaleplerimKutu key={box.id} helpBox={box} setHelpBox={setHelpBox} />
           ))}
         </div>}
           </div>  
