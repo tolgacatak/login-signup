@@ -2,7 +2,7 @@ import './TalepKisa.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const TalepKisa = () => {
+const TalepKisa = ({ onClick }) => {
     const id = localStorage.getItem('userId');
     const [kisaUser, setKisaUser] = useState({});
 
@@ -23,7 +23,7 @@ const TalepKisa = () => {
       }, []);
   return (
     
-    <div className='talep-kisa-wrapper'>
+    <div className='talep-kisa-wrapper' onClick={onClick}>
         <div className="talep-kisa-aktif">
             <h2>{kisaUser.active ? 'AKTİF' : 'Pasif'}</h2>
         </div>

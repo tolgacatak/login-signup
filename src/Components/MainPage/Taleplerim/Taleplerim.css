@@ -8,7 +8,11 @@
 }
 .talepler-kisa-ekran {
   display: flex;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   
  
+}
+.talep-kutu-taleplerim {
+  display: flex;
+  flex-direction: column;  
 }
