@@ -4,26 +4,8 @@ import logo from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Com
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const TaleplerimKutu = () => {
-    const id = localStorage.getItem('userId');
-    const [helpBox, setHelpBox] = useState({});
-
-    useEffect(() => {
-        if (!id) {
-            // id yoksa işlem yapma
-            return;
-        }
-
-        axios.get(`http://localhost:8087/helpbox/getHelpBoxesByUserId/${id}`)
-            .then((response) => {
-                const helpBoxData = response.data[0]; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
-                setHelpBox(helpBoxData);
-            })
-            .catch((error) => {
-                console.error("Hata:", error);
-            });
-    }, []);
-
+const TaleplerimKutu = ({helpBox}) => {
+    
     return (
         <div>
             <div className="talep-kutu-wrapper">

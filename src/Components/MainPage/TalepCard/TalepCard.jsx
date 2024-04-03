@@ -9,6 +9,8 @@ const TalepCard = ({ authorized }) => {
   const [error, setError] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+
+
   const errorHandler = () => {
     setError('');
   };

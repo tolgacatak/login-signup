@@ -7,6 +7,8 @@ import KisaTalep from './TalepKisa/TalepKisa'
 import TaleplerimKutu from './TaleplerimKutu/TaleplerimKutu'
 import TalepKisa from './TalepKisa/TalepKisa';
 import { useRef } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const Taleplerim = () => {
   const [showModal, setShowModal] = useState(true);
@@ -17,7 +19,24 @@ const Taleplerim = () => {
   if (taleplerimTitle) {
     taleplerimTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+  const id = localStorage.getItem('userId');
+    const [helpBox, setHelpBox] = useState({});
 
+    useEffect(() => {
+        if (!id) {
+            // id yoksa işlem yapma
+            return;
+        }
+
+        axios.get(`http://localhost:8087/helpbox/getHelpBoxesByUserId/${id}`)
+            .then((response) => {
+                const helpBoxData = response.data; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
+                setHelpBox(helpBoxData);
+            })
+            .catch((error) => {
+                console.error("Hata:", error);
+            });
+    }, []);
 
 
   const handleCloseModal = () => {
@@ -43,9 +62,11 @@ const Taleplerim = () => {
             <TalepKisa onClick={handleTalepKisaClick} />
           </div>
           <div ref={taleplerimKutuRef}>
-            {talepKisaClicked && showTaleplerimKutu && <div className='talep-kutu-taleplerim'>
-              <TaleplerimKutu/>
-            </div> }
+            {talepKisaClicked && showTaleplerimKutu && <div className="destek-kutu-css-taleplerim">
+          {helpBox.length > 0 && helpBox.map((box) => (
+            <TaleplerimKutu key={box.id} helpBox={box} />
+          ))}
+        </div>}
           </div>  
         </div>
       </div>
