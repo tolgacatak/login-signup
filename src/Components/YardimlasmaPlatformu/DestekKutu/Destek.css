@@ -1,5 +1,4 @@
 .destek-card-wrapper{
-    
     display: flex;
     margin: auto;
     margin-top: 40px;
@@ -7,7 +6,7 @@
     background: #fff;
     padding-bottom: 30px;
     width: 590px;
-    height: 550px;
+    height: 590px;
 
 }
 .yardim-kutusu-baslik{
@@ -48,7 +47,7 @@
 .yardim-orta-cizgi{
     position: absolute;
     width: 1px;
-    height: 438px;
+    height: 488px;
     background-color: #000;
     margin-top: 22px;
     margin-left: 180px;
@@ -95,7 +94,7 @@
 .yardim-yorum-yap img{
     width: 40px;
     height: 40px;
-    margin-top: 395px;
+    margin-top: 425px;
     margin-left: 250x;
 }
 
@@ -121,15 +120,15 @@
     width: 40px;
     height: 40px;
     margin-left: 430px;
-    top: 0px
+    top: 0px 
 }
 .uc-yorum{
     position: absolute;
     margin-left: 481px;
-    top: 405px;
+    top: 430px;
 }
 .uc-yorum-iki{
     position: absolute;
     margin-left: 496px;
-    top: 405px;
+    top: 430px;
 }

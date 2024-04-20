@@ -88,6 +88,28 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                             /> : helpBox.contactInfo}
                         </p>
                     </div>
+                    <div className="talep-kutu-sehir">
+                        <p>
+                            {editMode ? (
+                                <input
+                                    rows={5}
+                                    type="text"
+                                    value={values.categories}
+                                    onChange={(e) => setValues({ ...values, categories: e.target.value })}
+                                />
+                            ) : (
+                                <p>
+                                    {helpBox.categories.map((category, index) => (
+                                        <span key={index}>
+                                            {category}
+                                            {index !== helpBox.categories.length - 1 && " - "}
+                                        </span>
+                                    ))}
+                                </p>
+)}
+
+                        </p>
+                    </div>
                     <div className="talep-kutu-ozet">
                         <button type='button' onClick={() => {
                             setEditMode(!editMode)

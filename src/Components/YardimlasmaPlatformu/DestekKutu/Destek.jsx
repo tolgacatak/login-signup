@@ -44,8 +44,18 @@ const Destek = ({helpBox}) => {
                 <p>{helpBox.summary}</p>
             </div>
             <div className="yardim-kutu-adres">
-                        <p>{helpBox.contactInfo}</p>
-                </div>
+                <p>{helpBox.contactInfo}</p>
+            </div>
+            <div className="yardim-kutu-kategori">
+                <p>
+                    {helpBox.categories.map((category, index) => (
+                        <span key={index}>
+                            {category}
+                            {index !== helpBox.categories.length - 1 && " - "}
+                        </span>
+                    ))}
+                </p>
+            </div>
         </div>
         <div className="yardim-yorum-yap">
             <img src={logo} alt="" />
@@ -54,7 +64,6 @@ const Destek = ({helpBox}) => {
             </div>
             <div className="yardim-comment-icon">
                 <img src={comment} alt="" />
-                
             </div>
             <div className='uc-yorum'>3</div>
             <div className="uc-yorum-iki">Yorum</div>
