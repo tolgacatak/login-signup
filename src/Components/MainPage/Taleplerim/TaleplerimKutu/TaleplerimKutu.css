@@ -128,3 +128,8 @@
 .talep-kutu-sehir p{
     padding : 5px !important;
 }
+.yorumlar{
+    position: absolute;
+    bottom: 475px !important;
+    left: 10px;
+}

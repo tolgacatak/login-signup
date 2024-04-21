@@ -19,22 +19,22 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
             id: id
         }
     });
-    
 
 
-    
+
+
     const handleUpdate = async () => {
-       
+
         const response = await axios.put(`http://localhost:8087/helpbox/updateHelpBox/${helpBox.id}`, values);
-        if(response.status === 200){
+        if (response.status === 200) {
             axios.get(`http://localhost:8087/helpbox/getHelpBoxesByUserId/${id}`)
-            .then((response) => {
-                const helpBoxData = response.data; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
-                setHelpBox(helpBoxData);
-            })
-            .catch((error) => {
-                console.error("Hata:", error);
-            });
+                .then((response) => {
+                    const helpBoxData = response.data; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
+                    setHelpBox(helpBoxData);
+                })
+                .catch((error) => {
+                    console.error("Hata:", error);
+                });
         }
     }
 
@@ -47,7 +47,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                     </div>
                     <div className="talep-kutu-gorsel">
                         {values.active ? (
-                        <img src={kutu} alt="" />
+                            <img src={kutu} alt="" />
                         ) : (
                             <img src={kutu2} alt="" />
                         )}
@@ -59,18 +59,18 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                         <h4 >
                             {editMode ? (
                                 <select
-                                value={values.active}
-                                onChange={(e) => {
-                                    setValues({ ...values, active: e.target.value });
-                                    
-                                }}
-                            >
+                                    value={values.active}
+                                    onChange={(e) => {
+                                        setValues({ ...values, active: e.target.value });
+
+                                    }}
+                                >
                                     <option value={true}>Aktif</option>
                                     <option value={false}>Pasif</option>
                                 </select>
                             ) : (
                                 <h2>{helpBox.active ? 'AKTİF' : 'PASİF'}</h2>
-                            )    
+                            )
                             }
                         </h4>
                     </div>
@@ -126,7 +126,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                                         </span>
                                     ))}
                                 </p>
-)}
+                            )}
 
                         </p>
                     </div>
@@ -138,8 +138,12 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                             }
                         }}>
                             {editMode ? 'Kaydet' : 'Düzenle'}
-                           
+
                         </button>
+                    </div>
+                    <div className='yorumlar'>
+                        <div className='uc-yorum'>3</div>
+                        <div className="uc-yorum-iki">Yorum</div>
                     </div>
 
                 </div>
