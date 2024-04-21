@@ -9,7 +9,22 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const Destek = ({helpBox}) => {
-  
+    const [userData, setUserData] = useState({});
+    useEffect(() => {
+        const id = localStorage.getItem('userId');
+        if (!id) {
+            // id yoksa işlem yapma
+            return;
+        }
+
+        axios.get(`http://localhost:8087/users/getProfileInfo/${id}`)
+            .then((response) => {
+                setUserData(response.data);
+            })
+            .catch((error) => {
+                console.error("Hata:", error);
+            });
+    }, []);
 
   return (
     <div className="destek-card-wrapper">
@@ -69,7 +84,9 @@ const Destek = ({helpBox}) => {
             </div>
         </div>
         <div className="yardim-yorum-yap">
-            <img src={logo} alt="" />
+            <div className="yardim-yorum-yap-img">
+                <img src={userData.profilePicture ? `data:image/png;base64,${userData.profilePicture}` : logo} alt="" />
+            </div>
             <div className="yardim-input">
                 <input type="text" placeholder="Yorumunuzu buraya yazınız..." />
             </div>
