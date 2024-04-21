@@ -1,5 +1,6 @@
 import './TaleplerimKutu.css';
 import kutu from './TaleplerimKutuAssets/1.png';
+import kutu2 from './TaleplerimKutuAssets/2.png';
 import logo from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Assets\\user.png';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -18,6 +19,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
             id: id
         }
     });
+    
 
 
     
@@ -44,17 +46,35 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                         <img src={helpBox.user?.profilePicture ? `data:image/png;base64,${helpBox.user?.profilePicture}` : logo} alt="" />
                     </div>
                     <div className="talep-kutu-gorsel">
+                        {values.active ? (
                         <img src={kutu} alt="" />
+                        ) : (
+                            <img src={kutu2} alt="" />
+                        )}
                     </div>
                     <div className="talep-kutu-adsoyad">
                         <h4>Sayın {helpBox.user?.nameSurname}</h4>
                     </div>
                     <div className="talep-kutu-aktif">
-                        <h2 onClick={() => {
-                            setValues({ ...values, active: !values.active })
-                            handleUpdate();
-                        }}>{helpBox.active ? 'AKTİF' : 'PASİF'}</h2>
+                        <h4 >
+                            {editMode ? (
+                                <select
+                                value={values.active}
+                                onChange={(e) => {
+                                    setValues({ ...values, active: e.target.value });
+                                    
+                                }}
+                            >
+                                    <option value={true}>Aktif</option>
+                                    <option value={false}>Pasif</option>
+                                </select>
+                            ) : (
+                                <h2>{helpBox.active ? 'AKTİF' : 'PASİF'}</h2>
+                            )    
+                            }
+                        </h4>
                     </div>
+
                 </div>
                 <div className="talep-kutu-orta-cizgi">
                 </div>
@@ -118,6 +138,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                             }
                         }}>
                             {editMode ? 'Kaydet' : 'Düzenle'}
+                           
                         </button>
                     </div>
 

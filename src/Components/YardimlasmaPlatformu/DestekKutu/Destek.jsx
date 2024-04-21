@@ -1,6 +1,7 @@
 import React from 'react';
 import './Destek.css';
 import foto1 from './DestekAssets/1.png';
+import foto2 from './DestekAssets/2.png';
 import StarRatings from 'react-star-ratings';
 import logo from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Assets\\user.png'
 import comment from './DestekAssets/3.png'
@@ -25,12 +26,22 @@ const Destek = ({helpBox}) => {
                 starSpacing="2px" // Yıldızlar arası boşluk
                 />
             </div>
+            {helpBox.active ? (
             <img src={foto1} alt="" />
+            ) : (
+                <img src={foto2} alt="" />
+            )}
             <div className="yardim-aktif">
-                <h2><h2>{helpBox.active ? 'AKTİF' : ''}</h2></h2>
+                <h2><h2>{helpBox.active ? 'AKTİF' : 'PASİF'}</h2></h2>
             </div>
             <div className="yardim-iletisime-gec">
-                <button>İletişime Geç</button>
+                {helpBox.active ? (
+                    <button>İletişime Geç</button>
+                ) : (
+                    ""
+                )    
+                }
+
             </div>
         </div>
         <div className="yardim-orta-cizgi">
