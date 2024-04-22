@@ -102,10 +102,16 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                     </div>
                     <div className="talep-kutu-adres">
                         <p>
-                            {editMode ? <textarea rows={5} type="text"
-                                value={values.contactInfo}
-                                onChange={(e) => setValues({ ...values, contactInfo: e.target.value })}
-                            /> : helpBox.contactInfo}
+                            {editMode ? (
+                                <textarea
+                                    rows={5}
+                                    type="text"
+                                    value={values.contactInfo}
+                                    onChange={(e) => setValues({ ...values, contactInfo: e.target.value })}
+                                />
+                            ) : (
+                                <><b>Yardım Adresi: </b>{helpBox.contactInfo}</>
+                            )}
                         </p>
                     </div>
                     <div className="talep-kutu-sehir">
@@ -119,6 +125,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                                 />
                             ) : (
                                 <p>
+                                    <b>İhtiyaçlar:  </b>
                                     {helpBox.categories.map((category, index) => (
                                         <span key={index}>
                                             {category}

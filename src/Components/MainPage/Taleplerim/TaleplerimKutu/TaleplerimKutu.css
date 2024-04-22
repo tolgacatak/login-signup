@@ -121,8 +121,9 @@
     
 }
 .talep-kutu-sehir{
-
-    margin-left: 26px !important;
+    position: absolute;
+    margin-left: 15px !important;
+    bottom: 15px !important;
     font-size: medium;
 }
 .talep-kutu-sehir p{
