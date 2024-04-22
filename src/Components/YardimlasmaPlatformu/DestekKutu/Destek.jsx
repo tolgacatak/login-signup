@@ -70,12 +70,15 @@ const Destek = ({helpBox}) => {
                 <p>{helpBox.summary}</p>
             </div>
             <div className="yardim-kutu-adres">
-                <p>{helpBox.contactInfo}</p>
+                <p><b>Yardım Adresi: </b>{helpBox.contactInfo}</p>
             </div>
             <div className="yardim-kutu-kategori">
+                
                 <p>
+                <b>İhtiyaçlar: </b>
                     {helpBox.categories.map((category, index) => (
                         <span key={index}>
+                            
                             {category}
                             {index !== helpBox.categories.length - 1 && " - "}
                         </span>
