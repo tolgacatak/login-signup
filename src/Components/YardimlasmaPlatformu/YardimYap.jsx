@@ -16,12 +16,15 @@ import { useEffect, useState } from 'react'
 const YardimYap = () => {
   const [helpBox, setHelpBox] = useState([]);
   const [helpBoxId, setHelpBoxId] = useState(0);
+  const [count, setCount] = useState(0); // Tüm yardım kutularının sayacını tutmak için
+
   useEffect(() => {
     axios.get(`http://localhost:8087/helpbox/getAllHelpBoxes`)
         .then((response) => {
              
             const helpBoxData = response.data; // Sadece ilk talebi alıyoruz, diğerleri için gerekirse uygun bir şekilde döngü kullanabilirsiniz
             setHelpBox(helpBoxData);
+            setCount(response.data.length);
         })
         .catch((error) => {
             console.error("Hata:", error);
@@ -65,7 +68,7 @@ const YardimYap = () => {
         </div>
         <div className="destek-kutu-css">
           {helpBox.length > 0 && helpBox.map((box) => (
-            <Destek key={box.id} helpBox={box}/>
+            <Destek key={box.id} helpBox={box} count={count}/>
           ))}
         </div>
 

@@ -8,9 +8,10 @@ import comment from './DestekAssets/3.png'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const Destek = ({helpBox,id}) => {
+const Destek = ({helpBox,count}) => {
     const [userData, setUserData] = useState({});
     const [commentText, setCommentText] = useState('');
+    const [showComments, setShowComments] = useState(false);
     useEffect(() => {
         const id = localStorage.getItem('userId');
         if (!id) {
@@ -59,6 +60,10 @@ const Destek = ({helpBox,id}) => {
             console.error('Hata:', error);
         });
     }
+    const toggleComments = () => {
+        setShowComments(!showComments);
+    };
+    
     
 
   return (
@@ -134,11 +139,25 @@ const Destek = ({helpBox,id}) => {
                         onKeyDown={handleKeyPress}
                     />
             </div>
-            <div className="yardim-comment-icon">
-                <img src={comment} alt="" />
+            <div className="yorum-goster" onClick={toggleComments}>
+                <div className="yardim-comment-icon">
+                    <img src={comment} alt="" />
+                </div>
+                <div className='uc-yorum'>{count}</div>
+                <div className="uc-yorum-iki">Yorum</div>
             </div>
-            <div className='uc-yorum'>3</div>
-            <div className="uc-yorum-iki">Yorum</div>
+            {showComments && (
+                <div className="yorumlar">
+                    <h3>Yorumlar</h3>
+                    <ul>
+                        {helpBox.commentHelpBoxes.map((comment, index) => (
+                            <li key={index} className="yorum">
+                                <p className="yorum-icerik">{comment.content}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
 
         </div>
         
