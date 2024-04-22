@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react'
 
 const YardimYap = () => {
   const [helpBox, setHelpBox] = useState([]);
+  const [helpBoxId, setHelpBoxId] = useState(0);
   useEffect(() => {
     axios.get(`http://localhost:8087/helpbox/getAllHelpBoxes`)
         .then((response) => {
@@ -64,7 +65,7 @@ const YardimYap = () => {
         </div>
         <div className="destek-kutu-css">
           {helpBox.length > 0 && helpBox.map((box) => (
-            <Destek key={box.id} helpBox={box} />
+            <Destek key={box.id} helpBox={box}/>
           ))}
         </div>
 

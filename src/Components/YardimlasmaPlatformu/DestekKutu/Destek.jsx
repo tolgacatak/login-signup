@@ -8,8 +8,9 @@ import comment from './DestekAssets/3.png'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const Destek = ({helpBox}) => {
+const Destek = ({helpBox,id}) => {
     const [userData, setUserData] = useState({});
+    const [commentText, setCommentText] = useState('');
     useEffect(() => {
         const id = localStorage.getItem('userId');
         if (!id) {
@@ -25,6 +26,40 @@ const Destek = ({helpBox}) => {
                 console.error("Hata:", error);
             });
     }, []);
+    
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            // Enter tuşuna basıldığında yorum yapma işlemini gerçekleştir
+            submitComment();
+        }
+    };
+    const submitComment = () => {
+        if (!commentText || !helpBox.id) {
+            // Yorum metni veya helpBoxId eksikse işlem yapma
+            return;
+        }
+        
+        const commentData = {
+            helpBox: { id: helpBox.id }, // Yardım kutusu id'sini commentData'ya ekleyin
+            content: commentText // Yorum içeriğini commentData'ya ekleyin
+        };
+    
+        axios.post('http://localhost:8087/comments/add', commentData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            // Yorum ekleme işlemi başarılı
+            console.log('Yorum eklendi:', response.data);
+            setCommentText('');
+        })
+        .catch((error) => {
+            console.error('Hata:', error);
+        });
+    }
+    
 
   return (
     <div className="destek-card-wrapper">
@@ -91,7 +126,13 @@ const Destek = ({helpBox}) => {
                 <img src={userData.profilePicture ? `data:image/png;base64,${userData.profilePicture}` : logo} alt="" />
             </div>
             <div className="yardim-input">
-                <input type="text" placeholder="Yorumunuzu buraya yazınız..." />
+                <input
+                        type="text"
+                        placeholder="Yorumunuzu buraya yazınız..."
+                        value={commentText}
+                        onChange={(event) => setCommentText(event.target.value)}
+                        onKeyDown={handleKeyPress}
+                    />
             </div>
             <div className="yardim-comment-icon">
                 <img src={comment} alt="" />
