@@ -1,0 +1,50 @@
+/* KVKKModal.css */
+
+.KVKK-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .KVKK-header {
+    margin-bottom: 20px;
+  }
+  
+  .KVKK-header h2 {
+    font-size: 1.5rem;
+    color: #333333;
+  }
+  
+  .KVKK-content p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555555;
+  }
+  
+  .KVKK-tamam {
+    text-align: center;
+  }
+  
+  .KVKK-tamam button {
+    margin-left: 145px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .KVKK-tamam button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -6,13 +6,15 @@
     import logo from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Assets\\user.png'
     import comment from './DestekAssets/3.png'
     import axios from 'axios';
+    import IletisimeGecModal from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Modals\\IletisimeGecModal\\IletisimeGecModal.jsx'
     import { useEffect, useState } from 'react';
 
     const Destek = ({helpBox,count}) => {
         const [userData, setUserData] = useState({});
         const [commentText, setCommentText] = useState('');
         const [showComments, setShowComments] = useState(false);
-        const [updatedHelpBox, setUpdatedHelpBox] = useState(helpBox); // Güncellenmiş yardım kutusu durumu
+        const [updatedHelpBox, setUpdatedHelpBox] = useState(helpBox);
+        const [showModal, setShowModal] = useState(false);
 
         useEffect(() => {
             const id = localStorage.getItem('userId');
@@ -69,8 +71,9 @@
         const toggleComments = () => {
             setShowComments(!showComments);
         };
-        
-        
+        const handleModalToggle = () => {
+            setShowModal(!showModal); // Modal'ın görünürlüğünü toggle et
+        };
 
     return (
         <div className="destek-card-wrapper">
@@ -95,14 +98,15 @@
                 <div className="yardim-aktif">
                     <h2><h2>{helpBox.active ? 'AKTİF' : 'PASİF'}</h2></h2>
                 </div>
-                <div className="yardim-iletisime-gec">
+                <div className="yardim-iletisime-gec" >
                     {helpBox.active ? (
-                        <button>İletişime Geç</button>
+                        <button onClick={handleModalToggle}>İletişime Geç</button>
+                        
                     ) : (
                         ""
                     )    
                     }
-
+                {showModal && <IletisimeGecModal helpBox={helpBox} handleModalToggle={handleModalToggle} />} 
                 </div>
             </div>
             <div className="yardim-orta-cizgi">

@@ -1,0 +1,39 @@
+.iletisime-gec-wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 580px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-radius: 15px;
+    height: 310px;
+    z-index: 1000;
+}
+.iletisime-gec-title{
+    background-color: #FF8000;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+}
+.iletisime-gec-content{
+    padding: 20px;
+    font-size: large;
+}
+.iletisime-gec-tamam{
+    position: absolute;
+    bottom: 6px;
+    left: 220px ;
+}
+.iletisime-gec-yazi input{
+    position: absolute;
+    bottom: 70px;
+    right: 80px;
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #FF8000;
+}
