@@ -3,7 +3,7 @@
     display: flex;
     margin: auto;
     margin-top: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 190px;
     background: #fff;
     padding-bottom: 30px;
     width: 590px;
@@ -129,8 +129,13 @@
 .talep-kutu-sehir p{
     padding : 5px !important;
 }
-.yorumlar{
+.yorumlar1{
     position: absolute;
     bottom: 475px !important;
     left: 10px;
+}
+.yorumlar3{
+    position: absolute;
+    bottom: 488px !important;
+    left: 30px;
 }

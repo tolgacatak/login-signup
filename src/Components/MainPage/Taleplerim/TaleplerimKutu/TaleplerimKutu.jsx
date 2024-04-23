@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
     const [editMode, setEditMode] = useState(false);
+    const [showComments, setShowComments] = useState(false);
     const id = window.localStorage.getItem('userId');
     const [values, setValues] = useState({
         city: helpBox.city,
@@ -37,6 +38,9 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                 });
         }
     }
+    const toggleComments = () => {
+        setShowComments(!showComments);
+    };
 
     return (
         <div>
@@ -148,10 +152,26 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
 
                         </button>
                     </div>
-                    <div className='yorumlar'>
-                        <div className='uc-yorum'>3</div>
+                    <div className='yorumlar1' onClick={toggleComments}>
+                        
+                        <div className='uc-yorum'>{helpBox.commentHelpBoxes.length}</div>
                         <div className="uc-yorum-iki">Yorum</div>
                     </div>
+                    {showComments && (
+                    <div className='yorumlar3'>
+                        <div className="yorumlar">
+                            <h3>Yorumlar</h3>
+                            <ul>
+                                {helpBox.commentHelpBoxes.map((comment, index) => (
+                                    <li key={index} className="yorum">
+                                        <p className="yorum-icerik">{comment.content}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                )}
+                
 
                 </div>
             </div>
