@@ -13,8 +13,8 @@
         const [userData, setUserData] = useState({});
         const [commentText, setCommentText] = useState('');
         const [showComments, setShowComments] = useState(false);
-        const [updatedHelpBox, setUpdatedHelpBox] = useState(helpBox);
         const [showModal, setShowModal] = useState(false);
+        const [rating, setRating] = useState(0);
 
         useEffect(() => {
             const id = localStorage.getItem('userId');
@@ -65,6 +65,26 @@
                     console.error('Hata:', error);
                 });
         };
+        const handleRatingChange = (newRating) => {
+            // Yıldıza tıklama olayı
+            setRating(newRating);
+            // Rating değerini güncellemek ve getRating fonksiyonunu çağırmak için
+            getRating(newRating);
+        };
+    
+        const getRating = async (newRating) => {
+            try {
+                const response = await axios.post('http://localhost:8087/votes', {
+                    votedUser: { id: helpBox.user.id },
+                    helpBox: { id: helpBox.id },
+                    score: newRating
+                });
+    
+                console.log('Rating:', response.data);
+            } catch (error) {
+                console.error('Hata:', error);
+            }
+        };
 
         
 
@@ -83,11 +103,12 @@
                 <h4>{helpBox.user?.nameSurname}</h4>
                 <div className="star-ratings">
                     <StarRatings 
-                    rating={3} // Başlangıç puanı (örneğin 2.5)
-                    starRatedColor="gold" // Dolu yıldız rengi
-                    starEmptyColor="gray" // Boş yıldız rengi
-                    starDimension="20px" // Yıldız boyutu
-                    starSpacing="2px" // Yıldızlar arası boşluk
+                    rating={rating} 
+                    starRatedColor="gold" 
+                    starEmptyColor="gray" 
+                    starDimension="20px" 
+                    starSpacing="2px"
+                    changeRating={handleRatingChange}
                     />
                 </div>
                 {helpBox.active ? (
