@@ -187,10 +187,13 @@
                 {showComments && (
                     <div className="yorumlar">
                         <h3>Yorumlar</h3>
-                        <ul>
+                        <ul className="yorumlar-liste">
+                            
                             {helpBox.commentHelpBoxes.map((comment, index) => (
                                 <li key={index} className="yorum">
-                                    <p className="yorum-icerik">{comment.content}</p>
+                                    <p className="yorum-icerik">
+                                        <b>{helpBox.user?.username}: </b>
+                                        {comment.content}</p>
                                 </li>
                             ))}
                         </ul>

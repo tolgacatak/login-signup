@@ -72,11 +72,11 @@ const YardimYap = () => {
           ))}
         </div>
 
-        <div className="destek-paging">
+        {/* <div className="destek-paging">
           <a href="" className='paging1'>1</a>
           <a href="" className='ucnokta'>...</a>
           <a href="" className='paging-all'>Görüntüle</a>
-        </div>
+        </div> */}
         <div className="destek-para-yardim">
             <div className="destek-para-yardim-title">
               <h3>Maddi Bağış Yapabileceğiniz Kurumlar</h3>
