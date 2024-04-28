@@ -75,6 +75,10 @@ const contactHandler = () => {
       </header>
       <section className="iletisime-gec-content">
         <p>
+          <b>Mail adresimin yardım kutusu sahibiyle paylaşılmasını kabul ediyorum.</b>
+        </p>
+        
+        <p>
           <input type="checkbox" checked={isChecked} onChange={checkboxHandler} /> <Link onClick={toggleKvkkModal}>KVKK</Link> kapsamında bilgilendirildim.
         </p>
       </section>
