@@ -202,7 +202,7 @@
                             {helpBox.commentHelpBoxes.map((comment, index) => (
                                 <li key={index} className="yorum">
                                     <p className="yorum-icerik">
-                                        <b>{helpBox.user?.username}: </b>
+                                        <b>{userData.username}: </b>
                                         {comment.content}
                                         <button className="yorum-icerik-button" onClick={() => handleDeleteComment(comment.id)}>X</button>
                                         </p>
