@@ -175,6 +175,7 @@
 }
 
 .yorumlar .yorum p {
+    word-wrap: break-word;
     margin-top: 5px;
     color: #34495e;
     font-size: 16px;
@@ -202,5 +203,16 @@
 .yorumlar::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+.yorum button {
+    width: 28px;
+    height: 28px;
+    background-color: #FF8000;
+    margin-left: 0px; /* Butonun yanındaki mesafe */
+    vertical-align: middle; /* Dikey hizalama */
+    word-wrap: break-word; /* Uzun yazılar alt satıra iner */
+}
 
+
+
+   
 

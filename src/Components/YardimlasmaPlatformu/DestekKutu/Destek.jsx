@@ -101,6 +101,16 @@
         const handleModalToggle = () => {
             setShowModal(!showModal); // Modal'ın görünürlüğünü toggle et
         };
+        const handleDeleteComment = async (commentId) => {
+            try {
+                await axios.delete(`http://localhost:8087/comments/delete/${commentId}`);
+                console.log('Yorum silindi:', commentId);
+                window.location.reload();
+                // Yorum silindikten sonra sayfayı yenileme işlemi veya diğer gerekli işlemler burada gerçekleştirilebilir.
+            } catch (error) {
+                console.error('Hata:', error);
+            }
+        };
 
     return (
         <div className="destek-card-wrapper">
@@ -193,7 +203,9 @@
                                 <li key={index} className="yorum">
                                     <p className="yorum-icerik">
                                         <b>{helpBox.user?.username}: </b>
-                                        {comment.content}</p>
+                                        {comment.content}
+                                        <button className="yorum-icerik-button" onClick={() => handleDeleteComment(comment.id)}>X</button>
+                                        </p>
                                 </li>
                             ))}
                         </ul>
