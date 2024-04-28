@@ -18,6 +18,7 @@
 
         useEffect(() => {
             const id = localStorage.getItem('userId');
+            
             if (!id) {
                 // id yoksa işlem yapma
                 return;
@@ -26,11 +27,15 @@
             axios.get(`http://localhost:8087/users/getProfileInfo/${id}`)
                 .then((response) => {
                     setUserData(response.data);
+                    
                 })
                 .catch((error) => {
                     console.error("Hata:", error);
                 });
         }, []);
+
+    
+        
 
         const handleKeyPress = (event) => {
             if (event.key === 'Enter') {
@@ -66,10 +71,11 @@
                 });
         };
         const handleRatingChange = (newRating) => {
-            // Yıldıza tıklama olayı
-            setRating(newRating);
             // Rating değerini güncellemek ve getRating fonksiyonunu çağırmak için
             getRating(newRating);
+            
+            
+           
         };
     
         const getRating = async (newRating) => {
@@ -79,6 +85,7 @@
                     helpBox: { id: helpBox.id },
                     score: newRating
                 });
+                setRating(newRating);
     
                 console.log('Rating:', response.data);
             } catch (error) {
@@ -103,7 +110,7 @@
                 <h4>{helpBox.user?.nameSurname}</h4>
                 <div className="star-ratings">
                     <StarRatings 
-                    rating={rating} 
+                    rating={rating || 0}
                     starRatedColor="gold" 
                     starEmptyColor="gray" 
                     starDimension="20px" 
