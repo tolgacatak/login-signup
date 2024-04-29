@@ -23,6 +23,7 @@ import DestekIste from './Components/YardimlasmaPlatformu/DestekTalepEt';
 import YardimYap from './Components/YardimlasmaPlatformu/YardimYap';
 import Taleplerim from './Components/MainPage/Taleplerim/Taleplerim';
 import KVKK from 'C:\\Users\\User\\Desktop\\login-signup\\login-signup\\src\\Components\\Modals\\KVKKModal\\KVKKModal.jsx'
+import AfetHaberleriAnaysayfa from './Components/AfetHaberleri/AfetHaberleriAnaysayfa';
 
 
 
@@ -55,6 +56,7 @@ function App() {
         <Route path="/yardim-yap" element={<YardimYap />} />
         <Route path="/taleplerim" element={<Taleplerim />} />
         <Route path="/kvkk" element={<KVKK />} />
+        <Route path="/afet-haberleri" element={<AfetHaberleriAnaysayfa />} />
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>

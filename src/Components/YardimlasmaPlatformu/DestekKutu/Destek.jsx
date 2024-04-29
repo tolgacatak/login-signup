@@ -33,6 +33,17 @@
                     console.error("Hata:", error);
                 });
         }, []);
+        useEffect(() => {
+            axios.get(`http://localhost:8087/votes/getScoreByHelpBoxId/${helpBox.id}`)
+                .then((response) => {
+                    setRating(response.data.trustScore);
+                    
+                })
+                .catch((error) => {
+                    console.error("Hata:", error);
+                });
+        }, [helpBox.id]);
+    
 
     
         
@@ -81,7 +92,7 @@
         const getRating = async (newRating) => {
             try {
                 const response = await axios.post('http://localhost:8087/votes', {
-                    votedUser: { id: helpBox.user.id },
+
                     helpBox: { id: helpBox.id },
                     score: newRating
                 });
