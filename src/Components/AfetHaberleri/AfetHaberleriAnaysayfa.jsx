@@ -5,7 +5,7 @@ import foto from './AfetHaberleriAnaysayfaAssets/1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-
+import HaberCard from './HaberCard/HaberCard'
 
 const AfetHbaerleriAnaysayfa = () => {
   const images = [foto];
@@ -40,6 +40,12 @@ const AfetHbaerleriAnaysayfa = () => {
                 <FontAwesomeIcon icon={faChevronRight} size='2x' />
               </div>
             </div>
+            <div className="anasyafa-baslik">
+              <h2>Başlık</h2>
+            </div>
+            <div className="anasayfa-icerik">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam eveniet suscipit sunt ducimus, quis ipsam rem ab quos voluptate tempore veniam voluptas aspernatur sapiente consequatur. Consequuntur fuga iusto unde magni totam similique minus reprehenderit maiores? Odit tenetur atque facilis molestias!</p>
+            </div>
             <div className="anasayfa-baslik">
               <h2>Afet Haberleri</h2>
             </div>
@@ -65,6 +71,14 @@ const AfetHbaerleriAnaysayfa = () => {
                 <h3>Diğer Afetler</h3>
               </li>
             </ul>
+          </div>
+          <div className="haberler">
+            <HaberCard />
+            <HaberCard />
+            <HaberCard />
+            <HaberCard />
+            <HaberCard />
+            <HaberCard />
           </div>
 
         </div>

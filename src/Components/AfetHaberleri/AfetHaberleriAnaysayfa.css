@@ -41,23 +41,25 @@
 }
 
 .left-arrow {
-    left: 10px;
-    
-    
+    left: 10px; 
 }
 
 .right-arrow {
     right: 10px;
 }
-.buyuk-resim h2{
+.buyuk-resim .anasayfa-baslik h2{
     position: absolute;
-    top: 15%;
-    left: 17%;
+    top: 7%;
+    left: 10%;
     transform: translate(-50%, -50%);
     font-size: 38px;
     font-weight: 750;
     color: #3d3811;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #ddd;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
 }
 .haber-baslik {
     margin-bottom: 20px;
@@ -86,5 +88,68 @@
     padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
     border-radius: 5px; /* Başlık kenar yuvarlaklığı */
   }
+  .haberler {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .anasayfa-icerik {
+    position: absolute;
+    bottom: 27px; /* Alt kenara doğru hizalamak için */
+    right: 2px; /* Sağ kenara doğru hizalamak için */
+    color: white; /* Metin rengini beyaz yapmak için */
+    margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
+    padding: 10px; /* İç boşluk eklemek için */
+    background-color: rgba(0, 0, 0, 0.6); /* Opak bir arka plan oluşturmak için */
+    border-radius: 10px;
+}
+
+.anasyafa-baslik {
+    border-radius: 10px;
+    position: absolute;
+    bottom: 34%; /* Alt kenara göre yüksekliği ayarlamak için */
+    justify-content: center;
+    right: 690px; /* Sağ kenara doğru hizalamak için */
+    color: white; /* Metin rengini beyaz yapmak için */
+    margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
+    padding: 10px; /* İç boşluk eklemek için */
+    background-color: rgba(0, 0, 0, 0.6); /* Opak bir arka plan oluşturmak için */
+}
+
+.anasyafa-baslik h2 {
+    font-size: 24px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
+    font-weight: bold; /* Başlık fontunu kalın yapar */
+    text-transform: uppercase; /* Başlık metnini büyük harfe dönüştürür */
+    margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
+    padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
+    border-radius: 5px; /* Başlık kenar yuvarlaklığı */
+}
+
+
+.haber-baslik {
+    margin-bottom: 20px;
+    text-align: right; /* Başlıkları sağa hizalamak için */
+}
+
+.haber-baslik h3 {
+    font-size: 24px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
+    font-weight: bold; /* Başlık fontunu kalın yapar */
+    text-transform: uppercase; /* Başlık metnini büyük harfe dönüştürür */
+    margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
+    padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
+    border-radius: 5px; /* Başlık kenar yuvarlaklığı */
+}
+
+.haberler {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}   
+
+  
+  
+ 
+  
+  
   
   
