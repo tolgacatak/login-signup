@@ -93,23 +93,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .anasayfa-icerik {
-    position: absolute;
-    bottom: 27px; /* Alt kenara doğru hizalamak için */
-    right: 2px; /* Sağ kenara doğru hizalamak için */
-    color: white; /* Metin rengini beyaz yapmak için */
-    margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
-    padding: 10px; /* İç boşluk eklemek için */
-    background-color: rgba(0, 0, 0, 0.6); /* Opak bir arka plan oluşturmak için */
-    border-radius: 10px;
-}
-
-.anasyafa-baslik {
+  .anasyafa-baslik {
     border-radius: 10px;
     position: absolute;
-    bottom: 34%; /* Alt kenara göre yüksekliği ayarlamak için */
-    justify-content: center;
-    right: 690px; /* Sağ kenara doğru hizalamak için */
+    top: 50%; /* Dikeyde tam ortala */
+    left: 50%; /* Yatayda tam ortala */
+    transform: translate(-50%, -50%); /* Dikey ve yatayda tam ortala */
     color: white; /* Metin rengini beyaz yapmak için */
     margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
     padding: 10px; /* İç boşluk eklemek için */
@@ -117,12 +106,24 @@
 }
 
 .anasyafa-baslik h2 {
-    font-size: 24px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
+    font-size: 20px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
     font-weight: bold; /* Başlık fontunu kalın yapar */
     text-transform: uppercase; /* Başlık metnini büyük harfe dönüştürür */
     margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
     padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
     border-radius: 5px; /* Başlık kenar yuvarlaklığı */
+}
+
+.anasayfa-icerik {
+    position: absolute;
+    bottom: 20%; /* Dikeyde tam ortala */
+    left: 50%; /* Yatayda tam ortala */
+    transform: translate(-50%, 50%); /* Dikey ve yatayda tam ortala */
+    color: white; /* Metin rengini beyaz yapmak için */
+    margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
+    padding: 10px; /* İç boşluk eklemek için */
+    background-color: rgba(0, 0, 0, 0.6); /* Opak bir arka plan oluşturmak için */
+    border-radius: 10px; /* Kenar yuvarlaklığı */
 }
 
 
@@ -145,6 +146,28 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }   
+.pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    transition: background-color 0.3s ease; /* Geçiş efekti ekleyelim */
+}
+
+.dot.active {
+    background-color: #fff; /* Aktif noktanın rengini beyaza çevirelim */
+}
+
 
   
   
