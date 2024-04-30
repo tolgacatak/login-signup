@@ -15,6 +15,9 @@ const AfetHbaerleriAnaysayfa = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
+  const [newsData, setNewsData] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const [date, setDate] = useState('');
 
   useEffect(() => {
     async function fetchData() {
@@ -26,7 +29,12 @@ const AfetHbaerleriAnaysayfa = () => {
         setImageUrl(firstImageUrl);
         setTitle(firstItem.title);
         setDescription(firstItem.description);
-        setLink(firstItem.link); // Linki ayarla
+        setLink(firstItem.link); 
+        setNewsData(data.content); 
+        setTotalPages(data.totalPages);
+        const pubDate = new Date(firstItem.pubDate);
+        const formattedDate = `${pubDate.getDate()}-${pubDate.getMonth() + 1}-${pubDate.getFullYear()}`;
+        setDate(formattedDate);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -103,13 +111,25 @@ const AfetHbaerleriAnaysayfa = () => {
             </ul>
           </div>
           <div className="haberler">
-            <HaberCard />
-            <HaberCard />
-            <HaberCard />
-            <HaberCard />
-            <HaberCard />
-            <HaberCard />
+          {/* Haber kartlarını dinamik olarak çağırma */}
+          {newsData.slice(0, 6).map((item, index) => (
+            <HaberCard
+              key={index}
+              title={item.title}
+              description={item.description}
+              imageUrl={item.imageUrl}
+              link={item.link}
+              pubDate={date}
+              onClick={() => handleClick(item.link)}
+            />
+          ))}
+        </div>
+        {newsData.length > 6 && (
+          <div className="pagination-arrows">
+            <FontAwesomeIcon icon={faChevronLeft} size='2x' onClick={handlePrev}/>
+            <FontAwesomeIcon icon={faChevronRight} size='2x' onClick={handleNext}/>
           </div>
+        )}
 
         </div>
       <Footer />

@@ -165,6 +165,14 @@
 .dot.active {
     background-color: #fff; /* Aktif noktanın rengini beyaza çevirelim */
 }
+.pagination-arrows {
+
+    transform: translateY(-50%);
+    margin-top: 25px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 1;
+}
 
 
   
