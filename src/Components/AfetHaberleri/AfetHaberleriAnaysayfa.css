@@ -73,7 +73,11 @@
   }
   
   .haber-baslik li {
-    margin-right: 20px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+    margin-right: 20px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background-color: #f0f0f0; 
+    box-shadow: 0px 0px 10px 0px rgba(1,12,2,10);
   }
   
   .haber-baslik li:last-child {
@@ -83,10 +87,11 @@
   .haber-baslik h3 {
     font-size: 24px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
     font-weight: bold; /* Başlık fontunu kalın yapar */
-    text-transform: uppercase; /* Başlık metnini büyük harfe dönüştürür */
+    
     margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
     padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
     border-radius: 5px; /* Başlık kenar yuvarlaklığı */
+    color: #333;
   }
   .haberler {
     display: flex;
@@ -132,14 +137,7 @@
     text-align: right; /* Başlıkları sağa hizalamak için */
 }
 
-.haber-baslik h3 {
-    font-size: 24px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
-    font-weight: bold; /* Başlık fontunu kalın yapar */
-    text-transform: uppercase; /* Başlık metnini büyük harfe dönüştürür */
-    margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
-    padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
-    border-radius: 5px; /* Başlık kenar yuvarlaklığı */
-}
+
 
 .haberler {
     display: flex;

@@ -5,7 +5,6 @@ const HaberCard = () => {
   return (
     <div className="haber-card-wrapper">
         <div className="haber-card-resim">
-            <p>Sel</p>
            <img src={foto} alt="" /> 
         </div>
         <div className="haber-card-title">

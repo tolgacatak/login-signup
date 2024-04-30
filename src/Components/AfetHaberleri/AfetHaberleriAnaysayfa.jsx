@@ -79,6 +79,9 @@ const AfetHbaerleriAnaysayfa = () => {
           </div>
           <div className="haber-baslik">
             <ul>
+              <li className="haber-baslik-li">
+                <h3>Tüm Haberler</h3>
+              </li>
               <li>
                 <h3>Depremler</h3>
               </li>
