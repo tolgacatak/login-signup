@@ -87,12 +87,22 @@
   .haber-baslik h3 {
     font-size: 24px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
     font-weight: bold; /* Başlık fontunu kalın yapar */
-    
+    cursor: pointer; /* Farenin üstüne geldiğinde el işareti göster */
+    transition: background-color 0.3s ease; /* Geçiş efekti ekleyelim */
     margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
     padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
     border-radius: 5px; /* Başlık kenar yuvarlaklığı */
     color: #333;
   }
+  .haber-baslik h3:hover {
+    background-color: #915656; /* Farenin üzerine gelindiğinde arka plan rengini değiştir */
+}
+
+.haber-baslik h3.active {
+    background-color: #18376c; /* Seçilen afet türü için arka plan rengini değiştir */
+    font-weight: bold; /* Kalın font */
+    color: #333; /* Metin rengini ayarla */
+}
   .haberler {
     display: flex;
     flex-wrap: wrap;
@@ -173,12 +183,10 @@
     text-align: center;
     z-index: 1;
 }
-
-
-  
-  
- 
-  
-  
-  
+.haber-baslik h3.selected {
+    background-color: #ffcc00; /* Seçilen afet türü için belirlediğiniz arka plan rengi */
+    color: white; /* Yazı rengini beyaz yapmak için */
+    padding: 10px 15px; /* Kenar boşluklarını ayarlamak için */
+    border-radius: 5px; /* Kenar yuvarlaklığı */
+  }
   

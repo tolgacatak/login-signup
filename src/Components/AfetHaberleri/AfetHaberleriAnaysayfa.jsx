@@ -4,9 +4,10 @@ import Footer from '../Footer/Footer'
 import foto from './AfetHaberleriAnaysayfaAssets/1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import HaberCard from './HaberCard/HaberCard'
-import { useEffect } from 'react'
+
+
 
 const AfetHbaerleriAnaysayfa = () => {
   
@@ -18,11 +19,13 @@ const AfetHbaerleriAnaysayfa = () => {
   const [newsData, setNewsData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [date, setDate] = useState('');
+  const [selectedDisaster, setSelectedDisaster] = useState('');
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://localhost:8087/disaster-news/paging?page=${page}`);
+        let endpoint = selectedDisaster ? `disaster-news/${selectedDisaster}` : 'disaster-news/paging';
+        const response = await fetch(`http://localhost:8087/${endpoint}?page=${page}`);
         const data = await response.json();
         const firstImageUrl = data.content.length > 0 ? data.content[0].imageUrl : ''; // İlk resmin URL'sini al
         const firstItem = data.content.length > 0 ? data.content[0] : {};
@@ -41,7 +44,7 @@ const AfetHbaerleriAnaysayfa = () => {
     }
 
     fetchData();
-  }, [page]);
+  }, [page, selectedDisaster]);
 
   const handlePrev = () => {
     setPage(prevPage => Math.max(prevPage - 1, 0));
@@ -50,67 +53,74 @@ const AfetHbaerleriAnaysayfa = () => {
   const handleNext = () => {
     setPage(prevPage => prevPage + 1);
   };
-  const handleClick = () => {
-    window.open(link, '_blank'); // Yeni sekmede aç
+
+  const handleClick = (url) => {
+    window.open(url, '_blank'); // Yeni sekmede aç
   };
+
+  const handleDisasterClick = (disaster) => {
+    setSelectedDisaster(disaster);
+    setPage(0);
+  };
+
   return (
     <div>
       <Navbar />
-        <div className="haberler-anasayfa">
-          <div className="buyuk-resim" >
-            <div className="resim">
-              <img src={imageUrl} alt="" onClick={handleClick} />
-              <div className="pagination">
-                  {[...Array(10)].map((_, index) => (
-                      <span
-                          key={index}
-                          className={`dot ${index === page ? 'active' : ''}`}
-                      ></span>
-                  ))}
-              </div>
-              <div className="left-arrow">
-                <FontAwesomeIcon icon={faChevronLeft} size='2x' onClick={handlePrev}/>
-              </div>
-              <div className="right-arrow">
-                <FontAwesomeIcon icon={faChevronRight} size='2x' onClick={handleNext}/>
-              </div>
+      <div className="haberler-anasayfa">
+        <div className="buyuk-resim" >
+          <div className="resim">
+            <img src={imageUrl} alt="" onClick={() => handleClick(link)} />
+            <div className="pagination">
+              {[...Array(10)].map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === page ? 'active' : ''}`}
+                ></span>
+              ))}
             </div>
-            <div className="anasyafa-baslik">
-              <h2>{title}</h2>
+            <div className="left-arrow">
+              <FontAwesomeIcon icon={faChevronLeft} size='2x' onClick={handlePrev}/>
             </div>
-            <div className="anasayfa-icerik">
-              <p>{description}</p>
-            </div>
-            <div className="anasayfa-baslik">
-              <h2>Afet Haberleri</h2>
+            <div className="right-arrow">
+              <FontAwesomeIcon icon={faChevronRight} size='2x' onClick={handleNext}/>
             </div>
           </div>
-          <div className="haber-baslik">
-            <ul>
-              <li className="haber-baslik-li">
-                <h3>Tüm Haberler</h3>
-              </li>
-              <li>
-                <h3>Depremler</h3>
-              </li>
-              <li>
-                <h3>Seller</h3>
-              </li>
-              <li>
-                <h3>Yangınlar</h3>
-              </li>
-              <li>
-                <h3>Heyelan</h3>
-              </li>
-              <li>
-                <h3>Şiddetli Hava Durumu</h3>
-              </li>
-              <li>
-                <h3>Diğer Afetler</h3>
-              </li>
-            </ul>
+          <div className="anasyafa-baslik">
+            <h2>{title}</h2>
           </div>
-          <div className="haberler">
+          <div className="anasayfa-icerik">
+            <p>{description}</p>
+          </div>
+          <div className="anasayfa-baslik">
+            <h2>Afet Haberleri</h2>
+          </div>
+        </div>
+        <div className="haber-baslik">
+          <ul>
+            <li className="haber-baslik-li">
+              <h3 onClick={() => handleDisasterClick('')}>Tüm Haberler</h3>
+            </li>
+            <li>
+              <h3 onClick={() => handleDisasterClick('earthquake')}>Depremler</h3>
+            </li>
+            <li>
+              <h3 onClick={() => handleDisasterClick('flood')}>Seller</h3>
+            </li>
+            <li>
+              <h3 onClick={() => handleDisasterClick('fire')}>Yangınlar</h3>
+            </li>
+            <li>
+              <h3 onClick={() => handleDisasterClick('landslide')}>Heyelan</h3>
+            </li>
+            <li>
+              <h3 onClick={() => handleDisasterClick('weather')}>Şiddetli Hava Durumu</h3>
+            </li>
+            <li>
+              <h3 onClick={() => handleDisasterClick('disaster')}>Diğer Afetler</h3>
+            </li>
+          </ul>
+        </div>
+        <div className="haberler">
           {/* Haber kartlarını dinamik olarak çağırma */}
           {newsData.slice(0, 6).map((item, index) => (
             <HaberCard
@@ -130,8 +140,7 @@ const AfetHbaerleriAnaysayfa = () => {
             <FontAwesomeIcon icon={faChevronRight} size='2x' onClick={handleNext}/>
           </div>
         )}
-
-        </div>
+      </div>
       <Footer />
     </div>
   )
