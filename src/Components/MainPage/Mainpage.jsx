@@ -9,12 +9,19 @@ import TalepCard from "./TalepCard/TalepCard"
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import LoginModal from '../Modals/Loginmodal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 
 const Mainpage = () => {
     const [authorized, setAuthorized] = useState(false);
     const id = localStorage.getItem('userId');
     const[error, setError] = useState(false);
+    const [imageUrl, setImageUrl] = useState('');
+    const [page, setPage] = useState(0);
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [link, setLink] = useState('');
     useEffect(() => {
         const checkAuthorization = async () => {
             try {
@@ -34,6 +41,37 @@ const Mainpage = () => {
             checkAuthorization();
         }
     }, [id]);
+    
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch(`http://localhost:8087/disaster-news/paging?page=${page}`);
+                const data = await response.json();
+                const firstImageUrl = data.content.length > 0 ? data.content[0].imageUrl : '';
+                const firstItem = data.content.length > 0 ? data.content[0] : {};
+                setImageUrl(firstImageUrl);
+                setTitle(firstItem.title);
+                setDescription(firstItem.description);
+                setLink(firstItem.link);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchData();
+    }, [page]);
+
+    const handlePrev = () => {
+        setPage(prevPage => Math.max(prevPage - 1, 0));
+    };
+
+    const handleNext = () => {
+        setPage(prevPage => prevPage + 1);
+    };
+
+    const handleClick = () => {
+        window.open(link, '_blank');
+    };
     const yardimalHandler = () => {
         
         setError(
@@ -54,8 +92,22 @@ const errorHandler = () => {
         {error && <LoginModal onConfirm={errorHandler} error={error} />}
         <Profil />
         <div className="deprem-haberi">
-            <img src={depremHaberi} alt="" />
-            <span>Az önce deprem mi oldu? Nerede, kaç şiddetinde deprem oldu?</span>
+        <img src={imageUrl} alt="" onClick={() => handleClick(link)} />
+            <div className="pagination2">
+              {[...Array(10)].map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot2 ${index === page ? 'active' : ''}`}
+                ></span>
+              ))}
+            </div>
+            <div className="left-arro2">
+              <FontAwesomeIcon icon={faChevronLeft} size='2x' onClick={handlePrev}/>
+            </div>
+            <div className="right-arro2">
+              <FontAwesomeIcon icon={faChevronRight} size='2x' onClick={handleNext}/>
+            </div>
+            
         </div>
         <div className="talep-card-mainpage">
             <TalepCard authorized={authorized} />

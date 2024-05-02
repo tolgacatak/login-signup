@@ -2,7 +2,7 @@
 .deprem-haberi {
     display: flex;
     justify-content: center;
-    margin-right: 220px;
+    margin-right: 240px;
     margin-top: 12px;
     padding: 10px;
     border-radius: 5px;
@@ -10,6 +10,11 @@
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
+}
+.deprem-haberi img{
+    top: 6px;
+    height: 350px;
+    width: 900px;
 }
 .deprem-haberi span{
     position: absolute;
@@ -68,8 +73,32 @@
     height: 17px;
     margin-left: 400px;
     top: 6px;
-
-
 }
+/* Sol okun stili */
+.left-arro2 {
+    position: absolute;
+    top: 40%;
+    left: 320px; /* Sol taraftan mesafe ayarla */
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    color: #fff;
+}
+
+/* Sağ okun stili */
+.right-arro2 {
+    position: absolute;
+    top: 40%;
+    right: 320px; /* Sağ taraftan mesafe ayarla */
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    color: #fff;
+}
+/* Pagination için stil */
+
+
+
+
 
 
