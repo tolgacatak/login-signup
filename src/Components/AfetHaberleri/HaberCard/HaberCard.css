@@ -1,13 +1,14 @@
 .haber-card-wrapper {
     width: 100%;
-    max-width: 363px; /* Kartın maksimum genişliği */
-    margin: 20px; /* Kartlar arası boşluk */
+    max-width: 423px; /* Kartın maksimum genişliği */
+    margin: 20px 40px;
     border: 1px solid #ddd; /* Kart kenarlık */
     border-radius: 8px; /* Kart köşe yuvarlaklığı */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s ease; /* Dönüşüm için geçiş efekti */
     overflow: hidden; /* İçerik dışarı taşmasın */
     background-color: #ffffff; /* Kart arka plan rengi */
+    
   }
   
   .haber-card-wrapper:hover {

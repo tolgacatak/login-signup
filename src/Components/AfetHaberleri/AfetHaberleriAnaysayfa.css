@@ -111,28 +111,29 @@
   .anasyafa-baslik {
     border-radius: 10px;
     position: absolute;
-    top: 50%; /* Dikeyde tam ortala */
-    left: 50%; /* Yatayda tam ortala */
+    top: 47%; /* Dikeyde tam ortala */
+    left: 70%; /* Yatayda tam ortala */
     transform: translate(-50%, -50%); /* Dikey ve yatayda tam ortala */
     color: white; /* Metin rengini beyaz yapmak için */
     margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
-    padding: 10px; /* İç boşluk eklemek için */
-    background-color: rgba(0, 0, 0, 0.6); /* Opak bir arka plan oluşturmak için */
+    padding: 5px; /* İç boşluk eklemek için */
+    background-color: rgba(0, 0, 0, 0.4); /* Opak bir arka plan oluşturmak için */
 }
 
 .anasyafa-baslik h2 {
-    font-size: 20px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
+    font-size: 15px; /* Başlık fontunu istediğiniz boyuta ayarlayabilirsiniz */
     font-weight: bold; /* Başlık fontunu kalın yapar */
     text-transform: uppercase; /* Başlık metnini büyük harfe dönüştürür */
-    margin: 0; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
-    padding: 10px 15px; /* Başlık öğesinin iç boşluğunu ayarlar */
+    margin-top: 10px; /* Her başlık öğesinin alt ve üst boşluğunu kaldırır */
+    padding: 6px 8px; /* Başlık öğesinin iç boşluğunu ayarlar */
     border-radius: 5px; /* Başlık kenar yuvarlaklığı */
 }
 
 .anasayfa-icerik {
+    font-size: 13px;
     position: absolute;
     bottom: 20%; /* Dikeyde tam ortala */
-    left: 50%; /* Yatayda tam ortala */
+    left: 70%; /* Yatayda tam ortala */
     transform: translate(-50%, 50%); /* Dikey ve yatayda tam ortala */
     color: white; /* Metin rengini beyaz yapmak için */
     margin: 0; /* Varsayılan dış boşlukları kaldırmak için */
