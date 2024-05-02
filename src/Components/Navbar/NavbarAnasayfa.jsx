@@ -22,7 +22,7 @@ const NavbarAnasayfa = () => {
             </Link>
         </div>
         <div className="buttons-navbar">
-            <Link className="link2" to="/button1">Canlı Afet Haritası</Link>
+            <Link className="link2" to="/deprem-haritasi">Canlı Deprem Haritası</Link>
             <Link className="link3" to="/afet-haberleri">Afet Haberleri</Link>
             <Link className="link4" to="/yardimlasma-platformu">Yardımlaşma Platformu</Link>
             <Link className="link5" to="/acil-durum-bilgileri">Acil Durum Bilgileri</Link>
