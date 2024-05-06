@@ -16,6 +16,20 @@ import { useEffect, useState } from 'react';
 
 const DepremHaritasi = () => {
     const [earthquakeData, setEarthquakeData] = useState([]);
+    const [lastEarthquakeData, setLastEarthquakeData] = useState([]);
+    const fetchData = async (url) => {
+        try {
+            const response = await axios.get(url);
+            setLastEarthquakeData(prevData => [...prevData, ...response.data.content]);
+        } catch (error) {
+            console.error('Error fetching earthquake data: ', error);
+        }
+    };
+
+    const clearData = () => {
+        setLastEarthquakeData([]);
+    };
+
     useEffect(() => {
         axios.get('http://localhost:8087/earthquakes/last-5-earthquakes')
           .then(response => {
@@ -87,6 +101,49 @@ const DepremHaritasi = () => {
                     ))}
                 </div>
             </div>
+            
+            <div className="depremler-tablo">
+            <div className="depremler-button">
+                <button onClick={() => fetchData('http://localhost:8087/earthquakes/last-24-hours')}>
+                    Son 24 Saat
+                </button>
+                <button onClick={() => fetchData('http://localhost:8087/earthquakes/last-2-days')}>
+                    Son 2 Gün
+                </button>
+                <button onClick={() => fetchData('http://localhost:8087/earthquakes/last-3-days')}>
+                    Son 3 Gün
+                </button>
+                <button onClick={() => fetchData('http://localhost:8087/earthquakes/last-4-days')}>
+                    Son 4 Gün
+                </button>
+                <button onClick={() => fetchData('http://localhost:8087/earthquakes/last-5-days')}>
+                    Son 5 Gün
+                </button>
+                <button onClick={clearData}>
+                    Temizle
+                </button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Yer</th>
+                        <th>Büyüklük</th>
+                        <th>Derinlik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {lastEarthquakeData.map((data, index) => (
+                        <tr key={index}>
+                            <td>{data.date}</td>
+                            <td>{data.location}</td>
+                            <td>{data.magnitude}</td>
+                            <td>{data.depth}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
 
             <Footer />
         </div>

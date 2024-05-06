@@ -80,6 +80,56 @@
     margin-left: 30px;
     margin-top: 40px;
   }
+  .depremler-tablo {
+    margin-top: 50px;
+  }
+  
+  .depremler-tablo table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .depremler-tablo th, .depremler-tablo td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .depremler-tablo th {
+    background-color: #f2f2f2;
+  }
+  
+  .depremler-tablo tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .depremler-tablo tbody tr:hover {
+    background-color: #ddd;
+  }
+  
+  .depremler-button {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 60px 10px 60px;
+
+  }
+  
+  .depremler-button button {
+    
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .depremler-button button:hover {
+    background-color: #0056b3;
+  }
+  
   
 
   
