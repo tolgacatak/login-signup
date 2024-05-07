@@ -6,13 +6,12 @@ import Navbar from '../Navbar/NavbarAnasayfa';
 import { MapContainer, TileLayer, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle } from '@fortawesome/free-solid-svg-icons'
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import SonDeprem from './SonDepremler/SonDepremler';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+import L from 'leaflet';
 
 const DepremHaritasi = () => {
     const [earthquakeData, setEarthquakeData] = useState([]);
@@ -52,6 +51,14 @@ const DepremHaritasi = () => {
         const selectedCity = e.target.value;
         fetchData(`http://localhost:8087/earthquakes/earthquakes-by-province?province=${selectedCity}`);
     }
+    const exclamationIcon = L.icon({
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+        iconSize: [20, 31],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        tooltipAnchor: [16, -28],
+        className: 'leaflet-div-icon'
+    });
     return (
         <div className="harita-wrapper">
             <Navbar />
@@ -71,17 +78,17 @@ const DepremHaritasi = () => {
                     />
                     <ZoomControl position="topleft" />
                     {latestEarthquake && (
-                        <Marker position={[latestEarthquake.latitude, latestEarthquake.longitude]}>
+                        <Marker position={[latestEarthquake.latitude, latestEarthquake.longitude]} icon={exclamationIcon}>
                             <Popup>
                                 <div>
                                     <h3>Son Deprem</h3>
                                     <p>{latestEarthquake.location}</p>
-                                    <p>Magnitude: {latestEarthquake.magnitude}</p>
-                                    <p>Depth: {latestEarthquake.depth}</p>
-                                    <p>Date: {latestEarthquake.date}</p>
+                                    <p>Büyüklük : {latestEarthquake.magnitude}</p>
+                                    <p>Derlinlik : {latestEarthquake.depth}</p>
+                                    <p>Tarih : {latestEarthquake.date}</p>
                                 </div>
                             </Popup>
-                            <FontAwesomeIcon icon={faExclamationTriangle} style={{ color: 'red', fontSize: '1.5em' }} />
+                            {/* <FontAwesomeIcon icon={faExclamationTriangle} style={{ color: 'red', fontSize: '1.5em' }} /> */}
                         </Marker>
                     )}
                 </MapContainer>
@@ -115,7 +122,7 @@ const DepremHaritasi = () => {
 
                 <h3> Son Deprem</h3>
                 <label>
-                    Son Deprem <span className="legend-marker" style={{ marginLeft: '3px' }}><FontAwesomeIcon icon={faExclamationTriangle} style={{ color: 'red', fontSize: '1.5em' }} /></span>
+                    Son Deprem <span className="legend-marker" style={{ marginLeft: '3px' }}><FontAwesomeIcon icon={faLocationDot} style={{ color: 'blue', fontSize: '1.5em' }} /></span>
                 </label><br />
             </div>
             <div className="son-deprem">
