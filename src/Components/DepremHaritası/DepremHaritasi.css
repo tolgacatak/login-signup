@@ -3,6 +3,9 @@
     background: transparent !important;
     border: none !important;
 }
+.leaflet-iki-icon{
+  size: 5px !important;
+}
 .harita-container {
     display: flex;
     align-items: stretch;
