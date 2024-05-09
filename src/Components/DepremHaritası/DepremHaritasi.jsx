@@ -385,8 +385,8 @@ const DepremHaritasi = () => {
                         onChange={m7_7_9CheckedChecked} />
                     M ≥ 7  M ≤ 7.9 <span className="legend-marker"><FontAwesomeIcon className="ico6" icon={faCircle} style={{ color: 'yellow', fontSize: '1.5em', marginTop: '5px' }} /></span>
                 </label><br />
-
-                <h3> Son Deprem</h3>
+                                
+                <h3 style={{marginBottom: '5px'}}> Son Deprem</h3>
                 <label>
                     Son Deprem <span className="legend-marker" style={{ marginLeft: '3px' }}><FontAwesomeIcon icon={faLocationDot} style={{ color: 'blue', fontSize: '1.5em' }} /></span>
                 </label><br />
@@ -404,8 +404,8 @@ const DepremHaritasi = () => {
             
             <div className="depremler-tablo">
             <div className="depremler-button" >
-                <select name="zamanlar" id="zamanlar" value="Zaman Seçiniz" onChange={(e) => fetchData(e.target.value)}>
-                    <option value="http://localhost:8087/earthquakes/last-5-earthquakes">Son Depremler</option>
+                <select name="zamanlar" id="zamanlar" onChange={(e) => fetchData(e.target.value)}>
+                    <option value="http://localhost:8087/earthquakes/last-5-earthquake">Son Depremler</option>
                     <option value="http://localhost:8087/earthquakes/last-24-hours">Son 24 Saat</option>
                     <option value="http://localhost:8087/earthquakes/last-2-days">Son 2 Gün</option>
                     <option value="http://localhost:8087/earthquakes/last-3-days">Son 3 Gün</option>
