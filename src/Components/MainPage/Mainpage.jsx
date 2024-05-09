@@ -125,6 +125,18 @@ const errorHandler = () => {
         <div className="sosyal-medya-haberler">
             <Sosyalmedya />
             <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+            <Sosyalmedya />
+
+
         </div>
         
 

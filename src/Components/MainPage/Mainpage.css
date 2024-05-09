@@ -107,6 +107,16 @@
     color: #FF0000;
     font-family: 'Times New Roman', Times, serif;
 }
+.sosyal-medya-haberler {
+    display: flex;
+    flex-wrap: wrap; /* Kartlar sığmadığında alt satıra geç */
+    justify-content: space-between; /* Kartları eşit uzaklıkta yerleştir */
+}
+
+.sosyal-medya-haberler .kart {
+    flex: 0 0 38%;
+}
+
 
 
 
