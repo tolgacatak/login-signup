@@ -93,6 +93,9 @@ const errorHandler = () => {
         <Profil />
         <div className="deprem-haberi">
         <img src={imageUrl} alt="" onClick={() => handleClick(link)} />
+            {/* <div className="deprem-haberi-text">
+                <span>{title}</span>
+            </div> */}
             <div className="pagination2">
               {[...Array(10)].map((_, index) => (
                 <span
