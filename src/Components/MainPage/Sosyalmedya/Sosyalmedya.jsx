@@ -5,8 +5,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
-const Sosyalmedya = () => {
+const Sosyalmedya = ({tweet}) => {
     const [userData, setUserData] = useState({});
+    const [showComments, setShowComments] = useState(false);
+    const [commentText, setCommentText] = useState('');
     useEffect(() => {
         const id = localStorage.getItem('userId');
         if (!id) {
@@ -22,43 +24,143 @@ const Sosyalmedya = () => {
                 console.error("Hata:", error);
             });
     }, []);
+    const toggleComments = () => {
+        setShowComments(!showComments);
+    };
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            // Enter tuşuna basıldığında yorum yapma işlemini gerçekleştir
+            submitComment();
+        }
+    };
+    const submitComment = () => {
+        if (!commentText) {
+            // Yorum metni veya helpBoxId eksikse işlem yapma
+            return;
+        }
+
+        const commentData = {
+            userId: userData.id,
+            contentId : tweet.id,
+            commentText: commentText
+        };
+
+        axios.post('http://localhost:8087/comments/add', commentData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => {
+                // Yorum ekleme işlemi başarılı
+                console.log('Yorum eklendi:', response.data);
+                setCommentText('');
+                window.location.reload(); // Sayfayı yenile
+            })
+            .catch((error) => {
+                console.error('Hata:', error);
+            });
+    };
+    const handleLike = () => {
+        const likeData = {
+            userId: userData.id,
+            contentId: tweet.id
+        };
+
+        axios.post('http://localhost:8085/api/contents/like', likeData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => {
+                // Handle success
+                console.log('Like successful');
+            })
+            .catch((error) => {
+                // Handle error
+                console.error('Like error:', error);
+            });
+
+            window.location.reload();
+    };
+
+    const handleDislike = () => {
+        const dislikeData = {
+            userId: userData.id,
+            contentId: tweet.id
+        };
+
+        axios.post('http://localhost:8085/api/contents/dislike', dislikeData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => {
+                // Handle success
+                console.log('Dislike successful');
+            })
+            .catch((error) => {
+                // Handle error
+                console.error('Dislike error:', error);
+            });
+
+            window.location.reload();
+    };
+           
+    const formatDate = (timestamp) => {
+        const date = new Date(timestamp);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear().toString();
+
+    return `${day}-${month}-${year}`;
+};
+const hideUrls = (text) => {
+    // URL'leri tespit etmek için basit bir regex kullanarak gizleyebiliriz
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, ''); // URL'leri boş bir string ile değiştiriyoruz
+};
+    
 
 
     return (
         <>
             <div class="kart">
-                <img class="kart-foto" src={logo} alt="" />
+                <img class="kart-foto" src={tweet.userInfo.avatar} alt="" />
                 <div class="kart-baslik">
-                    <span>İsim Soyisim</span>
+                    <span>{tweet.userInfo.name}</span>
                 </div>
                 <div class="kart-zaman">
-                    <span>Zaman</span>
+                    <span>{formatDate(tweet.createdAt)}</span>
                 </div>
-                <div className="rating-like">
+                <div className="rating-like" onClick={handleLike}>
                     <FontAwesomeIcon icon={faArrowUp}   />
                 </div>
-                <div className="rating-like-sayi">
-                    <span>0</span>
+                <div className="rating-like-sayi" >
+                    <span>{tweet.likes}</span>
                 </div>
                 <div className="rating-dislike">
-                    <FontAwesomeIcon icon={faArrowDown} />
+                    <FontAwesomeIcon icon={faArrowDown} onClick={handleDislike} />
                 </div>
                 <div className="rating-dislike-sayi">
-                    <span>0</span>
+                    <span>{tweet.dislikes}</span>
                 </div>
                 <img class="kart-twitter" src={twitter} alt="" />
                 <div class="kart-icerik">
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quo vel hic error dignissimos impedit blanditiis vitae nam sint ipsa deserunt fugit iste omnis, nemo aperiam eos dicta, sapiente accusantium explicabo dolorum ea labore adipisci eius! Quibusdam voluptas quis ea doloribus architecto nihil eos eveniet rerum tempora. Totam doloremque minima reiciendis delectus modi numquam tempore hic vel doloribus? Mollitia debitis non, hic cum quos ipsum saepe blanditiis ducimus, ad quibusdam dolore in, doloribus quidem placeat excepturi odio beatae dolor nam. Minima esse adipisci architecto repellat molestiae. Velit tempore inventore soluta cumque quae voluptas numquam adipisci culpa, deleniti at fugiat asperiores?</span>
+                    <span>{hideUrls(tweet.text)}</span>
                 </div>
                 <div class="kart-alt">
                     
                     
                     <div class="kart-yorum">
                         <img src={userData.profilePicture ? `data:image/png;base64,${userData.profilePicture}` : logo} alt="" />
-                        <input type="text" placeholder="Yorum Yap" />
+                        <input type="text"
+                            placeholder="Yorumunuzu buraya yazınız..."
+                            value={commentText}
+                            onChange={(event) => setCommentText(event.target.value)}
+                            onKeyDown={handleKeyPress}/>
                         <div class="kart-yorum-sayisi">
-                        <span>3 Yorum</span>
-                    </div>
+                            <span>3 Yorum</span>
+                        </div>
                     </div>
                 </div>
             </div>

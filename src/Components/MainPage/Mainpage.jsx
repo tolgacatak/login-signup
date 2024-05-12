@@ -22,6 +22,8 @@ const Mainpage = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [link, setLink] = useState('');
+    const [newsData, setNewsData] = useState([]);
+    const [newsIndex, setNewsIndex] = useState(0);
     useEffect(() => {
         const checkAuthorization = async () => {
             try {
@@ -60,6 +62,17 @@ const Mainpage = () => {
 
         fetchData();
     }, [page]);
+    useEffect(() => {
+        async function fetchTweet() {
+            try {
+                const response = await axios.get('http://localhost:8085/api/contents');
+                setNewsData(response.data.slice(-12));
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        fetchTweet();
+    }, []);
 
     const handlePrev = () => {
         setPage(prevPage => Math.max(prevPage - 1, 0));
@@ -85,6 +98,7 @@ const Mainpage = () => {
 const errorHandler = () => {
     setError('');
 }
+
 
   return (
     <div>
@@ -123,20 +137,9 @@ const errorHandler = () => {
             </div>
         </div>
         <div className="sosyal-medya-haberler">
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-            <Sosyalmedya />
-
-
+                {newsData.map((tweet, index) => (
+                    <Sosyalmedya key={index} tweet={tweet} />
+                ))}
         </div>
         
 
