@@ -45,7 +45,7 @@ const Sosyalmedya = ({tweet}) => {
             commentText: commentText
         };
 
-        axios.post('http://localhost:8087/comments/add', commentData, {
+        axios.post('http://localhost:8085/api/commentsToSocialMediaContent/save', commentData, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -119,6 +119,17 @@ const hideUrls = (text) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, ''); // URL'leri boş bir string ile değiştiriyoruz
 };
+const handleDeleteComment = (commentId) => {
+    axios.delete(`http://localhost:8085/api/commentsToSocialMediaContent/delete/${commentId}`)
+        .then((response) => {
+            console.log('Yorum silindi:', response.data);
+            window.location.reload(); // Sayfayı yenile
+        })
+        .catch((error) => {
+            console.error('Hata:', error);
+        });
+};
+
     
 
 
@@ -158,9 +169,27 @@ const hideUrls = (text) => {
                             value={commentText}
                             onChange={(event) => setCommentText(event.target.value)}
                             onKeyDown={handleKeyPress}/>
-                        <div class="kart-yorum-sayisi">
-                            <span>3 Yorum</span>
+                        <div class="kart-yorum-sayisi" onClick={toggleComments}>
+                            <span>{tweet.comments.length} Yorum</span>
                         </div>
+                        {showComments && (
+                        <div className="yorumlar-sosyal">
+                            <h3>Yorumlar</h3>
+                            <ul className="yorumlar-liste-sosyal">
+                                {tweet.comments.map((comment, index) => (
+                                    <li key={index} className="yorum-sosyal">
+                                        <p className="yorum-icerik-sosyal">
+                                            <b>{userData.username}: </b>
+                                            {comment.commentText}
+                                            <button className="yorum-icerik-button-sosyal" onClick={() => handleDeleteComment(comment.id)}>X</button>
+                                            </p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+
                     </div>
                 </div>
             </div>

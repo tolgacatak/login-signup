@@ -5,7 +5,7 @@
     border-radius: 5px;
     padding: 10px;
     margin-left: 140px;
-    margin-top: 30px;
+    margin-top: 85px;
     width: 25%;
     max-height: 500px; /* Maksimum yükseklik */
     margin-bottom: 50px;
@@ -104,3 +104,57 @@
 .kart-yorum-sayisi {
     color: #666;
 }
+/* Yorumlar bölümü */
+.yorumlar-sosyal {
+    position: absolute;
+    left: 0px !important;
+    top: 235px !important;
+    width: 490px;
+    height: 130px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Yorumlar başlık */
+.yorumlar-sosyal h3 {
+    position: absolute;
+    font-size: 1.2rem;
+    top: -7px;
+    margin-left: 170px;
+}
+
+/* Yorumlar listesi */
+.yorumlar-liste-sosyal {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Her yorum */
+.yorum-sosyal {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Yorum içeriği */
+.yorum-icerik-sosyal {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Silme butonu */
+.yorum-icerik-button-sosyal {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    color: #f00;
+    cursor: pointer;
+    margin-left: 250px;
+    top: 30px !important;
+}
+

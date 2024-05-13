@@ -136,6 +136,9 @@ const errorHandler = () => {
                 <img src={search} alt="" />
             </div>
         </div>
+        {/* <div className="yeni-haber">
+            <button>Yeni Haber</button>
+        </div> */}
         <div className="sosyal-medya-haberler">
                 {newsData.map((tweet, index) => (
                     <Sosyalmedya key={index} tweet={tweet} />
