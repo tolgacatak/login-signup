@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import LoginModal from '../Modals/Loginmodal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import BulunamadiModal from "../Modals/BulunamadiModal/BulunamadiModal"
 
 
 
@@ -27,6 +28,8 @@ const Mainpage = () => {
     const [newsIndex, setNewsIndex] = useState(0);
     const [searchText, setSearchText] = useState('');
     const [previousNewsData, setPreviousNewsData] = useState([]);
+    const [showNoResultModal, setShowNoResultModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const checkAuthorization = async () => {
@@ -104,9 +107,20 @@ const errorHandler = () => {
 }
 const handleSearch = () => {
     axios.get(`http://localhost:8085/api/contents/search?text=${searchText}&limit=12`)
-        .then(response => setNewsData(response.data))
-        .catch(error => console.error('Error fetching data: ', error));
+        .then(response => {
+            setNewsData(response.data);
+            if (response.data.length === 0) {
+                setShowNoResultModal(true);
+            } else {
+                setShowNoResultModal(false);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data: ', error);
+            setShowNoResultModal(true); // Eğer hata alınırsa da modalı göster
+        });
 };
+
 
 const handleInputChange = (e) => {
     setSearchText(e.target.value);
@@ -114,10 +128,15 @@ const handleInputChange = (e) => {
         setNewsData(previousNewsData);
     }
 };
+
+const onClose = () => {
+    setShowNoResultModal(!showNoResultModal);
+}
+
   return (
     <div>
         <NavbarAnasayfa/>
-        {error && <LoginModal onConfirm={errorHandler} error={error} />}
+        {showNoResultModal && <BulunamadiModal onClose={onClose}/>}
         <Profil />
         <div className="deprem-haberi">
         <img src={imageUrl} alt="" onClick={() => handleClick(link)} />
@@ -151,6 +170,7 @@ const handleInputChange = (e) => {
             </div>
         </div>
         <div className="sosyal-medya-haberler">
+            
                 {newsData.map((tweet, index) => (
                     <Sosyalmedya key={index} tweet={tweet} />
                 ))}
