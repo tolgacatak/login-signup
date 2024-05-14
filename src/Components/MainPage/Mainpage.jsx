@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 
+
 const Mainpage = () => {
     const [authorized, setAuthorized] = useState(false);
     const id = localStorage.getItem('userId');
@@ -24,6 +25,9 @@ const Mainpage = () => {
     const [link, setLink] = useState('');
     const [newsData, setNewsData] = useState([]);
     const [newsIndex, setNewsIndex] = useState(0);
+    const [searchText, setSearchText] = useState('');
+    const [previousNewsData, setPreviousNewsData] = useState([]);
+
     useEffect(() => {
         const checkAuthorization = async () => {
             try {
@@ -66,6 +70,7 @@ const Mainpage = () => {
         async function fetchTweet() {
             try {
                 const response = await axios.get('http://localhost:8085/api/contents');
+                setPreviousNewsData(response.data.slice(-12));
                 setNewsData(response.data.slice(-12));
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -73,7 +78,6 @@ const Mainpage = () => {
         }
         fetchTweet();
     }, []);
-
     const handlePrev = () => {
         setPage(prevPage => Math.max(prevPage - 1, 0));
     };
@@ -98,8 +102,18 @@ const Mainpage = () => {
 const errorHandler = () => {
     setError('');
 }
+const handleSearch = () => {
+    axios.get(`http://localhost:8085/api/contents/search?text=${searchText}&limit=12`)
+        .then(response => setNewsData(response.data))
+        .catch(error => console.error('Error fetching data: ', error));
+};
 
-
+const handleInputChange = (e) => {
+    setSearchText(e.target.value);
+    if (e.target.value === '') {
+        setNewsData(previousNewsData);
+    }
+};
   return (
     <div>
         <NavbarAnasayfa/>
@@ -132,13 +146,10 @@ const errorHandler = () => {
         <div className="arama-anasayfa">
             <span>Afet Adı veya Anahtar Kelime Giriniz(ör: 'Deprem','Sel' vb.)</span>
             <div className="arama">
-                <input type="text" placeholder="Aramak İçin Tıklayın..." />
-                <img src={search} alt="" />
+                <input type="text" placeholder="Aramak İçin Tıklayın..." value={searchText} onChange={handleInputChange} />
+                <img src={search} alt="" onClick={handleSearch} />
             </div>
         </div>
-        {/* <div className="yeni-haber">
-            <button>Yeni Haber</button>
-        </div> */}
         <div className="sosyal-medya-haberler">
                 {newsData.map((tweet, index) => (
                     <Sosyalmedya key={index} tweet={tweet} />
