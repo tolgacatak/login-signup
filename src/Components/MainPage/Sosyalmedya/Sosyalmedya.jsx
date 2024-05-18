@@ -4,7 +4,7 @@ import './Sosyalmedya.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faArrowUp, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faArrowUp, faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 const Sosyalmedya = ({tweet}) => {
     const [userData, setUserData] = useState({});
     const [showComments, setShowComments] = useState(false);
@@ -144,13 +144,13 @@ const handleDeleteComment = (commentId) => {
                     <span>{formatDate(tweet.createdAt)}</span>
                 </div>
                 <div className="rating-like" onClick={handleLike}>
-                    <FontAwesomeIcon icon={faArrowUp}   />
+                    <FontAwesomeIcon icon={faThumbsUp}   />
                 </div>
                 <div className="rating-like-sayi" >
                     <span>{tweet.likes}</span>
                 </div>
                 <div className="rating-dislike">
-                    <FontAwesomeIcon icon={faArrowDown} onClick={handleDislike} />
+                    <FontAwesomeIcon icon={faThumbsDown} onClick={handleDislike} />
                 </div>
                 <div className="rating-dislike-sayi">
                     <span>{tweet.dislikes}</span>

@@ -11,6 +11,7 @@
     margin-bottom: 50px;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Kartın gölgelendirilmesi */
+    background-color: #bbb;
 }
 
 .kart-foto {
@@ -54,7 +55,7 @@
 }
 .rating-like{
     position: absolute;
-    margin-left: 400px;
+    margin-left: 398px;
     color: green;
     cursor: pointer;
 }
@@ -64,7 +65,7 @@
 }
 .rating-dislike{
     position: absolute;
-    margin-left: 400px;
+    margin-left: 398px;
     margin-top: 30px;
     color: red;
     cursor: pointer;
