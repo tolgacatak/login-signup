@@ -204,11 +204,12 @@
     background: #555;
 }
 .yorum button {
+    position: absolute;
     width: 28px;
     height: 28px;
+    margin-left: 490px;
+    bottom: 50px !important;
     background-color: #FF8000;
-    margin-left: 0px; /* Butonun yanındaki mesafe */
-    vertical-align: middle; /* Dikey hizalama */
     word-wrap: break-word; /* Uzun yazılar alt satıra iner */
 }
 .iletisim-sayi{

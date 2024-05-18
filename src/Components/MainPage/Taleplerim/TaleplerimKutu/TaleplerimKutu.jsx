@@ -151,28 +151,7 @@ const TaleplerimKutu = ({ helpBox, setHelpBox }) => {
                             {editMode ? 'Kaydet' : 'Düzenle'}
 
                         </button>
-                    </div>
-                    <div className='yorumlar1' onClick={toggleComments}>
-                        
-                        <div className='uc-yorum'>{helpBox.commentHelpBoxes.length}</div>
-                        <div className="uc-yorum-iki">Yorum</div>
-                    </div>
-                    {showComments && (
-                    <div className='yorumlar3'>
-                        <div className="yorumlar">
-                            <h3>Yorumlar</h3>
-                            <ul>
-                                {helpBox.commentHelpBoxes.map((comment, index) => (
-                                    <li key={index} className="yorum">
-                                        <p className="yorum-icerik">{comment.content}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                )}
-                
-
+                    </div>                             
                 </div>
             </div>
         </div>
