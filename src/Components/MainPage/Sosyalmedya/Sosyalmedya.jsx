@@ -142,13 +142,18 @@ const Sosyalmedya = ({ tweet }) => {
                 <div className="kart-icerik">
                     <span>{hideUrls(tweet.text)}</span>
                 </div>
+                {tweet.media && tweet.media.photos && tweet.media.photos.length > 0 && tweet.media.photos[0].mediaUrlHttps && (
+                    <div className="tweet-image-container">
+                        <img src={tweet.media.photos[0].mediaUrlHttps} alt="Tweet media" />
+                    </div>
+                )}
                 <div className="rating-container">
                     <div className="rating-item" onClick={handleLike}>
-                        <FontAwesomeIcon icon={faThumbsUp} />
+                        <FontAwesomeIcon icon={faThumbsUp} className="begen"/>
                         <span>{tweet.likes}</span>
                     </div>
                     <div className="rating-item" onClick={handleDislike}>
-                        <FontAwesomeIcon icon={faThumbsDown} />
+                        <FontAwesomeIcon icon={faThumbsDown} className="begenme" />
                         <span>{tweet.dislikes}</span>
                     </div>
                     <div className="rating-item" onClick={toggleComments}>

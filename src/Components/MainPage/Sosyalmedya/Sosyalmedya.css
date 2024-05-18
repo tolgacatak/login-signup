@@ -132,9 +132,30 @@
 }
 
 .yorum-icerik-button-sosyal {
+    position: absolute;
     background-color: transparent;
     border: none;
     color: #f00;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 280px;
+    bottom: 77px !important;
+}
+.begen{
+    color: green;
+    cursor: pointer;
+}
+
+.begenme{
+    color: red ;
+    cursor: pointer;
+}
+.tweet-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.tweet-image-container img {
+    max-width: 100%;
+    border-radius: 5px;
 }
