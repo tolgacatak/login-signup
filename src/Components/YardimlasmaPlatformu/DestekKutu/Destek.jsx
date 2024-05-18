@@ -15,6 +15,7 @@
         const [showComments, setShowComments] = useState(false);
         const [showModal, setShowModal] = useState(false);
         const [rating, setRating] = useState(0);
+        const [contactCount, setContactCount] = useState(0);
 
         useEffect(() => {
             const id = localStorage.getItem('userId');
@@ -111,6 +112,10 @@
         };
         const handleModalToggle = () => {
             setShowModal(!showModal); // Modal'ın görünürlüğünü toggle et
+            if (!showModal) {
+                // Modal açıldığında sayacı artır
+                setContactCount(prevCount => prevCount + 1);
+            }
         };
         const handleDeleteComment = async (commentId) => {
             try {
@@ -146,6 +151,9 @@
                 )}
                 <div className="yardim-aktif">
                     <h2><h2>{helpBox.active ? 'AKTİF' : 'PASİF'}</h2></h2>
+                </div>
+                <div className="iletisim-sayi">
+                    <h4>Aktif İletişim Sayısı: {contactCount}</h4>
                 </div>
                 <div className="yardim-iletisime-gec" >
                     {helpBox.active ? (
