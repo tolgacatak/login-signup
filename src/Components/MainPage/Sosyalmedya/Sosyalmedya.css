@@ -1,3 +1,5 @@
+
+
 .kart {
     display: flex;
     flex-direction: column;
@@ -5,44 +7,44 @@
     border-radius: 5px;
     padding: 10px;
     margin-left: 140px;
-    margin-top: 85px;
-    width: 25%;
-    max-height: 500px; /* Maksimum yükseklik */
+    margin-top: 25px;
+    width: 28%;
+    height: auto;
     margin-bottom: 50px;
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Kartın gölgelendirilmesi */
-    background-color: #bbb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background-color: #eae4e4;
 }
 
 .kart-foto {
-    width: 60px; /* Logo biraz daha büyük */
+    width: 60px;
     height: 60px;
     border-radius: 50%;
     margin-right: 10px;
     position: absolute;
-    top: 10px; /* Kartın üst kısmından 10px aşağıda */
-    left: 10px; /* Kartın sol kısmından 10px içeride */
+    top: 10px;
+    left: 10px;
 }
 
 .kart-baslik {
     font-weight: bold;
     margin-bottom: 5px;
-    margin-left: 80px; /* İsim soyisim yazısını logonun yanına al */
+    margin-left: 80px;
 }
 
 .kart-zaman {
     color: #666;
-    margin-top: 10px; /* Zaman twitter'ın altında yer alsın */
-    margin-left: 80px; /* Zaman yazısını logonun yanına al */
+    margin-top: 10px;
+    margin-left: 80px;
 }
 
 .kart-twitter {
-    width: 30px; /* Twitter logosu biraz daha büyük */
+    width: 30px;
     height: 30px;
     position: absolute;
-    top: 10px; /* Kartın üst kısmından 10px aşağıda */
-    right: 10px; /* Kartın sağ kısmından 10px içeride */
-    z-index: 1; /* Diğer içeriklerin üzerinde kalması için */
+    top: 10px;
+    right: 10px;
+    z-index: 1;
 }
 
 .kart-icerik {
@@ -51,29 +53,23 @@
     margin-top: 30px;
     margin-bottom: 10px;
     max-height: 250px;
-    overflow-y: auto; /* Yüksekliği aştığında scroll bar göster */
+    overflow-y: auto;
 }
-.rating-like{
-    position: absolute;
-    margin-left: 398px;
-    color: green;
+
+.rating-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
-.rating-like-sayi{
-    position: absolute;
-    margin-left: 420px;
-}
-.rating-dislike{
-    position: absolute;
-    margin-left: 398px;
-    margin-top: 30px;
-    color: red;
-    cursor: pointer;
-}
-.rating-dislike-sayi{
-    position: absolute;
-    margin-left: 420px;
-    margin-top: 30px;
+
+.rating-item span {
+    margin-left: 5px;
 }
 
 .kart-alt {
@@ -84,34 +80,27 @@
 .kart-yorum {
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-top: 10px;
 }
 
 .kart-yorum img {
-    width: 30px; /* Yorum logosu biraz daha büyük */
+    width: 30px;
     height: 30px;
-    margin-right: 10px; /* Logo ile input arasına boşluk ekler */
+    margin-right: 10px;
 }
 
 .kart-yorum input[type="text"] {
-    flex: 1; /* Input alanının tüm boşluğu kaplamasını sağlar */
+    flex: 1;
     padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-right: 5px; /* Input ile yorum sayısı arasına boşluk ekler */
-    width: 380px; /* Input alanının genişliğini ayarlar */
+    margin-right: 5px;
+    width: 380px;
 }
 
-.kart-yorum-sayisi {
-    color: #666;
-}
-/* Yorumlar bölümü */
 .yorumlar-sosyal {
-    position: absolute;
-    left: 0px !important;
-    top: 235px !important;
-    width: 490px;
-    height: 130px;
+    margin-top: 20px;
+    width: 100%;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -119,22 +108,17 @@
     overflow-y: auto;
 }
 
-/* Yorumlar başlık */
 .yorumlar-sosyal h3 {
-    position: absolute;
     font-size: 1.2rem;
-    top: -7px;
-    margin-left: 170px;
+    margin-bottom: 10px;
 }
 
-/* Yorumlar listesi */
 .yorumlar-liste-sosyal {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-/* Her yorum */
 .yorum-sosyal {
     display: flex;
     align-items: center;
@@ -142,20 +126,15 @@
     border-bottom: 1px solid #eee;
 }
 
-/* Yorum içeriği */
 .yorum-icerik-sosyal {
     flex: 1;
     margin-left: 10px;
 }
 
-/* Silme butonu */
 .yorum-icerik-button-sosyal {
-    position: absolute;
     background-color: transparent;
     border: none;
     color: #f00;
     cursor: pointer;
-    margin-left: 250px;
-    top: 30px !important;
+    margin-left: 10px;
 }
-
