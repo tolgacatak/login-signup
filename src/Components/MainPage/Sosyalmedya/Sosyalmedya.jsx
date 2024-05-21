@@ -75,7 +75,9 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
         .then((response) => {
             setTweet(prevTweet => ({
                 ...prevTweet,
-                likes: prevTweet.likes + 1
+                likes: prevTweet.userLikeStatus === 'liked' ? prevTweet.likes - 1 : prevTweet.likes + 1,
+                dislikes: prevTweet.userLikeStatus === 'disliked' ? prevTweet.dislikes - 1 : prevTweet.dislikes,
+                userLikeStatus: prevTweet.userLikeStatus === 'liked' ? null : 'liked'
             }));
         })
         .catch((error) => {
@@ -96,7 +98,9 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
         .then((response) => {
             setTweet(prevTweet => ({
                 ...prevTweet,
-                dislikes: prevTweet.dislikes + 1
+                likes: prevTweet.userLikeStatus === 'liked' ? prevTweet.likes - 1 : prevTweet.likes,
+                dislikes: prevTweet.userLikeStatus === 'disliked' ? prevTweet.dislikes - 1 : prevTweet.dislikes + 1,
+                userLikeStatus: prevTweet.userLikeStatus === 'disliked' ? null : 'disliked'
             }));
         })
         .catch((error) => {
@@ -150,7 +154,7 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
             )}
             <div className="rating-container">
                 <div className="rating-item" onClick={handleLike}>
-                    <FontAwesomeIcon icon={faThumbsUp} className="begen"/>
+                    <FontAwesomeIcon icon={faThumbsUp} className="begen" />
                     <span>{tweet.likes}</span>
                 </div>
                 <div className="rating-item" onClick={handleDislike}>
@@ -169,7 +173,7 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
                         {tweet.comments.map((comment, index) => (
                             <li key={index} className="yorum-sosyal">
                                 <p className="yorum-icerik-sosyal">
-                                    <b>{userData.username}: </b>
+                                    <b>{comment.username}: </b>
                                     {comment.commentText}
                                     <button className="yorum-icerik-button-sosyal" onClick={() => handleDeleteComment(comment.id)}>X</button>
                                 </p>
