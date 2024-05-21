@@ -139,6 +139,7 @@ const onClose = () => {
         {showNoResultModal && <BulunamadiModal onClose={onClose}/>}
         <Profil />
         <div className="deprem-haberi">
+            <span>Afet Haberleri</span>
         <img src={imageUrl} alt="" onClick={() => handleClick(link)} />
             {/* <div className="deprem-haberi-text">
                 <span>{title}</span>
