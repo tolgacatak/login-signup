@@ -55,7 +55,7 @@ const LoginSignUp = () => {
         }catch (error){
             setError({
                 title: "Hatalı Giriş",
-                message: error.message,
+                message: error.response.data,
             });
         }
         

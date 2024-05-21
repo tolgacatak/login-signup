@@ -84,7 +84,7 @@ const Register = () => {
             setError(
                 {
                     title: "Hatalı Giriş",
-                    message: error.message
+                    message: error.response.data
                 }
             );
         }

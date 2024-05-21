@@ -8,6 +8,7 @@ import foto3 from './DestekAssets/3.png'
 import foto4 from './DestekAssets/4.png'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import YardimAlDestekModal from '../Modals/YardimAlModal/YardimAlDestekModal';
 
 const DestekTalepEt = () => {
     const [sehirler, setSehirler] = useState([]);
@@ -18,6 +19,11 @@ const DestekTalepEt = () => {
     const [selectedCity, setSelectedCity] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [userInfo, setUserInfo] = useState(null);
+    const [error, setError] = useState(false);
+
+    const errorHandler = () => {
+        setError(false);
+    }
 
     const cityHandler = (e) => {
         setSelectedCity(e.target.value);
@@ -97,12 +103,22 @@ const handleSubmit = async (e) => {
         alert('Destek talebiniz gönderilmiştir.');
         window.location.reload();
     } catch (error) {
-        console.error('Error creating help box:', error);
-        if (error.response && error.response.status === 400) {
-            alert('Talep oluşturma işleminiz gerçekleştirilemedi. Lütfen alanları doğru şekilde doldurunuz!');
+        let errorMessage = 'Bir hata oluştu.';
+        console.log(error.response.data);
+        if (error.response) {
+            errorMessage = error.response.data || errorMessage;
+        } else if (error.request) {
+            errorMessage = 'Sunucuya ulaşılamadı.';
         } else {
-            alert('Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+            errorMessage = error.message;
         }
+    
+        setError({
+            title: 'Talep gönderme hatası',
+            message: errorMessage
+        });
+    
+        
     }
 };
 
@@ -110,7 +126,7 @@ const handleSubmit = async (e) => {
   return (
     <div>
         <Navbar />
-        
+        {error && <YardimAlDestekModal onClose={errorHandler} error={error} />}
             <form className="destek-iste-container" onSubmit={handleSubmit}>
                 <div className="destek-gunes">
                     <img src={foto2} alt="" />
