@@ -55,6 +55,11 @@
     max-height: 250px;
     overflow-y: auto;
 }
+.tweet-id {
+    position: absolute;
+    margin-top: 62px;
+    margin-left: 76px;
+}
 
 .rating-container {
     display: flex;

@@ -11,6 +11,7 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
     const [tweet, setTweet] = useState(initialTweet);
     const [showComments, setShowComments] = useState(false);
     const [commentText, setCommentText] = useState('');
+    const [tweetId, setTweetId] = useState('');
 
     useEffect(() => {
         const id = localStorage.getItem('userId');
@@ -127,6 +128,7 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
         const month = (date.getMonth() + 1).toString().padStart(2, '0');
         const year = date.getFullYear().toString();
         return `${day}-${month}-${year}`;
+        
     };
 
     const hideUrls = (text) => {
@@ -140,8 +142,12 @@ const Sosyalmedya = ({ tweet: initialTweet }) => {
             <div className="kart-baslik">
                 <span>{tweet.userInfo.name}</span>
             </div>
+           
             <div className="kart-zaman">
                 <span>{formatDate(tweet.createdAt)}</span>
+            </div>
+            <div className="tweet-id">
+                <span> <b>Tweet Id : {tweet.tweetId}</b></span>
             </div>
             <img className="kart-twitter" src={twitter} alt="" />
             <div className="kart-icerik">

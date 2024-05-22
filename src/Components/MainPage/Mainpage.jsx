@@ -31,6 +31,7 @@ const Mainpage = () => {
     const [showNoResultModal, setShowNoResultModal] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [contentPage, setContentPage] = useState(0);
+    const [tweetId, setTweetId] = useState('');
 
     useEffect(() => {
         const checkAuthorization = async () => {
@@ -76,6 +77,9 @@ const Mainpage = () => {
                 const response = await axios.get(`http://localhost:8085/api/contents/paging?page=${contentPage}`);
                 setNewsData(response.data.content);
                 setPreviousNewsData(response.data.content);
+                setTweetId(response.data.content[contentPage].tweetId);
+                
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
