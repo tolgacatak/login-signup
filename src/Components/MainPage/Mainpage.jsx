@@ -30,6 +30,7 @@ const Mainpage = () => {
     const [previousNewsData, setPreviousNewsData] = useState([]);
     const [showNoResultModal, setShowNoResultModal] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [contentPage, setContentPage] = useState(0);
 
     useEffect(() => {
         const checkAuthorization = async () => {
@@ -72,9 +73,9 @@ const Mainpage = () => {
     useEffect(() => {
         async function fetchTweet() {
             try {
-                const response = await axios.get('http://localhost:8085/api/contents');
-                setPreviousNewsData(response.data.slice(12));
-                setNewsData(response.data.slice(12));
+                const response = await axios.get(`http://localhost:8085/api/contents/paging?page=${contentPage}`);
+                setNewsData(response.data.content);
+                setPreviousNewsData(response.data.content);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -106,7 +107,7 @@ const errorHandler = () => {
     setError('');
 }
 const handleSearch = () => {
-    axios.get(`http://localhost:8085/api/contents/search?text=${searchText}&limit=12`)
+    axios.get(`http://localhost:8085/api/contents/search?text=${searchText}`)
         .then(response => {
             setNewsData(response.data);
             if (response.data.length === 0) {

@@ -55,7 +55,7 @@ const LoginSignUp = () => {
         }catch (error){
             setError({
                 title: "Hatalı Giriş",
-                message: error.response.data,
+                message: "Giriş Gerçekleşemedi! Lütfen bilgilerinizi kontrol edin!"
             });
         }
         
