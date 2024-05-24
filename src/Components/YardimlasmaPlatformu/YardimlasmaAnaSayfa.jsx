@@ -62,8 +62,7 @@ const YardimlasmaAnaSayfa = () => {
             </div>
             <div className="yardimlasma-paragraf">
                 <p>
-                AfetAnkaNET, doğal afetler gibi acil durumlarda dayanışmayı ve yardımlaşmayı teşvik eden bir platformdur. Kullanıcılarımız, afet anlarında ihtiyaç duydukları yardımı talep edebilir, aynı zamanda diğer kullanıcıların yardım taleplerine yanıt verebilirler. Ayrıca, platformun yönlendirdiği kuruluşlara bağış yaparak ihtiyaç sahiplerine destek olabilirler.
-                </p>
+                AfetAnkaNET, doğal afetler gibi acil durumlarda dayanışmayı ve yardımlaşmayı teşvik eden bir platform olacaktır. Kullanıcılarımız, afet anlarında ihtiyaç duyacakları yardımı talep edebilecek, aynı zamanda diğer kullanıcıların yardım taleplerine yanıt verebilecekler. Ayrıca, platformun yönlendireceği kuruluşlara bağış yaparak ihtiyaç sahiplerine destek olabilecekler.                </p>
             </div>
             <div className="yardimlasma-kartlari">
                     <div className="yardim-al" onClick={authorized ? null : yardimalHandler}>
@@ -73,7 +72,7 @@ const YardimlasmaAnaSayfa = () => {
                         <YardimYap authorized={authorized} />
                     </div>
                 </div>
-            <div className="yardimlasma-uyari">
+             <div className="yardimlasma-uyari">
                 <p>
                     <b>Yardım talebi oluşturmak ve yardım yapmak için İsim - Soyisim bilgisinin eklenmiş olması gerekmektedir !
                         Eklemek için <a href="/profil-page  ">tıklayınız.</a>
